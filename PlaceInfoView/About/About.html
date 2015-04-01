@@ -1,0 +1,56 @@
+<nav class="b-top-tab-nav c-box-sz_bd-box">
+  <a href="{{placeUrl}}about" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__about">О нас</a>
+  <a href="{{placeUrl}}menu" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Мено</a>
+  <a href="{{placeUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__photo">Фото</a>
+  <a href="{{placeUrl}}comments" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__comments">Отзывы</a>
+  <a href="{{placeUrl}}complex" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Обеды</a>
+</nav>
+  
+<section class="b-place">
+  <header class="b-place_title">
+    <div class="b-place_title__left"></div>
+    <div class="b-place_title__content c-text__sz-big c-text__al-center c-text__clr-black" place-type="{{data.type}}">{{data.title}}</div>
+    <div class="b-place_title__right"></div>
+  </header>
+  <div class="b-place_info c-box-sz_bd-box">
+    <div class="b-place_info_separator"></div>
+    <iframe class="b-place_gmap" ng-src="{{data.gmap}}" width="600" height="450" frameborder="0" style="border:0"></iframe>
+    <div class="b-place_info_separator"></div>
+    <div class="b-place_info_info c-text__sz-avg c-text__al-left c-text__clr-black">{{data.info}}</div>
+    <div class="c-clr_fix"></div> 
+  </div> 
+  <table class="b-place_about-table c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black"> 
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Адрес</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.address}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Телефоны</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.phones}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">За городом</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.countryside}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Кухня</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.cuisine}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Парковка</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.parking}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Зал для курящих</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.smoking}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Средний чек</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.bill}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">WiFi</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.wifi}}</td>
+    </tr>
+  </table>
+</tab>   

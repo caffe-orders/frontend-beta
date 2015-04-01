@@ -1,0 +1,21 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.b-pagination {
+  width: 320px;
+  min-width: 320px;
+  margin: 0 auto !important;
+  @media screen and (min-width: 240px) and (max-width: 435px) {
+    left: 1%;
+  }
+  
+  &-wrap {
+    width: 100% !important;
+    height: auto;
+    padding: 1% 0 1% 1% !important;
+  }
+}

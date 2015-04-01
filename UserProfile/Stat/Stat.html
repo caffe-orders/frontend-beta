@@ -1,0 +1,33 @@
+<nav class="b-top-tab-nav c-box-sz_bd-box">
+  <a href="{{userUrl}}about" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__profile">Профиль</a>
+  <a href="{{userUrl}}stat" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Статистика</a>
+  <a href="{{userUrl}}settings" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__settings">Настройки</a>
+</nav>
+
+<section class="b-user-stat c-text__sz-avg c-text__al-left c-text__clr-black">
+<div>Сортировать по</div>
+<select>
+  <option>Названию</option>
+  <option>Дате</option>
+  <option>Оценке</option>
+</select>
+
+<table class="b-user-stat_table c-box-sz_bd-box">
+  <tr class="b-user-stat_table-head">
+    <td class="b-user-stat_table-col__place">Заведение</td>
+    <td class="b-user-stat_table-col__date">Дата</td>
+    <td class="b-user-stat_table-col__rating">Оценка</td>
+    <td class="b-user-stat_table-col__comment">Отзыв</td>
+  </tr>
+  
+  <tr class="b-user-stat_table-row">
+    <td class="b-user-stat_table-col__place">АртКартель</td>
+    <td class="b-user-stat_table-col__date">26.03.2015</td>
+    <td class="b-user-stat_table-col__rating">
+      <rating class="b-place-prev_rating" ng-model="3" max="5" state-on="'b-rating_star'" state-off="'b-rating_star__empty'"></rating>
+    </td>
+    <td class="b-user-stat_table-col__comment">//COMMENT//</td>
+  </tr>
+  
+</table>
+</section>

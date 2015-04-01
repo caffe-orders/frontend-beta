@@ -1,0 +1,98 @@
+$icon_wd: 100px;
+$icon_ht: 100px;
+
+.c-icon {
+  width: $icon_wd;
+  height: $icon_ht;
+  border: none;
+  display: block;
+  
+  @media screen and (min-width: 854px) and (max-width: 1680px) {
+    width: $icon_wd - 20px;
+    height: $icon_ht - 20px;
+  }
+  @media screen and (min-width: 240px) and (max-width: 853px) {
+    width: $icon_wd - 40px;
+    height: $icon_ht - 40px;
+  }
+  
+  &_nav {
+    background: url('../img/nav-icon.svg') no-repeat center;
+  }
+  
+  &_logo {
+    background: url('../img/logo.svg') no-repeat center;
+  }
+  
+  &_user-profile {
+    background: url('../img/user-profile-icon.svg') no-repeat center;
+  }
+  
+  &_sign-in {
+    background: url('../img/sign-in-icon.svg') no-repeat center;
+  }
+  
+  &_up {
+    background: url('../img/up-icon.svg') no-repeat center;
+  }
+  
+  &_tab {
+    width: auto;
+    height: auto;
+    
+    &__about {
+      background: url('../img/tab-about-icon.svg') no-repeat left 10px center;
+      background-size: 40px;
+    }
+    
+    &__menu {
+      background: url('../img/tab-menu-icon.svg') no-repeat left 10px center;
+      background-size: 35px;
+    }
+    
+    &__photo {
+      background: url('../img/tab-photo-icon.svg') no-repeat left 10px center;
+      background-size: 35px;
+    }
+    
+    &__comments {
+      background: url('../img/tab-comments-icon.svg') no-repeat left 10px center;
+      background-size: 32px;
+    }
+    
+    &__profile {
+      background:  url('../img/user-profile-icon.svg') no-repeat left 10px center;
+      background-size: 32px;
+    }
+    
+    &__stat {
+      background:  url('../img/tab-stat-icon.svg') no-repeat left 10px center;
+      background-size: 32px;
+    }
+    
+    &__settings {
+      background:  url('../img/tab-settings-icon.svg') no-repeat left 10px center;
+      background-size: 32px;
+    }
+  }
+  
+  &_custom {
+    
+    &__arr {
+      
+      &-left {
+        background: url('../img/left-arrow-icon.svg') no-repeat center;
+        background-size: 80%;
+      }
+
+      &-right {
+        background: url('../img/right-arrow-icon.svg') no-repeat center;
+        background-size: 80%;
+      }
+    }
+  }
+  
+  &__cover {
+    background-size: cover;
+  }
+}

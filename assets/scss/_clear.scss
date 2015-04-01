@@ -1,0 +1,27 @@
+.c-clr {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  float: none;
+  clear: both;
+  
+  &_bdr {
+    border: 0 !important;
+  }
+  
+  &_mgn {
+    margin: 0 !important;
+  }
+  
+  &_pad {
+    padding: 0 !important;
+  }
+  
+  &_flt {
+    float: none;
+  }
+  
+  &_fix {
+    clear: both;
+  }
+}

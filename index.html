@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <base href="/">
+  <title>{{title}} Сервис быстрого бронирования столиков онлайн</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Caffe-Orders Сервис быстрого бронирования столиков онлайн">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="m8MBaUezLf8lFDoxDATn2JuG6_sROje1HgVWQ2J38TU" />
+  <link rel="stylesheet" href="assets/scss/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body class="c-text">
+  <nav class="b-main-nav">
+    <a href="/" class="b-main-nav_btn">
+      <figure class="c-icon c-icon_logo c-icon__cover"></figure>
+    </a>
+    <a href="#" class="b-main-nav_btn b-main-nav_btn__toggle" ng-click="menuPanelCollapsed = !menuPanelCollapsed" tooltip="Меню" tooltip-placement="right">
+      <figure class="c-icon c-icon_nav c-icon__cover"></figure>
+    </a>
+    <a href="#" ng-init="signInOutModalVisible = false" ng-click="signInOutModalVisible = !signInOutModalVisible" class="b-main-nav_btn" tooltip="Войти или зарегистрироваться" tooltip-placement="right">
+      <figure class="c-icon c-icon_sign-in c-icon__cover"></figure>
+    </a>
+    <a href="user/0/" class="b-main-nav_btn" tooltip="Профиль" tooltip-placement="right">
+      <figure class="c-icon c-icon_user-profile c-icon__cover"></figure>
+    </a>
+    <a href="javascript:window.scroll(0,0)" class="b-main-nav_btn b-main-nav_btn__bottom bottom">
+      <figure class="c-icon c-icon_up c-icon__cover"></figure>
+    </a>
+  </nav><!-- b-main-nav -->
+  
+  <section ng-view class="b-content c-box-sz_bd-box"></section><!-- b-content -->
+  
+  <nav ng-init="menuPanelCollapsed = true;" ng-class="{visible: menuPanelCollapsed == false}" class="b-drop-down-nav">
+    <div class="b-drop-down-nav_wrap">
+      <div class="b-drop-down-nav_title c-text__sz-big c-text__al-left c-text__clr-white">Разделы</div>
+      <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Забронировать столик</a>
+      <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Устроить корпоратив</a>
+      <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Комплексные обеды</a>
+    </div>
+  </nav>
+  
+  <div class="cd-user-modal" ng-class="{visible: signInOutModalVisible}">
+  <div class="cd-user-modal-container">
+    <ul class="cd-switcher">
+      <li><a href="#0">Вход</a></li>
+      <li><a href="#0">Регистрация</a></li>
+    </ul>
+    <div id="cd-login" class="visible">
+      <form class="cd-form">
+        <p class="fieldset">
+		  <label class="image-replace cd-email" for="signin-email">E-mail</label>
+		  <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+		  <span class="cd-error-message">Не введен E-mail!</span>
+		</p>
+		<p class="fieldset">
+		  <label class="image-replace cd-password" for="signin-password">Пароль</label>
+		  <input class="full-width has-padding has-border" id="signin-password" type="text" placeholder="Пароль">
+		  <a href="#0" class="hide-password">Скрыть</a>
+		  <span class="cd-error-message">Не введен пароль!</span>
+		</p>
+		<p class="fieldset">
+		  <input type="checkbox" id="remember-me" checked>
+		  <label for="remember-me">Запомнить меня</label>
+		</p>
+		<p class="fieldset">
+		  <input class="full-width" type="submit" value="Войти">
+		</p>
+      </form>
+				
+	  <p class="cd-form-bottom-message"><a href="#0">Забыли свой пароль?</a></p>
+    </div>
+
+	<div id="cd-signup"> <!-- форма регистрации -->
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-username" for="signup-username">Имя пользователя</label>
+          <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Моб. телефон">
+          <span class="cd-error-message">Не введен мобильный телефон!</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="signup-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Не введен E-mail!</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-password" for="signup-password">Пароль</label>
+          <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Пароль">
+          <a href="#0" class="hide-password">Скрыть</a>
+          <span class="cd-error-message">Не введен пароль!</span>
+        </p>
+
+        <p class="fieldset">
+          <input type="checkbox" id="accept-terms">
+          <label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
+        </p>
+
+        <p class="fieldset">
+          <input class="full-width has-padding" type="submit" value="Создать аккаунт">
+        </p>
+      </form>
+    </div> <!-- cd-signup -->
+
+    <div id="cd-reset-password"> <!-- форма восстановления пароля -->
+      <p class="cd-form-message">Забыли пароль? Пожалуйста, введите адрес своей электронной почты. Вы получите ссылку, чтобы создать новый пароль.</p>
+
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="reset-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+        </p>
+
+        <p class="fieldset">
+          <input class="full-width has-padding" type="submit" value="Восстановить пароль">
+        </p>
+      </form>
+
+      <p class="cd-form-bottom-message"><a href="#0">Вернуться к входу</a></p>
+    </div> <!-- cd-reset-password -->
+    <a href="#0" class="cd-close-form">Закрыть</a>
+  </div> <!-- cd-user-modal-container -->
+</div> <!-- cd-user-modal -->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.min.js"></script>
+  <script src="assets/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  <script src="app.js"></script>
+  <script src="PlacePreviewsListView/PlacePreviewsListView.js"></script>
+  <script src="PlaceInfoView/About/About.js"></script>
+  <script src="PlaceInfoView/Comments/Comments.js"></script>
+  <script src="PlaceInfoView/Menu/Menu.js"></script>
+  <script src="PlaceInfoView/Photo/Photo.js"></script>
+  <script src="PlaceInfoView/Complex/Complex.js"></script>
+  <script src="UserProfile/About/About.js"></script>
+  <script src="UserProfile/Settings/Settings.js"></script>
+  <script src="UserProfile/Stat/Stat.js"></script>
+  <script src="UserProfile/Change/Pass/Pass.js"></script>
+  <script src="UserProfile/Change/Phone/Phone.js"></script>
+  <script src="PlaceSearchView/PlaceSearchView.js"></script>
+  <script src="Table/Reserve/Reserve.js"></script>
+</body>
+</html>

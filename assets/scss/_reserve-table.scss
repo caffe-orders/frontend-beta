@@ -1,0 +1,46 @@
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 900px)";
+
+.b-res-table {
+  width: 99%;
+  min-height: 100%;
+  height: auto;
+  margin: 0 0 1% 1%;
+  
+  @media #{$break-small} {
+    margin: 0 0 1% 0;
+    position: relative;
+    left: 1%;
+  }
+
+  &_title {
+    width: auto;
+    height: 50px;
+    margin: 1% auto 1% 0;
+    line-height: 50px;
+  }
+
+  &_wrap {
+    display: block;
+    width: 100%;
+    height: 600px;
+  }
+
+  &_btn {
+    width: 10%;
+    height: 600px;
+    float: left;
+  }
+  
+  &_deck {
+    width: 80%;
+    height: 600px;
+    float: left;
+    background: #639b9b;
+  }
+
+  &_table {
+    position: relative;
+  }
+}

@@ -1,0 +1,43 @@
+//base places search toggle button and form config
+$drop_down_toggle_btn_color: #6b82bb;
+
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 853px)";
+
+.b-pl-srh-drop-down-toggle-btn {
+  display: block;
+  width: 99%;
+  min-width: 320px;
+  height: 30px;
+  margin: 0 1% 1.5%;
+  background: url('../img/nav-icon.svg') 50% no-repeat, $drop_down_toggle_btn_color;
+  background-size: 26px;
+  
+  @media #{$break-small} {
+    max-width: 700px;
+  }
+}
+
+.b-pl-srh-drop-down {
+  display: none;
+  width: 99%;
+  min-width: 320px;
+  height: 200px;
+  margin: 0 0 0 1%;
+  padding: 10px;
+  background: #3995f0;
+  @media #{$break-small} {
+    max-width: 700px;
+  }
+  
+  &_descr {
+    padding-top: 5px;
+    font-weight: 400;
+  }
+  
+  &_chkbx {
+    width: 18px;
+    height: 18px;
+  }
+}

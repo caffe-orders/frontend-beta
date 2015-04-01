@@ -1,0 +1,21 @@
+{
+  "id": 1,
+  "imgList": [ 
+    {
+      "id": 0,
+      "prev": "assets/img/place-preview-sample.jpg",
+      "full": "assets/img/place-preview-sample.jpg"
+    },
+    {
+      "id": 1,
+      "prev": "assets/img/place-photo-full.jpg",
+      "full": "assets/img/place-photo-full.jpg"
+    },
+    {
+      "id": 2,
+      "prev": "assets/img/place-photo-full.jpg",
+      "full": "assets/img/place-photo-full.jpg"
+    }
+  ]
+}
+    

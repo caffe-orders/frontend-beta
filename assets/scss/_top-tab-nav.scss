@@ -1,0 +1,51 @@
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+     -moz-border-bottom-left-radius: $radius;
+      -ms-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+     -moz-border-bottom-right-radius: $radius;
+      -ms-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 853px)";
+
+.b-top-tab-nav {
+  width: 99%;
+  min-width: 320px;
+  height: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: block;
+  background: #3995f0;
+  margin: 0 1% 1.5%;
+  @include border-bottom-radius(3px);
+  @media #{$break-small} {
+    max-width: 700px;
+  }
+
+  &_btn {
+    width: auto;
+    height: 40px;
+    float: left;
+    padding-left: 55px;
+    padding-right: 10px;
+    line-height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+    @media #{$break-small} {
+      font-size: 0px;
+      color: transparent;
+      padding-right: 0px;
+    }
+    
+    &:hover {
+      text-decoration: none;
+      background-color: #6b82bb;
+    }
+  }
+}

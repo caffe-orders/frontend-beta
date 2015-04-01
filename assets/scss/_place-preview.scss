@@ -1,0 +1,144 @@
+// basic config for place preview block
+$place_prev_info_bg_color: rgba(255,255,255, 0.7);
+$place_prev_btn_bg_color_default: #3995f0;
+$place_prev_btn_bg_color_active: #6b82bb;
+$place_prev_ht: 350px;
+
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 853px)";
+
+.b-place-prev {
+  width: 32.333%;
+  max-width: 700px;
+  min-width: 320px;
+  height: $place_prev_ht;
+  float: left;
+  margin: 0 0 1.5% 1%;
+  @media #{$break-avg} {
+    width: 49%;
+  }
+  @media #{$break-small} {
+    width: 99%;
+    margin: 0 auto 1.5% 1%;
+    float: none;
+  }
+  
+  &_field {
+    padding: 0 10px 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 40px;
+    white-space: nowrap;
+    cursor: default;
+  }
+  
+  &_info {
+    width: 300px;
+    height: $place_prev_ht;
+    margin-right: 10px;
+    float: right;
+    background: rgba(255,255,255, 0.7) !important;
+  }
+  
+  &_title {
+    width: auto;
+    height: 40px;
+    margin: 0 auto;
+  }
+  
+  &_wifi {
+    width: auto;
+    height: 16px;
+    margin: -35px 10px 0 0;
+    line-height: 14px;
+    cursor: default;
+  }
+  
+  &_phone {
+    width: 100%;
+    height: 40px;
+    
+    &:before {
+      content: url('../img/phone-icon.png');
+    }
+  }
+  
+  &_addr {
+    width: 100%;
+    height: 40px;
+    @media #{$break-avg} {
+      font-size: 18px;
+    }
+    
+    &:before {
+      content: url('../img/address-icon.png');
+    }
+  }
+  
+  &_avg-bill {
+    width: 100%;
+    height: 40px;
+    
+    &:before {
+      content: url('../img/bill-icon.png');
+    }
+  }
+  
+  &_cuisine {
+    width: 100%;
+    height: 40px;
+    
+    &:before {
+      content: url('../img/cuisine-icon.png');
+    }
+  }
+  
+  &_separator {
+    width: 100%;
+    height: 20px;
+    background: url('../img/text-separator.png') no-repeat center;
+    cursor: default;
+  }
+  
+  &_btn {
+    display: block;
+    width: 280px;
+    height: 40px;
+    margin: 10px auto;
+    background-color: $place_prev_btn_bg_color_default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 40px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .2s;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+      background-color: $place_prev_btn_bg_color_active;
+    }
+  }
+  
+  &_type {
+    width: 300px - 140px;
+    height: 30px;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    cursor: default;
+  }
+    
+  &_rating {
+    width: 140px;
+    height: 25px;
+    float: left;
+    padding-left: 10px;
+    margin-top: 10px;
+  }
+}

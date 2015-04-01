@@ -1,0 +1,32 @@
+<nav class="b-top-tab-nav c-box-sz_bd-box">
+  <a href="{{userUrl}}about" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__profile">Профиль</a>
+  <a href="{{userUrl}}stat" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Статистика</a>
+  <a href="{{userUrl}}settings" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__settings">Настройки</a>
+</nav>
+
+
+<section class="b-user-info">
+  <div class="b-user-info_uname c-text__sz-avg c-text__al-left c-text__clr-black">
+    {{userData.firstName}} {{userData.lastName}}
+    <a href="{{userUrl}}settings" class="b-user-info_link c-text__sz-avg c-text__al-left c-text__clr-red">[изменить]</a>
+  </div>
+  
+  <table class="b-user-info_about c-text__sz-avg c-text__al-left c-text__clr-black">
+    <tr class="b-user-info_about-row">
+      <td class="b-user-info_about-col__key">Адрес:</td>
+      <td class="b-user-info_about-col__value">{{userData.address}}</td>
+    </tr>
+    <tr class="b-user-info_about-row">
+      <td class="b-user-info_about-col__key">Город:</td>
+      <td class="b-user-info_about-col__value">{{userData.city}}</td>
+    </tr>
+    <tr class="b-user-info_about-row">
+      <td class="b-user-info_about-col__key">Email:</td>
+      <td class="b-user-info_about-col__value">{{userData.email}}</td>
+    </tr>
+    <tr class="b-user-info_about-row">
+      <td class="b-user-info_about-col__key">Телефон:</td>
+      <td class="b-user-info_about-col__value">+{{userData.phone}}</td>
+    </tr>
+  </table>
+</section>

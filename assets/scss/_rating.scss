@@ -1,0 +1,16 @@
+.b-rating {
+  
+  &_star {
+    width: 25px;
+    height: 25px;
+    background: url('../img/star-icon.svg') no-repeat center;
+    background-size: 100%;
+    
+    &__empty {
+      width: 25px;
+      height: 25px;
+      background: url('../img/star-empty-icon.svg') no-repeat center;
+      background-size: 100%;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<form ng-init="searchFormCollapsed = true;" ng-class="{visible: searchFormCollapsed == false}" action="/search/1" class="b-pl-srh-drop-down c-box-sz_bd-box">
+ <div class="b-pl-srh-drop-down_sect">
+        <label for="wifi" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">WiFi</label>
+        <input type="checkbox" name="wifi" class="b-pl-srh-drop-down_chkbx">
+        <label for="countryside" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">За городом</label>
+        <input type="checkbox" name="countryside" class="b-pl-srh-drop-down_chkbx">
+        <label for="parking" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">Нужна парковка?</label>
+        <input type="checkbox" name="parking" class="b-pl-srh-drop-down_chkbx">
+        <label for="smoking" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">Зал для курящих</label>
+        <input type="checkbox" name="smoking" class="b-pl-srh-drop-down_chkbx">
+        <label for="min-bill" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">Средний чек</label>
+        <input type="text" name="min-bill" class="b-pl-srh-drop-down_textin">
+        <input type="text" name="max-bill" class="b-pl-srh-drop-down_textin">
+        <select name="type">
+          <option value="Ресторан">Ресторан</option>
+          <option value="Кафе">Кафе</option>
+        </select>
+        <input type="submit">
+      </div>
+    </form>
+    <a href="#" ng-click="searchFormCollapsed = !searchFormCollapsed" class="b-pl-srh-drop-down-toggle-btn c-border_bottom__small c-box-sz_bd-box"></a>
+
+<div class="b-pagination-wrap c-box-sz_bd-box text-center">
+  <pagination class="pagination-centered" max-size="maxSize" previous-text="&lsaquo;" next-text="&rsaquo;" total-items="totalItems" ng-model="currentPage" ng-change="onPageChanged()"></pagination>
+</div>
+<div class="c-clr_fix"></div>
+
+<article ng-repeat="PlacePreview in PlacePreviewsList" class="b-place-prev" style="background: url({{PlacePreview.img}}) no-repeat center;">
+  <div class="b-place-prev_info">
+    <div class="b-place-prev_title b-place-prev_field c-text__sz-big c-text__al-center c-text__clr-black c-box-sz_bd-box">{{PlacePreview.title}}</div>
+    <div class="b-place-prev_wifi c-text__sz-vsml c-text__al-left c-text__clr-red right">{{PlacePreview.wifi}}</div>
+    <div class="b-place-prev_separator"></div>
+    <div class="b-place-prev_cuisine b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.cuisine}}</div>
+    <div class="b-place-prev_phone b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.phone}}</div>
+    <div class="b-place-prev_addr b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.address}}</div>
+    <div class="b-place-prev_avg-bill b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.bill}}</div>
+    <a href="place/{{PlacePreview.id}}/" class="b-place-prev_btn c-text__sz-avg c-text__al-center c-text__clr-white">Подробнее</a>
+    <rating class="b-place-prev_rating" ng-model="PlacePreview.rating" max="5" state-on="'b-rating_star'" state-off="'b-rating_star__empty'"></rating>
+    <div class="b-place-prev_type c-text__sz-avg c-text__al-right c-text__clr-gray">{{PlacePreview.type}}</div>
+  </div>
+  <div class="c-clr_fix"></div>
+</article>
+
+<div class="c-clr_fix"></div>
+<div class="b-pagination-wrap c-box-sz_bd-box text-center">
+  <pagination class="pagination-centered" max-size="maxSize" previous-text="&lsaquo;" next-text="&rsaquo;" total-items="totalItems" ng-model="currentPage" ng-change="onPageChanged()"></pagination>
+</div>
