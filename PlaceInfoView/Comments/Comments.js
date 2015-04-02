@@ -23,4 +23,16 @@ angular.module('app.PlaceCommentsView', [
       $scope.commentsList = data;
       $rootScope.title = 'Отзывы | CaffeOrders';
     });
+    
+    $scope.send = function(comment) {
+      var commentData = comment;
+      var queryString = 'http://api.caffe.ru/comments/new?' +
+        'placeId=' + $scope.placeId + 
+        '&state=' + ((commentData.state == true) ? true : false) + 
+        '&text=' + commentData.text;
+      alert(queryString);
+      $http.get(queryString).success(function(data) {
+        
+      });
+    }
 }]);

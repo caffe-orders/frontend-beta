@@ -19,7 +19,7 @@ angular.module('app', [
   'app.PlaceSearchView',
   'app.TableReserveView'
 ]).
-config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
+config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', 
   function($routeProvider, $locationProvider, $sceDelegateProvider) {
     $routeProvider.otherwise({redirectTo: '/list/1'});
     $locationProvider.html5Mode(true);
@@ -28,7 +28,6 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
       'https://www.google.com/maps/**'
     ]);
 }]).
-run(function($rootScope) {
+run(function($rootScope, $http) {
   $rootScope.title = 'Caffe-Orders | Fast & Beautiful table reservation service';
-  //auth panel functions here
 });

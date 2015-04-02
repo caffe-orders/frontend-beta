@@ -7,6 +7,12 @@
 </nav>
     
 <section class="b-comment">
+   <form>
+     <input ng-model="comment.text" type="text" name="text">
+     <label for="state">Понравилось?</label>
+     <input ng-model="comment.state" type="checkbox" name="state" value="true">
+     <input ng-click="send(comment)" type="submit">
+   </form>
   <article ng-repeat="comment in commentsList" class="b-comment_item">
     <div class="b-comment_uname c-box-sz_bd-box c-text__sz-big c-text__al-left c-text__clr-white">{{comment.firstName}} {{comment.lastName}}</div>
     <div class="b-comment_state c-text__sz-big c-text__al-center {{comment.state ? 'b-comment_state__like' : 'b-comment_state__dislike'}}">{{comment.state ? 'Понравилось' : 'Не понравилось'}}</div>
