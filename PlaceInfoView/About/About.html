@@ -9,14 +9,14 @@
 <section class="b-place">
   <header class="b-place_title">
     <div class="b-place_title__left"></div>
-    <div class="b-place_title__content c-text__sz-big c-text__al-center c-text__clr-black" place-type="{{data.type}}">{{data.title}}</div>
+    <div class="b-place_title__content c-text__sz-big c-text__al-center c-text__clr-black" place-type="{{data.type}}">{{data.name}}</div>
     <div class="b-place_title__right"></div>
   </header>
   <div class="b-place_info c-box-sz_bd-box">
     <div class="b-place_info_separator"></div>
     <iframe class="b-place_gmap" ng-src="{{data.gmap}}" width="600" height="450" frameborder="0" style="border:0"></iframe>
     <div class="b-place_info_separator"></div>
-    <div class="b-place_info_info c-text__sz-avg c-text__al-left c-text__clr-black">{{data.info}}</div>
+    <div class="b-place_info_info c-text__sz-avg c-text__al-left c-text__clr-black">{{data.descr}}</div>
     <div class="c-clr_fix"></div> 
   </div> 
   <table class="b-place_about-table c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black"> 
@@ -30,7 +30,7 @@
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">За городом</td>
-      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.countryside}}</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.outdoors}}</td>
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Кухня</td>
@@ -46,11 +46,15 @@
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Средний чек</td>
-      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.bill}}</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.avgBill}}</td>
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">WiFi</td>
       <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.wifi}}</td>
+    </tr>
+    <tr class="b-place_about-table_row c-border__small">
+      <td class="b-place_about-table_column b-place_about-table_column__title">Время работы</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.workTime}}</td>
     </tr>
   </table>
 </tab>   

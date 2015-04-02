@@ -16,10 +16,10 @@ angular.module('app.PlaceCommentsView', [
   function($scope, $routeParams, $http, $location, $sce, $rootScope) {
     //init base data
     $scope.placeId = $routeParams.placeId;
-    $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
+    $scope.placeUrl = 'place/' + $scope.placeId + '/';
     
     //get all needed data about place (json)
-    $http.get('tmp/comments.json').success(function(data) {
+    $http.get('//api.caffe.ru/comments/list?id=' + $scope.placeId).success(function(data) {
       $scope.commentsList = data;
       $rootScope.title = 'Отзывы | CaffeOrders';
     });

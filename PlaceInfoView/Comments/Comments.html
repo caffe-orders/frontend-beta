@@ -8,7 +8,7 @@
     
 <section class="b-comment">
   <article ng-repeat="comment in commentsList" class="b-comment_item">
-    <div class="b-comment_uname c-box-sz_bd-box c-text__sz-big c-text__al-left c-text__clr-white">{{comment.user}}</div>
+    <div class="b-comment_uname c-box-sz_bd-box c-text__sz-big c-text__al-left c-text__clr-white">{{comment.firstName}} {{comment.lastName}}</div>
     <div class="b-comment_state c-text__sz-big c-text__al-center {{comment.state ? 'b-comment_state__like' : 'b-comment_state__dislike'}}">{{comment.state ? 'Понравилось' : 'Не понравилось'}}</div>
     <div class="c-clr_fix"></div>
     <div class="b-comment_text c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">{{comment.text}}</div>

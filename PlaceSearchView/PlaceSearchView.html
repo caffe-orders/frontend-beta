@@ -25,15 +25,15 @@
 </div>
 <div class="c-clr_fix"></div>
 
-<article ng-repeat="PlacePreview in PlacePreviewsList" class="b-place-prev" style="background: url({{PlacePreview.img}}) no-repeat center;">
+<article ng-repeat="PlacePreview in PlacePreviewsList" class="b-place-prev" style="background: url('//files.caffe.ru/{{PlacePreview.id}}/preview.jpg') no-repeat center;">
   <div class="b-place-prev_info">
-    <div class="b-place-prev_title b-place-prev_field c-text__sz-big c-text__al-center c-text__clr-black c-box-sz_bd-box">{{PlacePreview.title}}</div>
-    <div class="b-place-prev_wifi c-text__sz-vsml c-text__al-left c-text__clr-red right">{{PlacePreview.wifi}}</div>
+    <div class="b-place-prev_title b-place-prev_field c-text__sz-big c-text__al-center c-text__clr-black c-box-sz_bd-box">{{PlacePreview.name}}</div>
+    <div class="b-place-prev_wifi c-text__sz-vsml c-text__al-left c-text__clr-red right">{{(PlacePreview.wifi) ? 'WiFi' : '';}}</div>
     <div class="b-place-prev_separator"></div>
     <div class="b-place-prev_cuisine b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.cuisine}}</div>
-    <div class="b-place-prev_phone b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.phone}}</div>
+    <div class="b-place-prev_phone b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.phones}}</div>
     <div class="b-place-prev_addr b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.address}}</div>
-    <div class="b-place-prev_avg-bill b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.bill}}</div>
+    <div class="b-place-prev_avg-bill b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.avgBill}}</div>
     <a href="place/{{PlacePreview.id}}/" class="b-place-prev_btn c-text__sz-avg c-text__al-center c-text__clr-white">Подробнее</a>
     <rating class="b-place-prev_rating" ng-model="PlacePreview.rating" max="5" state-on="'b-rating_star'" state-off="'b-rating_star__empty'"></rating>
     <div class="b-place-prev_type c-text__sz-avg c-text__al-right c-text__clr-gray">{{PlacePreview.type}}</div>

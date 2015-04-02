@@ -23,7 +23,7 @@ angular.module('app.PlaceAboutView', [
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
     
     //get all needed data about place (json)
-    $http.get('tmp/placeinfo' + $scope.placeId + '.json').success(function(data) {
+    $http.get('http://api.caffe.ru/places/info?id=' + $scope.placeId).success(function(data) {
       $scope.data = data;
       $rootScope.title = 'О заведени | CaffeOrders';
     });

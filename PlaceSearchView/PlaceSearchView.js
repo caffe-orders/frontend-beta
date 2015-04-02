@@ -17,7 +17,7 @@ angular.module('app.PlaceSearchView', [
     
     $scope.searchFormCollapsed = true;
     
-    $http.get('tmp/previews' + $routeParams.pageNo + '.json').success(function(data) {
+    $http.get('http://api.caffe.ru/places/shortlist?limit=5&offset=0').success(function(data) {
       $scope.PlacePreviewsList = data;
       $scope.currentPage = $routeParams.pageNo;
       $rootScope.title = 'Поиск заведений | CaffeOrders';
@@ -32,7 +32,7 @@ angular.module('app.PlaceSearchView', [
     };
 
     $scope.onPageChanged = function() {
-      $http.get('tmp/previews' + $scope.currentPage + '.json').success(function(data) {
+      $http.get('http://api.caffe.ru/places/shortlist?limit=5&offset=0').success(function(data) {
         $scope.PlacePreviewsList = data;
         $location.path('search/' + $scope.currentPage);
       });
