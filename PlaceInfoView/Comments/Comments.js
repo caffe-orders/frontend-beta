@@ -1,4 +1,5 @@
 angular.module('app.PlaceCommentsView', [
+  'ngCookies',
   'ngRoute',
   'ui.bootstrap',
   'ngSanitize'
@@ -12,8 +13,8 @@ angular.module('app.PlaceCommentsView', [
     })
 }])
 
-.controller('PlaceCommentsCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+.controller('PlaceCommentsCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope', '$cookies',
+  function($scope, $routeParams, $http, $location, $sce, $rootScope, $cookies) {
     //init base data
     $scope.placeId = $routeParams.placeId;
     $scope.placeUrl = 'place/' + $scope.placeId + '/';
@@ -26,13 +27,21 @@ angular.module('app.PlaceCommentsView', [
     
     $scope.send = function(comment) {
       var commentData = comment;
-      var queryString = 'http://api.caffe.ru/comments/new?' +
+      var currDate = new Date();
+      commentData.pubDate = currDate.getDate + '.' + currDate.getMonth + '.' + currDate.getFullYear;
+      var queryString = '//api.caffe.ru/comments/new?' +
         'placeId=' + $scope.placeId + 
-        '&state=' + ((commentData.state == true) ? true : false) + 
+        '&state=' + ((commentData.state) ? true : false) + 
         '&text=' + commentData.text;
-      alert(queryString);
-      $http.get(queryString).success(function(data) {
-        
+      var req = {
+        method: 'GET',
+        url: queryString,
+        crossDomain: true,
+        withCredentials: true,
+        data: { }
+      }
+      $http(req).success(function(data) {
+        $scope.commentsList.push(commentData);
       });
     }
 }]);
