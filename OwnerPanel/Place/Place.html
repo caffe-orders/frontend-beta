@@ -1,0 +1,38 @@
+<nav class="b-top-tab-nav c-box-sz_bd-box">
+  <a href="{{ownerUrl}}index" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__about">Главная</a>
+  <a href="{{ownerUrl}}stat" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Статистика</a>
+  <a href="{{ownerUrl}}place" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Заведение</a>
+  <a href="{{ownerUrl}}rooms" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Комнаты</a>
+  <a href="{{ownerUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Фото</a>
+</nav>
+
+<section class="b-owner-panel">
+  <form action="" class="b-place-create-form">
+    <label for="name" class="b-place-create-form_label">Название</label>
+    <input type="text" name="name" class="b-place-create-form_text-input" tooltip="Название заведения" tooltip-placement="top">
+    <label for="type" class="b-place-create-form_label">Тип</label>
+    <select name="type" tooltip="Тип заведения" tooltip-placement="top">
+      <option value="Ресторан">Ресторан</option>
+      <option value="Кафе">Кафе</option>
+    </select>
+    <label for="phones" class="b-place-create-form_label">Телефон</label>
+    <input type="text" name="phones" class="b-place-create-form_text-input" tooltip="Контактный телефон" tooltip-placement="top">
+    <label for="address" class="b-place-create-form_label">Адрес</label>
+    <input type="text" name="address" class="b-place-create-form_text-input" tooltip="Адрес заведения" tooltip-placement="top">
+    <label for="cuisine" class="b-place-create-form_label">Кухня</label>
+    <input type="text" name="cuisine" class="b-place-create-form_text-input" tooltip="На какой кухне специализируется заведение?" tooltip-placement="top">
+    <label for="outdoors" class="b-place-create-form_label">За городом?</label>
+    <input type="checkbox" name="outdoors" class="b-place-create-form_checkbox-input">
+    <label for="parking" class="b-place-create-form_label">Парковка</label>
+    <input type="checkbox" name="parking" class="b-place-create-form_checkbox-input">
+    <label for="smoking" class="b-place-create-form_label">Зал для курящих</label>
+    <input type="checkbox" name="smoking" class="b-place-create-form_checkbox-input">
+    <label for="avgBill" class="b-place-create-form_label">Средний чек</label>
+    <input type="text" name="avgBill" class="b-place-create-form_text-input">
+    <label for="wifi" class="b-place-create-form_label">WiFi</label>
+    <input type="checkbox" name="wifi" class="b-place-create-form_checkbox-input">
+    <label for="workTime" class="b-place-create-form_label">Время работы</label>
+    <input type="text" name="workTime" class="b-place-create-form_text-input">
+    <input type="submit" name="wifi" class="b-place-create-form_submit-input">
+  </form>
+</section>

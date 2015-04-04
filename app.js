@@ -17,7 +17,10 @@ angular.module('app', [
   'app.UserProfileChangePassView',
   'app.PlacePhotoView',
   'app.PlaceSearchView',
-  'app.TableReserveView'
+  'app.TableReserveView',
+  'app.OwnerPanelIndexView',
+  'app.OwnerPanelPlaceView',
+  'app.OwnerPanelStatView'
 ]).
 config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', 
   function($routeProvider, $locationProvider, $sceDelegateProvider) {

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <base href="/">
   <title>{{title}} Сервис быстрого бронирования столиков онлайн</title>
   <meta charset="UTF-8">
@@ -130,6 +133,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-cookies.js"></script>
+  <script src="assets/libs/google-charts.js"></script>
   <script src="assets/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
   <script src="app.js"></script>
   <script src="PlacePreviewsListView/PlacePreviewsListView.js"></script>
@@ -145,5 +149,8 @@
   <script src="UserProfile/Change/Phone/Phone.js"></script>
   <script src="PlaceSearchView/PlaceSearchView.js"></script>
   <script src="Table/Reserve/Reserve.js"></script>
+  <script src="OwnerPanel/Index/Index.js"></script>
+  <script src="OwnerPanel/Stat/Stat.js"></script>
+  <script src="OwnerPanel/Place/Place.js"></script>
 </body>
 </html>

@@ -17,7 +17,6 @@ angular.module('app.PlacePreviewsListView', [
     $scope.searchFormCollapsed = true;
     
     $http.get('http://api.caffe.ru/places/shortlist?limit=5&offset=0').success(function(data) {
-        console.log(data);
       $scope.PlacePreviewsList = data;
       $scope.currentPage = $routeParams.pageNo;
       $rootScope.title = 'Список заведений | CaffeOrders';
