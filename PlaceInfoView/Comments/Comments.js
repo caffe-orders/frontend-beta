@@ -20,28 +20,37 @@ angular.module('app.PlaceCommentsView', [
     $scope.placeUrl = 'place/' + $scope.placeId + '/';
     
     //get all needed data about place (json)
-    $http.get('//api.caffe.ru/comments/list?id=' + $scope.placeId).success(function(data) {
-      $scope.commentsList = data;
-      $rootScope.title = 'Отзывы | CaffeOrders';
-    });
+    $rootScope.title = 'Отзывы | CaffeOrders';
     
-    $scope.send = function(comment) {
-      var commentData = comment;
-      var currDate = new Date();
-      commentData.pubDate = currDate.getDate + '.' + currDate.getMonth + '.' + currDate.getFullYear;
-      var queryString = '//api.caffe.ru/comments/new?' +
-        'placeId=' + $scope.placeId + 
-        '&state=' + ((commentData.state) ? true : false) + 
-        '&text=' + commentData.text;
-      var req = {
-        method: 'GET',
-        url: queryString,
-        crossDomain: true,
-        withCredentials: true,
-        data: { }
+    $scope.commentsPanel = {
+      'placeId': null,
+      'commentsList': {},
+      'getCommentsList': function() {
+        $http.get('//api.caffe.ru/comments/list?id=' + this.placeId).success(function(data) {
+          $scope.commentsPanel.commentsList = data;
+        });
+      },
+      'send': function(comment) {
+        var commentData = comment;
+        var currDate = new Date();
+        commentData.pubDate = currDate.getDate + '.' + currDate.getMonth + '.' + currDate.getFullYear;
+        var queryString = '//api.caffe.ru/comments/new?' +
+          'placeId=' + $scope.placeId + 
+          '&state=' + ((commentData.state) ? true : false) + 
+          '&text=' + commentData.text;
+        var req = {
+          method: 'GET',
+          url: queryString,
+          crossDomain: true,
+          withCredentials: true,
+          data: { }
+        };
+        $http(req).success(function(data) {
+          $scope.commentsPanel.getCommentsList(this.placeId);
+        });
       }
-      $http(req).success(function(data) {
-        $scope.commentsList.push(commentData);
-      });
-    }
+    };
+    
+    $scope.commentsPanel.placeId = $scope.placeId;
+    setInterval($scope.commentsPanel.getCommentsList(), 60000);
 }]);

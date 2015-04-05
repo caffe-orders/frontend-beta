@@ -487,7 +487,8 @@ body {
     height: 25px;
     float: left;
     padding-left: 10px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    outline: none; }
 
 /* -------------------------------- 
 
@@ -915,7 +916,7 @@ xsigin/signup popup
   display: none;
   width: 99%;
   min-width: 320px;
-  height: 200px;
+  height: auto;
   margin: 0 0 0 1%;
   padding: 10px;
   background: #3995f0; }
@@ -923,13 +924,52 @@ xsigin/signup popup
     .b-pl-srh-drop-down {
       max-width: 700px; } }
   /* line 34, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
-  .b-pl-srh-drop-down_descr {
-    padding-top: 5px;
-    font-weight: 400; }
+  .b-pl-srh-drop-down_sect {
+    width: 50%;
+    float: left; }
   /* line 39, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
+  .b-pl-srh-drop-down_select {
+    width: auto;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400; }
+  /* line 47, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
+  .b-pl-srh-drop-down_submit {
+    width: 30%;
+    height: 30px;
+    margin: 6% 0 0 0;
+    float: left; }
+  /* line 54, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
+  .b-pl-srh-drop-down_text {
+    width: 20%;
+    height: 30px;
+    margin: 0;
+    padding: 0 1% 0 1%;
+    font-weight: 400; }
+    @media screen and (min-width: 240px) and (max-width: 853px) {
+      .b-pl-srh-drop-down_text {
+        width: 40%; } }
+  /* line 65, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
+  .b-pl-srh-drop-down_descr {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 200;
+    margin: 0;
+    padding: 0; }
+    /* line 74, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
+    .b-pl-srh-drop-down_descr__checkbox {
+      width: 80%;
+      float: left; }
+  /* line 80, D:/work/Denwer/home/caffe.ru/www/assets/scss/_places-search-form.scss */
   .b-pl-srh-drop-down_chkbx {
-    width: 18px;
-    height: 18px; }
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px !important;
+    padding: 0 !important; }
 
 /* line 8, D:/work/Denwer/home/caffe.ru/www/assets/scss/pagination/_pagination.scss */
 .b-pagination {
@@ -1105,9 +1145,10 @@ xsigin/signup popup
 
 /* line 7, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
 .b-comment_item {
+  display: inline-block;
+  vertical-align: top;
   width: 32.3%;
   height: auto;
-  float: left;
   margin: 1% 0 0 1%;
   background-color: #c6e8f2; }
   @media screen and (min-width: 854px) and (max-width: 1680px) {
@@ -1116,7 +1157,7 @@ xsigin/signup popup
   @media screen and (min-width: 240px) and (max-width: 853px) {
     .b-comment_item {
       width: 99%; } }
-/* line 21, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+/* line 22, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
 .b-comment_uname {
   width: 65%;
   height: 40px;
@@ -1124,34 +1165,40 @@ xsigin/signup popup
   padding: 0 1% 0 1%;
   line-height: 40px;
   background-color: #3995f0; }
-/* line 30, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+/* line 31, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
 .b-comment_state {
   width: 35%;
   height: 40px;
   float: right;
   line-height: 40px; }
-  /* line 36, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+  @media screen and (min-width: 854px) and (max-width: 1680px) {
+    .b-comment_state {
+      font-size: 18px; } }
+  @media screen and (min-width: 240px) and (max-width: 853px) {
+    .b-comment_state {
+      font-size: 18px; } }
+  /* line 43, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
   .b-comment_state__like {
     color: #000;
     background-color: #5ae279; }
-  /* line 41, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+  /* line 48, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
   .b-comment_state__dislike {
     color: #fff;
     background-color: #de2448; }
-/* line 47, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+/* line 54, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
 .b-comment_text {
   width: 100%;
   height: auto;
   padding: 1%;
   line-height: 24px; }
-/* line 54, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+/* line 61, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
 .b-comment_pub-date {
   width: auto;
   height: 40px;
   float: right;
   padding: 0 1% 0 1%;
   line-height: 40px; }
-/* line 62, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+/* line 69, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
 .b-comment_delete {
   display: block;
   width: auto;
@@ -1159,7 +1206,8 @@ xsigin/signup popup
   float: left;
   padding: 0 1% 0 1%;
   line-height: 40px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
 
 /* line 16, D:/work/Denwer/home/caffe.ru/www/assets/scss/_top-tab-nav.scss */
 .b-top-tab-nav {
@@ -1537,5 +1585,50 @@ xsigin/signup popup
   /* line 9, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
   .b-place-create-form_text-input {
     width: 100%; }
+
+/* line 5, D:/work/Denwer/home/caffe.ru/www/assets/scss/_send-comment-form.scss */
+.b-send-comment-form {
+  display: block;
+  width: 78%;
+  height: auto;
+  padding: 1%;
+  margin: 0 auto;
+  background-color: #c6e8f2; }
+  @media screen and (min-width: 240px) and (max-width: 853px) {
+    .b-send-comment-form {
+      width: 99%;
+      margin-left: 1%; } }
+  /* line 17, D:/work/Denwer/home/caffe.ru/www/assets/scss/_send-comment-form.scss */
+  .b-send-comment-form_text {
+    width: 100%;
+    height: auto;
+    margin: 0 0 1% 0;
+    line-height: 20px;
+    resize: none;
+    outline: none; }
+  /* line 26, D:/work/Denwer/home/caffe.ru/www/assets/scss/_send-comment-form.scss */
+  .b-send-comment-form_label {
+    display: block;
+    width: auto;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 30px;
+    float: left; }
+  /* line 37, D:/work/Denwer/home/caffe.ru/www/assets/scss/_send-comment-form.scss */
+  .b-send-comment-form_checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 5px !important;
+    padding: 0;
+    outline: none; }
+  /* line 45, D:/work/Denwer/home/caffe.ru/www/assets/scss/_send-comment-form.scss */
+  .b-send-comment-form_submit {
+    float: right;
+    width: auto;
+    height: 30px;
+    margin: 0;
+    padding: 0 10px 0 10px; }
 
 /*# sourceMappingURL=app.css.map */

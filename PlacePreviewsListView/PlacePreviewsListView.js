@@ -4,7 +4,7 @@ angular.module('app.PlacePreviewsListView', [
 ])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/list/:pageNo', {
+  $routeProvider.when('/list/:pageNo/', {
     templateUrl: 'PlacePreviewsListView/PlacePreviewsListView.html',
     controller: 'PlacePreviewsListCtrl'
   });
@@ -12,33 +12,28 @@ angular.module('app.PlacePreviewsListView', [
 
 .controller('PlacePreviewsListCtrl', ['$scope', '$routeParams', '$http', '$location', '$rootScope',
   function($scope, $routeParams, $http, $location, $rootScope) {
-    //init base data to previews list
-    
-    $scope.searchFormCollapsed = true;
-    
-    $http.get('http://api.caffe.ru/places/shortlist?limit=5&offset=0').success(function(data) {
-      $scope.PlacePreviewsList = data;
-      $scope.currentPage = $routeParams.pageNo;
-      $rootScope.title = 'Список заведений | CaffeOrders';
-    });
-    //pagination config
-    $scope.totalItems = 60;
-    $scope.currentPage = 1;
-    $scope.maxSize = 7;
-
-    $scope.setPage = function (pageNo) {
-      $scope.currentPage = pageNo;
+   //init base data to previews list     
+    $scope.pagination = {
+      'totalItems': 999999,
+      'currentPage': 1,
+      'maxSize': 7,
+      'onPageChanged': function() {
+        $http.get('http://api.caffe.ru/places/list?limit=12&offset=' + ($scope.pagination.currentPage - 1) * 12).success(function(data) {
+          if(!data) {
+            alert('No data');
+          }
+          $scope.PlacePreviewsList = data;
+          $location.path('list/' + $scope.pagination.currentPage + '/');
+        });
+      }
+    }
+    $scope.setPage = function(pageNo) {
+      $scope.pagination.currentPage = pageNo;
     };
-
-    $scope.onPageChanged = function() {
-      $http.get('http://api.caffe.ru/places/list?limit=5&offset=0').success(function(data) {
-        $scope.PlacePreviewsList = data.fromJson();
-        $location.path('list/' + $scope.currentPage);
-      });
-    };
-
-    $scope.maxSize = 7;
+    $scope.setPage($routeParams.pageNo);
+    $scope.pagination.onPageChanged();
     
+    //rating
     $scope.max = 5;
     $scope.isReadonly = true;
 

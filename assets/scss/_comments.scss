@@ -5,9 +5,10 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
 .b-comment {
   
   &_item {
+    display: inline-block;
+    vertical-align: top;
     width: 32.3%;
     height: auto;
-    float: left;
     margin: 1% 0 0 1%;
     background-color: #c6e8f2;
     @media #{$break-avg} {
@@ -32,6 +33,12 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
     height: 40px;
     float: right;
     line-height: 40px;
+    @media #{$break-avg} {
+      font-size: 18px;
+    }
+    @media #{$break-small} {
+      font-size: 18px;
+    }
     
     &__like {
       color: #000;
@@ -67,5 +74,6 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
     padding: 0 1% 0 1%;
     line-height: 40px;
     cursor: pointer;
+    text-decoration: none;
   }
 }
