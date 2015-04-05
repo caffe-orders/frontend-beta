@@ -6,20 +6,20 @@ angular.module('app.OwnerPanelIndexView', [
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/owner/:ownerId/index/', {
+    when('/owner/:placeId/index/', {
       templateUrl: 'OwnerPanel/Index/Index.html',
       controller: 'OwnerPanelIndexCtrl'
     }).
-    when('/owner/:ownerId/', {
-      redirectTo: '/owner/:ownerId/index/'
+    when('/owner/:placeId/', {
+      redirectTo: '/owner/:placeId/index/'
     })
 }])
 
 .controller('OwnerPanelIndexCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
   function($scope, $routeParams, $http, $location, $sce, $rootScope) {
     //init base data
-    var ownerId = $routeParams.ownerId;
-    $scope.ownerUrl = 'owner/' + ownerId + '/';
+    var placeId = $routeParams.placeId;
+    $scope.ownerUrl = 'owner/' + placeId + '/';
     $rootScope.title = 'Панель владельца | CaffeOrders';
     
     

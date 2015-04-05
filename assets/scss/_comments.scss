@@ -58,4 +58,14 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
     padding: 0 1% 0 1%;
     line-height: 40px;
   }
+
+  &_delete {
+    display: block;
+    width: auto;
+    height: 40px;
+    float: left;
+    padding: 0 1% 0 1%;
+    line-height: 40px;
+    cursor: pointer;
+  }
 }

@@ -20,6 +20,7 @@ angular.module('app', [
   'app.TableReserveView',
   'app.OwnerPanelIndexView',
   'app.OwnerPanelPlaceView',
+  'app.OwnerPanelCommentsView',
   'app.OwnerPanelStatView'
 ]).
 config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', 

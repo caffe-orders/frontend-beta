@@ -6,7 +6,7 @@ angular.module('app.OwnerPanelPlaceView', [
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/owner/:ownerId/place/', {
+    when('/owner/:placeId/place/', {
       templateUrl: 'OwnerPanel/Place/Place.html',
       controller: 'OwnerPanelPlaceCtrl'
     })
@@ -15,8 +15,8 @@ angular.module('app.OwnerPanelPlaceView', [
 .controller('OwnerPanelPlaceCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
   function($scope, $routeParams, $http, $location, $sce, $rootScope) {
     //init base data
-    var ownerId = $routeParams.ownerId;
-    $scope.ownerUrl = 'owner/' + ownerId + '/';
+    var placeId = $routeParams.placeId;
+    $scope.ownerUrl = 'owner/' + placeId + '/';
     $rootScope.title = 'Панель владельца | CaffeOrders';
     
     

@@ -7,7 +7,7 @@ angular.module('app.OwnerPanelStatView', [
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/owner/:ownerId/stat/', {
+    when('/owner/:placeId/stat/', {
       templateUrl: 'OwnerPanel/Stat/Stat.html',
       controller: 'OwnerPanelStatCtrl'
     })
@@ -16,8 +16,8 @@ angular.module('app.OwnerPanelStatView', [
 .controller('OwnerPanelStatCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
   function($scope, $routeParams, $http, $location, $sce, $rootScope, googleChartApiPromise) {
     //init base data
-    var ownerId = $routeParams.ownerId;
-    $scope.ownerUrl = 'owner/' + ownerId + '/';
+    var placeId = $routeParams.placeId;
+    $scope.ownerUrl = 'owner/' + placeId + '/';
     $rootScope.title = 'Панель владельца | CaffeOrders';
     
    $scope.chartObject = {};

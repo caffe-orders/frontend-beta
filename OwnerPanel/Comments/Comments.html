@@ -7,13 +7,14 @@
   <a href="{{ownerUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Фото</a>
 </nav>
 
- <section class="b-owner-panel">
-  <div class="b-owner-panel_title c-text__sz-big c-text__al-center c-text__clr-black">Заявки на бронирование столиков</div>
-  <div class="b-owner-panel_hint c-text__sz-avg c-text__al-justify c-text__clr-black"></div>
-  <article class="b-order-article">
-    <div class="b-order-article_type">Столик</div>
-    <div class="b-order-article_uname">Жорж Жоржев</div>
-    <div class="b-order-article_phone">+375291233345</div>
-    .b-order-article_
+
+<section class="b-comment">
+  <article ng-repeat="comment in commentsList" class="b-comment_item">
+    <div class="b-comment_uname c-box-sz_bd-box c-text__sz-big c-text__al-left c-text__clr-white">{{comment.firstName}} {{comment.lastName}}</div>
+    <div class="b-comment_state c-text__sz-big c-text__al-center {{comment.state === '1' ? 'b-comment_state__like' : 'b-comment_state__dislike'}}">{{comment.state === '1' ? 'Понравилось' : 'Не понравилось'}}</div>
+    <div class="c-clr_fix"></div>
+    <div class="b-comment_text c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">{{comment.text}}</div>
+    <div class="b-comment_pub-date c-text__sz-avg c-text__al-right c-text__clr-black">{{comment.pubDate}}</div>
+    <a ng-click="deleteComment(comment.senderId)" class="b-comment_delete c-text__sz-avg c-text__al-left c-text__clr-black">Удалить</a>
   </article>
 </section>

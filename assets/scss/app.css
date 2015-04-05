@@ -1151,6 +1151,15 @@ xsigin/signup popup
   float: right;
   padding: 0 1% 0 1%;
   line-height: 40px; }
+/* line 62, D:/work/Denwer/home/caffe.ru/www/assets/scss/_comments.scss */
+.b-comment_delete {
+  display: block;
+  width: auto;
+  height: 40px;
+  float: left;
+  padding: 0 1% 0 1%;
+  line-height: 40px;
+  cursor: pointer; }
 
 /* line 16, D:/work/Denwer/home/caffe.ru/www/assets/scss/_top-tab-nav.scss */
 .b-top-tab-nav {
@@ -1524,6 +1533,9 @@ xsigin/signup popup
   height: auto; }
   /* line 5, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
   .b-place-create-form_label {
+    width: 100%; }
+  /* line 9, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+  .b-place-create-form_text-input {
     width: 100%; }
 
 /*# sourceMappingURL=app.css.map */
