@@ -26,7 +26,14 @@ angular.module('app.PlaceCommentsView', [
       'placeId': null,
       'commentsList': {},
       'getCommentsList': function() {
-        $http.get('//api.caffe.ru/comments/list?id=' + this.placeId).success(function(data) {
+        var req = {
+          method: 'GET',
+          url: '//api.caffe.ru/comments/list?id=' + this.placeId,
+          crossDomain: true,
+          withCredentials: true,
+          data: { }
+        };
+        $http(req).success(function(data) {
           $scope.commentsPanel.commentsList = data;
         });
       },
@@ -34,16 +41,17 @@ angular.module('app.PlaceCommentsView', [
         var commentData = comment;
         var currDate = new Date();
         commentData.pubDate = currDate.getDate + '.' + currDate.getMonth + '.' + currDate.getFullYear;
-        var queryString = '//api.caffe.ru/comments/new?' +
-          'placeId=' + $scope.placeId + 
-          '&state=' + ((commentData.state) ? true : false) + 
-          '&text=' + commentData.text;
         var req = {
-          method: 'GET',
-          url: queryString,
+          method: 'POST',
+          url: '//api.caffe.ru/comments/new',
           crossDomain: true,
           withCredentials: true,
-          data: { }
+          data: { 
+            'placeId': $scope.placeId,
+            'state': ((commentData.state) ? 'true' : 'false'),
+            'text': commentData.text
+          },
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
         };
         $http(req).success(function(data) {
           $scope.commentsPanel.getCommentsList(this.placeId);

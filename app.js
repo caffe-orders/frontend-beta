@@ -21,7 +21,8 @@ angular.module('app', [
   'app.OwnerPanelIndexView',
   'app.OwnerPanelPlaceView',
   'app.OwnerPanelCommentsView',
-  'app.OwnerPanelStatView'
+  'app.OwnerPanelStatView',
+  'app.AuthService'
 ]).
 config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', 
   function($routeProvider, $locationProvider, $sceDelegateProvider) {
@@ -32,6 +33,7 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
       'https://www.google.com/maps/**'
     ]);
 }]).
-run(function($rootScope, $http) {
+run(function($rootScope, $http, AuthService) {
   $rootScope.title = 'Caffe-Orders | Fast & Beautiful table reservation service';
+  AuthService.logIn('clain@sample.com', 199626);
 });

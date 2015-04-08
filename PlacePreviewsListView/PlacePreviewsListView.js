@@ -22,8 +22,10 @@ angular.module('app.PlacePreviewsListView', [
           if(!data) {
             alert('No data');
           }
-          $scope.PlacePreviewsList = data;
-          $location.path('list/' + $scope.pagination.currentPage + '/');
+          else {
+            $scope.PlacePreviewsList = data;
+            $location.path('list/' + $scope.pagination.currentPage + '/');
+          }
         });
       }
     }

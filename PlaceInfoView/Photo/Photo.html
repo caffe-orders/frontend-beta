@@ -7,7 +7,9 @@
 </nav>
 
 <section class="b-photo-gallery">
-  <figure class="b-photo-gallery_full-img"><img ng-src="{{fullImgUrl}}" alt=""></figure>
+  <div class="b-photo-gallery_full-img-wrap">
+    <figure class="b-photo-gallery_full-img"><img ng-src="{{fullImgUrl}}" alt=""></figure>
+  </div>
   
   <section class="b-photo-gallery_prev-wrap">
     <figure ng-repeat="prevData in galleryData" style="background: url({{prevData.prev}}) no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg(prevData.id)"></figure>
