@@ -1,0 +1,61 @@
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 853px)";
+
+.b-order-article {
+  display: block;
+  width: 70%;
+  min-width: 650px;
+  height: auto;
+  min-height: 30px;
+  margin: 0 auto 1%;
+  background-color: rgba(176, 0, 0, .8);
+  
+  @media #{$break-small} {
+    width: 100%;
+  }
+  
+  &_table, &_room, &_phone, &_uname {
+    float: left;
+    min-width: 50px;
+    width: auto;
+    height: 30px;
+    padding: 0 5px 0 5px;
+    line-height: 30px;
+    
+    @media #{$break-small} {
+      font-size: 14px;
+    }
+  }
+  
+  &_date {
+    float: right;
+    min-width: 50px;
+    width: auto;
+    height: 30px;
+    padding: 0 5px 0 5px;
+    line-height: 30px;
+    
+    @media #{$break-small} {
+      font-size: 14px;
+    }
+  }
+
+  &_accept, &_delete {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: 8px;
+    background-size: 80%;
+    opacity: .7;
+    
+    @media #{$break-small} {
+      font-size: 14px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+}

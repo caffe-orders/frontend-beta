@@ -1,26 +1,26 @@
-angular.module('app.PlacePhotoView', [
+angular.module('app.OwnerPanelPhotoView', [
   'ngRoute',
   'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/place/:placeId/photo/', {
-      templateUrl: 'PlaceInfoView/Photo/Photo.html',
-      controller: 'PlacePhotoCtrl'
+    when('/owner/:placeId/photo/', {
+      templateUrl: 'OwnerPanel/Photo/Photo.html',
+      controller: 'OwnerPanelPhotoCtrl'
     })
 }])
 
-.controller('PlacePhotoCtrl', ['$scope', '$routeParams', '$http', '$rootScope',
+.controller('OwnerPanelPhotoCtrl', ['$scope', '$routeParams', '$http', '$rootScope',
   function($scope, $routeParams, $http, $rootScope) {
     //init base data
     $scope.placeId = $routeParams.placeId;
-    $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
+    $scope.ownerUrl = 'owner/' + $routeParams.placeId + '/';
     
     //get all needed data about place (json)
     $http.get('tmp/photo.json').success(function(data) {
       $scope.galleryData = data.imgList;
-      $rootScope.title = 'Фото | CaffeOrders';
+      $rootScope.title = 'Панель владельца | CaffeOrders';
     });
     
     $scope.showFullImg = function(imgId) {

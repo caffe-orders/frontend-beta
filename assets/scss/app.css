@@ -240,46 +240,52 @@ body {
   .c-icon_up {
     background: url('../img/up-icon.svg') no-repeat center; }
   /* line 39, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+  .c-icon_accept {
+    background: url('../img/check-icon.svg') no-repeat center; }
+  /* line 43, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+  .c-icon_delete {
+    background: url('../img/delete-icon.svg') no-repeat center; }
+  /* line 47, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
   .c-icon_tab {
     width: auto;
     height: auto; }
-    /* line 43, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 51, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__about {
       background: url('../img/tab-about-icon.svg') no-repeat left 10px center;
       background-size: 40px; }
-    /* line 48, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 56, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__menu {
       background: url('../img/tab-menu-icon.svg') no-repeat left 10px center;
       background-size: 35px; }
-    /* line 53, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 61, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__photo {
       background: url('../img/tab-photo-icon.svg') no-repeat left 10px center;
       background-size: 35px; }
-    /* line 58, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 66, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__comments {
       background: url('../img/tab-comments-icon.svg') no-repeat left 10px center;
       background-size: 32px; }
-    /* line 63, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 71, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__profile {
       background: url('../img/user-profile-icon.svg') no-repeat left 10px center;
       background-size: 32px; }
-    /* line 68, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 76, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__stat {
       background: url('../img/tab-stat-icon.svg') no-repeat left 10px center;
       background-size: 32px; }
-    /* line 73, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+    /* line 81, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
     .c-icon_tab__settings {
       background: url('../img/tab-settings-icon.svg') no-repeat left 10px center;
       background-size: 32px; }
-  /* line 83, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+  /* line 91, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
   .c-icon_custom__arr-left {
     background: url('../img/left-arrow-icon.svg') no-repeat center;
     background-size: 80%; }
-  /* line 88, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+  /* line 96, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
   .c-icon_custom__arr-right {
     background: url('../img/right-arrow-icon.svg') no-repeat center;
     background-size: 80%; }
-  /* line 95, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
+  /* line 103, D:/work/Denwer/home/caffe.ru/www/assets/scss/_icon.scss */
   .c-icon__cover {
     background-size: cover; }
 
@@ -1227,7 +1233,7 @@ xsigin/signup popup
   -moz-border-bottom-right-radius: 3px;
   -ms-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px; }
-  @media screen and (min-width: 240px) and (max-width: 853px) {
+  @media screen and (min-width: 240px) and (max-width: 900px) {
     .b-top-tab-nav {
       max-width: 700px; } }
   /* line 30, D:/work/Denwer/home/caffe.ru/www/assets/scss/_top-tab-nav.scss */
@@ -1241,7 +1247,7 @@ xsigin/signup popup
     text-decoration: none;
     cursor: pointer;
     transition: .3s; }
-    @media screen and (min-width: 240px) and (max-width: 853px) {
+    @media screen and (min-width: 240px) and (max-width: 900px) {
       .b-top-tab-nav_btn {
         font-size: 0px;
         color: transparent;
@@ -1331,25 +1337,28 @@ xsigin/signup popup
 
 /* line 7, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
 .b-photo-gallery_full-img {
-  width: 49%;
+  width: 59%;
   height: auto;
   margin: 1% auto 1%;
   overflow: hidden;
   transition: .3s; }
-  /* line 14, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  @media screen and (min-width: 240px) and (max-width: 853px) {
+    .b-photo-gallery_full-img {
+      width: 79%; } }
+  /* line 18, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_full-img-wrap {
     width: 99%;
     height: auto;
     margin: 1% 0 1% 1%;
     background-color: rgba(0, 0, 0, 0.8); }
-  /* line 21, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 25, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_full-img__hide {
     display: none; }
-  /* line 25, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 29, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_full-img img {
     width: 100%;
     height: 100%; }
-/* line 31, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+/* line 35, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
 .b-photo-gallery_img-prev {
   z-index: 1;
   width: 19%;
@@ -1358,15 +1367,18 @@ xsigin/signup popup
   margin: 0 0 1% 1%;
   overflow: hidden;
   transition: .3s; }
-  /* line 40, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 44, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_img-prev:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Параметры тени */
     padding: 10px; }
   @media screen and (min-width: 854px) and (max-width: 1680px) {
     .b-photo-gallery_img-prev {
       height: 160px; } }
-  /* line 49, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  @media screen and (min-width: 240px) and (max-width: 853px) {
+    .b-photo-gallery_img-prev {
+      width: 32.3%;
+      height: 120px; } }
+  /* line 58, D:/work/Denwer/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_img-prev img {
     z-index: 0;
     width: 100%;
@@ -1575,6 +1587,12 @@ xsigin/signup popup
       position: relative;
       left: 1%; } }
   /* line 16, D:/work/Denwer/home/caffe.ru/www/assets/scss/_owner-panel.scss */
+  .b-owner-panel_title {
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 1%; }
+  /* line 23, D:/work/Denwer/home/caffe.ru/www/assets/scss/_owner-panel.scss */
   .b-owner-panel_g-chart {
     width: 100%;
     height: 500px;
@@ -1585,14 +1603,56 @@ xsigin/signup popup
 
 /* line 1, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
 .b-place-create-form {
-  width: 100%;
+  width: 50%;
   height: auto; }
   /* line 5, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
   .b-place-create-form_label {
-    width: 100%; }
-  /* line 9, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 30px;
+    float: left; }
+    /* line 15, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+    .b-place-create-form_label__ch-box {
+      display: block;
+      width: auto;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      line-height: 30px;
+      float: left; }
+  /* line 27, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
   .b-place-create-form_text-input {
-    width: 100%; }
+    width: 100%;
+    height: 30px;
+    line-height: 30px; }
+  /* line 33, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+  .b-place-create-form_checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 5px !important;
+    padding: 0;
+    outline: none; }
+  /* line 41, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+  .b-place-create-form_line-wrap {
+    width: 100%;
+    height: 30px; }
+  /* line 46, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+  .b-place-create-form_file {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0; }
+  /* line 53, D:/work/Denwer/home/caffe.ru/www/assets/scss/_place-create-form.scss */
+  .b-place-create-form_submit {
+    width: auto;
+    height: 30px;
+    margin: 0;
+    padding: 0 5px 0 5px; }
 
 /* line 5, D:/work/Denwer/home/caffe.ru/www/assets/scss/_send-comment-form.scss */
 .b-send-comment-form {
@@ -1638,5 +1698,173 @@ xsigin/signup popup
     height: 30px;
     margin: 0;
     padding: 0 10px 0 10px; }
+
+/* line 1, D:/work/Denwer/home/caffe.ru/www/assets/scss/_bad-browser.scss */
+.b-bad-browser {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: black; }
+  /* line 8, D:/work/Denwer/home/caffe.ru/www/assets/scss/_bad-browser.scss */
+  .b-bad-browser_link {
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin: 1% auto;
+    line-height: 40px;
+    background-color: darkgreen;
+    color: #fff;
+    text-align: center; }
+
+/* line 5, D:/work/Denwer/home/caffe.ru/www/assets/scss/_order-article.scss */
+.b-order-article {
+  display: block;
+  width: 70%;
+  min-width: 650px;
+  height: auto;
+  min-height: 30px;
+  margin: 0 auto 1%;
+  background-color: rgba(176, 0, 0, 0.8); }
+  @media screen and (min-width: 240px) and (max-width: 853px) {
+    .b-order-article {
+      width: 100%; } }
+  /* line 18, D:/work/Denwer/home/caffe.ru/www/assets/scss/_order-article.scss */
+  .b-order-article_table, .b-order-article_room, .b-order-article_phone, .b-order-article_uname {
+    float: left;
+    min-width: 50px;
+    width: auto;
+    height: 30px;
+    padding: 0 5px 0 5px;
+    line-height: 30px; }
+    @media screen and (min-width: 240px) and (max-width: 853px) {
+      .b-order-article_table, .b-order-article_room, .b-order-article_phone, .b-order-article_uname {
+        font-size: 14px; } }
+  /* line 31, D:/work/Denwer/home/caffe.ru/www/assets/scss/_order-article.scss */
+  .b-order-article_date {
+    float: right;
+    min-width: 50px;
+    width: auto;
+    height: 30px;
+    padding: 0 5px 0 5px;
+    line-height: 30px; }
+    @media screen and (min-width: 240px) and (max-width: 853px) {
+      .b-order-article_date {
+        font-size: 14px; } }
+  /* line 44, D:/work/Denwer/home/caffe.ru/www/assets/scss/_order-article.scss */
+  .b-order-article_accept, .b-order-article_delete {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: 8px;
+    background-size: 80%;
+    opacity: .7; }
+    @media screen and (min-width: 240px) and (max-width: 853px) {
+      .b-order-article_accept, .b-order-article_delete {
+        font-size: 14px; } }
+    /* line 56, D:/work/Denwer/home/caffe.ru/www/assets/scss/_order-article.scss */
+    .b-order-article_accept:hover, .b-order-article_delete:hover {
+      opacity: 1; }
+
+/* line 1, D:/work/Denwer/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+.b-create-room-form {
+  width: 49%;
+  margin-left: 1%;
+  height: auto; }
+  /* line 6, D:/work/Denwer/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  .b-create-room-form_label {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 30px;
+    float: left; }
+  /* line 17, D:/work/Denwer/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  .b-create-room-form_text {
+    width: 100%;
+    height: 30px;
+    line-height: 30px; }
+  /* line 23, D:/work/Denwer/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  .b-create-room-form_line-wrap {
+    width: 100%;
+    height: 30px; }
+  /* line 28, D:/work/Denwer/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  .b-create-room-form_file {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0; }
+  /* line 35, D:/work/Denwer/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  .b-create-room-form_submit {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0 5px 0 5px; }
+
+/* line 6, D:/work/Denwer/home/caffe.ru/www/assets/scss/_room-article.scss */
+.b-room-article {
+  width: 32.3%;
+  height: 35px;
+  margin: 0 0 1% 1%;
+  float: left;
+  display: block;
+  background-color: cyan; }
+  @media screen and (min-width: 854px) and (max-width: 1680px) {
+    .b-room-article {
+      width: 49%; } }
+  @media screen and (min-width: 240px) and (max-width: 900px) {
+    .b-room-article {
+      width: 49%; } }
+  /* line 20, D:/work/Denwer/home/caffe.ru/www/assets/scss/_room-article.scss */
+  .b-room-article:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  /* line 24, D:/work/Denwer/home/caffe.ru/www/assets/scss/_room-article.scss */
+  .b-room-article_name {
+    width: 69%;
+    height: 30px;
+    float: left;
+    margin-left: 1%;
+    line-height: 35px; }
+  /* line 32, D:/work/Denwer/home/caffe.ru/www/assets/scss/_room-article.scss */
+  .b-room-article_capacity {
+    width: 29%;
+    height: 30px;
+    float: right;
+    margin-left: 1%;
+    line-height: 35px; }
+
+/* line 1, D:/work/Denwer/home/caffe.ru/www/assets/scss/_edit-room-panel.scss */
+.b-edit-room-panel {
+  width: 99%;
+  margin-left: 1%;
+  height: 600px;
+  background-color: aqua; }
+  /* line 7, D:/work/Denwer/home/caffe.ru/www/assets/scss/_edit-room-panel.scss */
+  .b-edit-room-panel_room {
+    width: 68%;
+    height: 98%;
+    float: left;
+    margin: 1%;
+    background-color: bisque; }
+  /* line 15, D:/work/Denwer/home/caffe.ru/www/assets/scss/_edit-room-panel.scss */
+  .b-edit-room-panel_tables-list {
+    width: 29%;
+    height: 98%;
+    margin: 1% 1% 1% 0;
+    float: right; }
+
+/* line 1, D:/work/Denwer/home/caffe.ru/www/assets/scss/_table.scss */
+.b-table {
+  width: 98%;
+  height: auto;
+  margin: 1%;
+  background-color: blanchedalmond; }
+  /* line 7, D:/work/Denwer/home/caffe.ru/www/assets/scss/_table.scss */
+  .b-table_title {
+    width: 100%;
+    height: 30px;
+    line-height: 30px; }
 
 /*# sourceMappingURL=app.css.map */

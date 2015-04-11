@@ -22,7 +22,16 @@ angular.module('app', [
   'app.OwnerPanelPlaceView',
   'app.OwnerPanelCommentsView',
   'app.OwnerPanelStatView',
-  'app.AuthService'
+  'app.AuthService',
+  'app.BrowserDataProvider',
+  'app.BadBrowserView',
+  'app.OwnerPanelRoomCreateView',
+  'app.OwnerPanelRoomEditView',
+  'app.OwnerPanelRoomBaseEditView',
+  'app.OwnerPanelPhotoView',
+  'app.OwnerPanelMenuCreateView',
+  'app.OwnerPanelMenuEditView',
+  'app.OwnerPanelMenuBaseEditView',
 ]).
 config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', 
   function($routeProvider, $locationProvider, $sceDelegateProvider) {
@@ -33,7 +42,10 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
       'https://www.google.com/maps/**'
     ]);
 }]).
-run(function($rootScope, $http, AuthService) {
+run(function($rootScope, $http, $location, AuthService, BrowserData) {
   $rootScope.title = 'Caffe-Orders | Fast & Beautiful table reservation service';
   AuthService.logIn('clain@sample.com', 199626);
+  if(BrowserData.browser.family == 'IE' || BrowserData.browser.family == 'Opera Mini') {
+    $location.path('/badbrowser/');
+  }
 });

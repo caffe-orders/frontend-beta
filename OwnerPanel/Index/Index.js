@@ -1,7 +1,5 @@
 angular.module('app.OwnerPanelIndexView', [
-  'ngRoute',
-  'ui.bootstrap',
-  'ngSanitize'
+  'ngRoute'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -15,8 +13,8 @@ angular.module('app.OwnerPanelIndexView', [
     })
 }])
 
-.controller('OwnerPanelIndexCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+.controller('OwnerPanelIndexCtrl', ['$scope', '$routeParams', '$rootScope',
+  function($scope, $routeParams, $rootScope) {
     //init base data
     var placeId = $routeParams.placeId;
     $scope.ownerUrl = 'owner/' + placeId + '/';

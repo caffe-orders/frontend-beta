@@ -1,5 +1,6 @@
 angular.module('app.AuthService', []).factory('AuthService', ['$http', '$location', function($http, $location) {
   var auth = {
+    'defaultRedirectPath': '/list/',
     'user': {
       'uid': null,
       'sessionHash': null
@@ -16,8 +17,8 @@ angular.module('app.AuthService', []).factory('AuthService', ['$http', '$locatio
         headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
       };
       $http(req).success(function(data, state) {
-        console.log(state);
-        $location.path('/list/1');
+        console.log('authorized with code: ' + state);
+        $location.path(this.defaultRedirectPath);
       });
     },
     'logOut': function() {

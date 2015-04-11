@@ -1,8 +1,6 @@
 angular.module('app.OwnerPanelStatView', [
   'ngRoute',
-  'ui.bootstrap',
-  'googlechart',
-  'ngSanitize'
+  'googlechart'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -13,8 +11,8 @@ angular.module('app.OwnerPanelStatView', [
     })
 }])
 
-.controller('OwnerPanelStatCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope, googleChartApiPromise) {
+.controller('OwnerPanelStatCtrl', ['$scope', '$routeParams', '$http', '$rootScope',
+  function($scope, $routeParams, $http, $rootScope, googleChartApiPromise) {
     //init base data
     var placeId = $routeParams.placeId;
     $scope.ownerUrl = 'owner/' + placeId + '/';

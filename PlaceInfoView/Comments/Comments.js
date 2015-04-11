@@ -1,8 +1,7 @@
 angular.module('app.PlaceCommentsView', [
   'ngCookies',
   'ngRoute',
-  'ui.bootstrap',
-  'ngSanitize'
+  'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -13,8 +12,8 @@ angular.module('app.PlaceCommentsView', [
     })
 }])
 
-.controller('PlaceCommentsCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope', '$cookies',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope, $cookies) {
+.controller('PlaceCommentsCtrl', ['$scope', '$routeParams', '$http', '$rootScope', '$cookies',
+  function($scope, $routeParams, $http, $rootScope, $cookies) {
     //init base data
     $scope.placeId = $routeParams.placeId;
     $scope.placeUrl = 'place/' + $scope.placeId + '/';
@@ -55,7 +54,12 @@ angular.module('app.PlaceCommentsView', [
         };
         $http(req).success(function(data) {
           $scope.commentsPanel.getCommentsList(this.placeId);
+          $scope.commentsPanel.clear();
         });
+      },
+      'clear': function() {
+        $scope.comment.text = '';
+        $scope.comment.state = true;
       }
     };
     

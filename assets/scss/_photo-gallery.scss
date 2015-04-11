@@ -5,11 +5,15 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
 .b-photo-gallery {
   
   &_full-img {
-    width: 49%;
+    width: 59%;
     height: auto;
     margin: 1% auto 1%;
     overflow: hidden;
     transition: .3s;
+    
+    @media #{$break-small} {
+      width: 79%;
+    }
     
     &-wrap {
       width: 99%;
@@ -38,12 +42,17 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
     transition: .3s;
     
     &:hover {
-      box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-    padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      padding: 10px;
     }
     
     @media #{$break-avg} {
       height: 160px;
+    }
+
+    @media #{$break-small} {
+      width: 32.3%;
+      height: 120px;
     }
     
     img {

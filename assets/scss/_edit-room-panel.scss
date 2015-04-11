@@ -1,0 +1,21 @@
+.b-edit-room-panel {
+  width: 99%;
+  margin-left: 1%;
+  height: 600px;
+  background-color: aqua;
+  
+  &_room {
+    width: 68%;
+    height: 98%;
+    float: left;
+    margin: 1%;
+    background-color: bisque;
+  }
+  
+  &_tables-list {
+    width: 29%;
+    height: 98%;
+    margin: 1% 1% 1% 0;
+    float: right;
+  }
+}

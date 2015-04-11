@@ -1,7 +1,6 @@
 angular.module('app.OwnerPanelCommentsView', [
   'ngRoute',
   'ui.bootstrap',
-  'ngSanitize'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -12,8 +11,8 @@ angular.module('app.OwnerPanelCommentsView', [
     })
 }])
 
-.controller('OwnerPanelCommentsCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+.controller('OwnerPanelCommentsCtrl', ['$scope', '$routeParams', '$http', '$rootScope',
+  function($scope, $routeParams, $http, $rootScope) {
     //init base data
     var placeId = $routeParams.placeId;
     $scope.ownerUrl = 'owner/' + placeId + '/';
@@ -32,7 +31,12 @@ angular.module('app.OwnerPanelCommentsView', [
           data: { }
         }
         $http(req).success(function(data) {
-          $scope.commentsPanel.commentsList = data;
+          if(data) {
+            $scope.commentsPanel.commentsList = data;
+          }
+          else {
+            alert('Нет ни одного комментария');
+          }
         });
       },
       'deleteComment': function(senderId) {

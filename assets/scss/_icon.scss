@@ -36,6 +36,14 @@ $icon_ht: 100px;
     background: url('../img/up-icon.svg') no-repeat center;
   }
   
+  &_accept {
+    background: url('../img/check-icon.svg') no-repeat center;
+  }
+  
+  &_delete {
+    background: url('../img/delete-icon.svg') no-repeat center;
+  }
+  
   &_tab {
     width: auto;
     height: auto;

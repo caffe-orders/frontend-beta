@@ -1,7 +1,6 @@
 angular.module('app.PlaceMenuView', [
   'ngRoute',
-  'ui.bootstrap',
-  'ngSanitize'
+  'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -12,8 +11,8 @@ angular.module('app.PlaceMenuView', [
     })
 }])
 
-.controller('PlaceMenuCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+.controller('PlaceMenuCtrl', ['$scope', '$routeParams', '$http', '$rootScope',
+  function($scope, $routeParams, $http, $rootScope) {
     //init base data
     $scope.placeId = $routeParams.placeId;
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';

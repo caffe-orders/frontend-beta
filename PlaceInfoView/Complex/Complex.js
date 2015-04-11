@@ -1,7 +1,5 @@
 angular.module('app.PlaceComplexView', [
-  'ngRoute',
-  'ui.bootstrap',
-  'ngSanitize'
+  'ngRoute'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -12,8 +10,8 @@ angular.module('app.PlaceComplexView', [
     })
 }])
 
-.controller('PlaceComplexCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+.controller('PlaceComplexCtrl', ['$scope', '$routeParams', '$http', '$rootScope',
+  function($scope, $routeParams, $http, $rootScope) {
     //init base data
     $scope.placeId = $routeParams.placeId;
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';

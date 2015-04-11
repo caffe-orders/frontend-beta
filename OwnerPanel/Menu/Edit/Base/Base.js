@@ -1,16 +1,16 @@
-angular.module('app.OwnerPanelPlaceView', [
+angular.module('app.OwnerPanelMenuBaseEditView', [
   'ngRoute'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/owner/:placeId/place/', {
-      templateUrl: 'OwnerPanel/Place/Place.html',
-      controller: 'OwnerPanelPlaceCtrl'
+    when('/owner/:placeId/menu/edit', {
+      templateUrl: 'OwnerPanel/Menu/Edit/Base/Base.html',
+      controller: 'OwnerPanelMenuBaseEditCtrl'
     })
 }])
 
-.controller('OwnerPanelPlaceCtrl', ['$scope', '$routeParams', '$rootScope',
+.controller('OwnerPanelMenuBaseEditCtrl', ['$scope', '$routeParams', '$rootScope',
   function($scope, $routeParams, $rootScope) {
     //init base data
     var placeId = $routeParams.placeId;
