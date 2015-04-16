@@ -1,6 +1,7 @@
 angular.module('app.OwnerPanelStatView', [
   'ngRoute',
-  'googlechart'
+  'googlechart',
+  'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {

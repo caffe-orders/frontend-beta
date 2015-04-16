@@ -1,5 +1,6 @@
 angular.module('app.OwnerPanelRoomBaseEditView', [
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {

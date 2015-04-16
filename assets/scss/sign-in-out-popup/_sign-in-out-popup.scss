@@ -1,3 +1,10 @@
+
+$nav_wd: 100px;
+$drop_down_nav_btn_color_hover: #b1d1d9;
+
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 853px)";
 /* -------------------------------- 
 
 Primary style
@@ -72,6 +79,13 @@ xsigin/signup popup
   transition: .3s;
   display: none;
   
+  @media #{$break-avg} {
+    left: $nav_wd - 20px;
+  }
+  @media #{$break-small} {
+    left: $nav_wd - 40px;
+  }
+  
   &.is-visible {
     visibility: visible;
     opacity: 1;
@@ -94,7 +108,7 @@ xsigin/signup popup
     min-width: 300px;
     max-width: 600px;
     background: #FFF;
-    margin: 3em auto;
+    margin: 6em auto;
     cursor: auto;
     border-radius: 0.25em;
     -webkit-transform: translateY(-30px);
@@ -206,6 +220,7 @@ xsigin/signup popup
 }
 .cd-form input.full-width {
   width: 100%;
+  font-weight: 400 !important;
 }
 .cd-form input.has-padding {
   padding: 12px 20px 12px 50px;

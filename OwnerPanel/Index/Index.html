@@ -1,7 +1,26 @@
 <nav class="b-top-tab-nav c-box-sz_bd-box">
   <a href="{{ownerUrl}}index" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__about">Главная</a>
-  <a href="{{ownerUrl}}stat" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Статистика</a>
   <a href="{{ownerUrl}}place" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Заведение</a>
+</nav>
+
+<nav class="b-top-nav">
+  <a href="{{ownerUrl}}stat" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Статистика</a>
+  <span class="dropdown" dropdown on-toggle="toggled(open)">
+    <a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
+    <ul class="dropdown-menu">
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
+    </ul>
+  </span>
+  <a href="{{ownerUrl}}comments" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комментарии</a>
+  <a href="{{ownerUrl}}photo" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Фото</a>
+  <span class="dropdown" dropdown on-toggle="toggled(open)">
+    <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
+    <ul class="dropdown-menu">
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Создать</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Изменить</a>
+    </ul>
+  </span>
 </nav>
 
  <section class="b-owner-panel">

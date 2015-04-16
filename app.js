@@ -44,7 +44,15 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
 }]).
 run(function($rootScope, $http, $location, AuthService, BrowserData) {
   $rootScope.title = 'Caffe-Orders | Fast & Beautiful table reservation service';
-  AuthService.logIn('clain@sample.com', 199626);
+  $rootScope.loginForm = {
+    'email': null,
+    'password': null,
+    'send': function() {
+      console.log('try to log in on email: ' + this.email + ' , password: ' + this.password);
+      AuthService.logIn($rootScope.loginForm.email, $rootScope.loginForm.password);
+    }
+  }
+  //AuthService.logIn('clain@sample.com', 199626);
   if(BrowserData.browser.family == 'IE' || BrowserData.browser.family == 'Opera Mini') {
     $location.path('/badbrowser/');
   }

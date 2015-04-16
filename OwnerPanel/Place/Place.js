@@ -1,5 +1,6 @@
 angular.module('app.OwnerPanelPlaceView', [
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {

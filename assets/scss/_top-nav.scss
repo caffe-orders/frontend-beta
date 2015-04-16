@@ -1,0 +1,39 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// screen resolution break states
+$break-avg: "screen and (min-width: 854px) and (max-width: 1680px)";
+$break-small: "screen and (min-width: 240px) and (max-width: 900px)";
+
+.b-top-nav {
+  width: 25%;
+  height: 40px;
+  margin: 1% auto;
+  border: 1px solid red;
+  @include border-radius(5px);
+  
+  @media #{$break-avg} {
+    width: 35%;
+  }
+  @media #{$break-small} {
+    width: 99%;
+    margin-left: 1% !important;
+  }
+  
+  &_btn {
+    display: block;
+    width: auto;
+    height: 40px;
+    padding: 0 10px 0 10px;
+    float: left;
+    line-height: 40px;
+    
+    @media #{$break-small} {
+      padding: 0 6px 0 6px;
+    }
+  }
+}

@@ -30,7 +30,7 @@
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">За городом</td>
-      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.outdoors}}</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{(data.outdoors == 1) ? 'Да' : 'Нет'}}</td>
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Кухня</td>
@@ -38,11 +38,11 @@
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Парковка</td>
-      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.parking}}</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{(data.parking == 1) ? 'Да' : 'Нет'}}</td>
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Зал для курящих</td>
-      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.smoking}}</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{(data.smoking == 1) ? 'Есть' : 'Нет'}}</td>
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Средний чек</td>
@@ -50,7 +50,7 @@
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">WiFi</td>
-      <td class="b-place_about-table_column b-place_about-table_column__descr">{{data.wifi}}</td>
+      <td class="b-place_about-table_column b-place_about-table_column__descr">{{(data.wifi == 1) ? 'Есть' : 'Нет'}}</td>
     </tr>
     <tr class="b-place_about-table_row c-border__small">
       <td class="b-place_about-table_column b-place_about-table_column__title">Время работы</td>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="ru" ng-app="app">
 <head>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,20 +48,19 @@
   <div class="cd-user-modal" ng-class="{visible: signInOutModalVisible}">
   <div class="cd-user-modal-container">
     <ul class="cd-switcher">
-      <li><a href="#0">Вход</a></li>
+      <li><a href="#0" class="selected">Вход</a></li>
       <li><a href="#0">Регистрация</a></li>
     </ul>
     <div id="cd-login" class="visible">
       <form class="cd-form">
         <p class="fieldset">
 		  <label class="image-replace cd-email" for="signin-email">E-mail</label>
-		  <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+		  <input class="full-width has-padding has-border" ng-model="loginForm.email" id="signin-email" type="email" placeholder="E-mail">
 		  <span class="cd-error-message">Не введен E-mail!</span>
 		</p>
 		<p class="fieldset">
 		  <label class="image-replace cd-password" for="signin-password">Пароль</label>
-		  <input class="full-width has-padding has-border" id="signin-password" type="text" placeholder="Пароль">
-		  <a href="#0" class="hide-password">Скрыть</a>
+		  <input class="full-width has-padding has-border"  ng-model="loginForm.password" id="signin-password" type="text" placeholder="Пароль">
 		  <span class="cd-error-message">Не введен пароль!</span>
 		</p>
 		<p class="fieldset">
@@ -69,7 +68,7 @@
 		  <label for="remember-me">Запомнить меня</label>
 		</p>
 		<p class="fieldset">
-		  <input class="full-width" type="submit" value="Войти">
+		  <input class="full-width" type="submit" ng-click="loginForm.send()" value="Войти">
 		</p>
       </form>
 				
@@ -125,7 +124,7 @@
 
       <p class="cd-form-bottom-message"><a href="#0">Вернуться к входу</a></p>
     </div> <!-- cd-reset-password -->
-    <a href="#0" class="cd-close-form">Закрыть</a>
+    <a href="#0" ng-click="signInOutModalVisible = false" class="cd-close-form">Закрыть</a>
   </div> <!-- cd-user-modal-container -->
 </div> <!-- cd-user-modal -->
   

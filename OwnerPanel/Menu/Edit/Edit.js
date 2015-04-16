@@ -1,5 +1,6 @@
 angular.module('app.OwnerPanelMenuEditView', [
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
