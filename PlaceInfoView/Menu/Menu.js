@@ -18,8 +18,34 @@ angular.module('app.PlaceMenuView', [
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
     
     //get all needed data about place (json)
-    $http.get('tmp/comments.json').success(function(data) {
-      $scope.commentsList = data;
+    var req = {
+        method: 'GET',
+        url: '//api.caffe.ru/menu/list?placeId=' + $scope.placeId,
+        withCredentials: true,
+        data: {
+        }
+      };
+    $http(req).success(function(data, state) {
+      $scope.data = data;
+      console.log(data);  
       $rootScope.title = 'Меню | CaffeOrders';
+      $scope.menuPanel.currCat = $scope.menuPanel.getCatById(0);
+    
+      console.log($scope.menuPanel.currCat.dishList);
     });
+      
+    $scope.menuPanel = {
+      'currCat': null,
+      'changeCat': function(catId) {
+        $scope.menuPanel.currCat = $scope.menuPanel.getCatById(catId);
+      },
+      'getCatById': function(id) {
+        var hid = -1;
+        for(var catKey in $scope.data) {
+          hid++;
+          if(hid == id) return $scope.data[catKey];
+        }
+      }
+    };
+    
 }]);
