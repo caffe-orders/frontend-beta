@@ -1908,4 +1908,20 @@ xsigin/signup popup
       .b-top-nav_btn {
         padding: 0 6px 0 6px; } }
 
+/* line 1, D:/work/Denwer/home/caffe.ru/www/assets/scss/_week-day.scss */
+.b-week-day {
+  height: 40px;
+  margin: 0 auto; }
+  /* line 6, D:/work/Denwer/home/caffe.ru/www/assets/scss/_week-day.scss */
+  .b-week-day_btn {
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f7e8d5;
+    cursor: pointer; }
+    /* line 14, D:/work/Denwer/home/caffe.ru/www/assets/scss/_week-day.scss */
+    .b-week-day_btn:hover {
+      background-color: #efd0a7; }
+
 /*# sourceMappingURL=app.css.map */

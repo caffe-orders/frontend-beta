@@ -45,7 +45,7 @@
     <div class="b-place-prev_addr b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.address}}</div>
     <div class="b-place-prev_avg-bill b-place-prev_field c-text__sz-avg c-text__al-left c-text__clr-black c-box-sz_bd-box">{{PlacePreview.avgBill}}</div>
     <a href="place/{{PlacePreview.id}}/" class="b-place-prev_btn c-text__sz-avg c-text__al-center c-text__clr-white">Подробнее</a>
-    <rating class="b-place-prev_rating" ng-model="PlacePreview.rating" max="5" state-on="'b-rating_star'" state-off="'b-rating_star__empty'"></rating>
+    <rating ng-init="PlacePreview.rating = (PlacePreview.sumRating / PlacePreview.countRating) ? PlacePreview.sumRating / PlacePreview.countRating : 0;" class="b-place-prev_rating" ng-click="ratePlace(PlacePreview.id, PlacePreview.rating)"ng-model="PlacePreview.rating" max="5" state-on="'b-rating_star'" state-off="'b-rating_star__empty'"></rating>
     <div class="b-place-prev_type c-text__sz-avg c-text__al-right c-text__clr-gray">{{PlacePreview.type}}</div>
   </div>
   <div class="c-clr_fix"></div>

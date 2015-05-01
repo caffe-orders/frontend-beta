@@ -24,6 +24,7 @@ angular.module('app.PlacePreviewsListView', [
           }
           else {
             $scope.PlacePreviewsList = data;
+            console.log(data);
             $location.path('list/' + $scope.pagination.currentPage + '/');
           }
         });
@@ -47,4 +48,21 @@ angular.module('app.PlacePreviewsListView', [
     $scope.ratingStates = [
       {stateOn: 'b-rating_star', stateOff: 'b-rating_star__empty'}
     ];
+    
+    $scope.ratePlace = function(placeId, mark) {
+      var req = {
+          method: 'POST',
+          url: '//api.caffe.ru/places/rate',
+          withCredentials: true,
+          data: { 
+            'placeId': placeId,
+            'mark': mark
+          },
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
+        };
+        $http(req).success(function(data) {
+          console.log('set mark ' + mark + ' for place ' + placeId);
+          $scope.pagination.onPageChanged();
+        });
+    };
 }]);

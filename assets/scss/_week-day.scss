@@ -1,0 +1,18 @@
+.b-week-day {
+
+  height: 40px;
+  margin: 0 auto;
+  
+  &_btn {
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f7e8d5;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #efd0a7;
+    }
+  }
+}
