@@ -3,7 +3,13 @@ angular.module('app.AuthService', []).factory('AuthService', ['$http', '$locatio
     'defaultRedirectPath': '/list/',
     'user': {
       'uid': null,
-      'sessionHash': null
+      'sessionHash': null,
+      'firstName': null,
+      'lastName': null,
+      'address': null,
+      'city': null,
+      'phone': null,
+      'email': null
     },
     'logIn': function(email, password) {
       var req = {
@@ -18,6 +24,16 @@ angular.module('app.AuthService', []).factory('AuthService', ['$http', '$locatio
       };
       $http(req).success(function(data, state) {
         console.log('authorized with code: ' + state);
+        
+        auth.user.uid = data.id;
+        auth.user.sessionHash = data.sessionHash;
+        auth.user.firstName = data.firstName;
+        auth.user.lastName = data.lastName;
+        auth.user.address = 'not yet implemetned';
+        auth.user.city = 'Могилев';
+        auth.user.phone = data.phone;
+        auth.user.email = data.email;
+        localStorage.setItem('user', angular.toJson(auth.user));
         $location.path(this.defaultRedirectPath);
       });
     },

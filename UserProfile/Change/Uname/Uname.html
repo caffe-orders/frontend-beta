@@ -6,10 +6,10 @@
 
 <section class="b-user-settings">
   <form class="b-user-settings_form">
-   <lable for="old-phone">Введите старый телефон:</lable>
-    <input ng-model="phoneChangeForm.oldPhone" class="c-box-sz_bd-box" pattern="^\d{12}$" type="text" name="old-phone">
-    <lable for="new-phone">Введите новый телефон:</lable>
-    <input ng-model="phoneChangeForm.newPhone" class="c-box-sz_bd-box" pattern="^\d{12}$" type="text" name="new-phone">
-    <input ng-click="phoneChangeForm.change()" type="submit" value="Изменить">
+   <lable for="old-phone">Ваше имя:</lable>
+    <input ng-model="unameChangeForm.firstName" class="c-box-sz_bd-box" type="text" name="old-phone">
+    <lable for="new-phone">Ваша фамилия:</lable>
+    <input ng-model="unameChangeForm.lastName" class="c-box-sz_bd-box" type="text" name="new-phone">
+    <input ng-click="unameChangeForm.change()" type="submit" value="Изменить">
   </form>
 </section>

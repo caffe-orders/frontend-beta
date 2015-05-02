@@ -19,8 +19,5 @@ angular.module('app.UserProfileSettingsView', [
     $scope.userUrl = 'user/' + $routeParams.userId + '/';
     
     //get all needed data about place (json)
-    $http.get('tmp/user.json').success(function(data) {
-      $scope.userData = data;
       $rootScope.title = 'Настройки | CaffeOrders';
-    });
 }]);

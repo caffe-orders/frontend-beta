@@ -23,4 +23,32 @@ angular.module('app.UserProfileChangePassView', [
       $scope.userData = data;
       $rootScope.title = 'Сменить пароль | CaffeOrders';
     });
+    
+    $scope.passChangeForm = {
+      oldPass: null,
+      newPass: null,
+      repeatedPass: null,
+      change: function() {
+        if((/^((\d)|(\w)){5,18}$/).test($scope.passChangeForm.oldPass) && (/^((\d)|(\w)){5,18}$/).test($scope.passChangeForm.newPass)) {
+          if($scope.passChangeForm.newPass === $scope.passChangeForm.repeatedPass) {
+            var req = {
+              method: 'POST',
+              url: '//api.caffe.ru/users/changepass',
+              crossDomain: true,
+              withCredentials: true,
+              data: { 
+                'oldpass': $scope.passChangeForm.oldPass,
+                'newpass': $scope.passChangeForm.newPass,
+              },
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
+            };
+            $http(req).success(function(data) {
+              
+            });
+          }
+          else console.log('passwords mest me similar' + $scope.passChangeForm.newPass + $scope.passChangeForm.repeatedPass);
+        }
+        else console.log('wrong pass format');
+      }
+    };
 }]);

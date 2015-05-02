@@ -5,10 +5,13 @@
 </nav>
 
 <section class="b-user-settings">
-  <form action="" class="b-user-settings_form">
+  <form class="b-user-settings_form">
    <lable for="old-pass">Введите старый пароль:</lable>
-    <input class="c-box-sz_bd-box" type="text" name="old-pass">
+    <input ng-model="passChangeForm.oldPass" class="c-box-sz_bd-box" type="text" name="old-pass" pattern="^((\d)|(\w)){5,18}$">
     <lable for="new-pass">Введите новый пароль:</lable>
-    <input class="c-box-sz_bd-box" type="text" name="new-pass">
+    <input ng-model="passChangeForm.newPass" class="c-box-sz_bd-box" type="text" name="new-pass" pattern="^((\d)|(\w)){5,18}$">
+    <lable for="rep-pass">Повторите новый пароль:</lable>
+    <input ng-model="passChangeForm.repeatedPass" class="c-box-sz_bd-box" type="text" name="rep-pass" pattern="^((\d)|(\w)){5,18}$">
+    <input ng-click="passChangeForm.change()" type="submit" value="Изменить">
   </form>
 </section>

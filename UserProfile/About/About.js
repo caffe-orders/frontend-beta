@@ -1,7 +1,8 @@
 angular.module('app.UserProfileAboutView', [
   'ngRoute',
   'ui.bootstrap',
-  'ngSanitize'
+  'ngSanitize',
+  'app.AuthService'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -15,15 +16,12 @@ angular.module('app.UserProfileAboutView', [
     })
 }])
 
-.controller('UserProfileAboutCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+.controller('UserProfileAboutCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope', 'AuthService',
+  function($scope, $routeParams, $http, $location, $sce, $rootScope, AuthService) {
     //init base data
     $scope.userId = $routeParams.userId;
     $scope.userUrl = 'user/' + $routeParams.userId + '/';
     
-    //get all needed data about place (json)
-    $http.get('tmp/user.json').success(function(data) {
-      $scope.userData = data;
-      $rootScope.title = 'Профиль | CaffeOrders';
-    });
+    $scope.userData = angular.fromJson(localStorage.getItem('user'));
+    $rootScope.title = 'Профиль | CaffeOrders';
 }]);

@@ -15,6 +15,7 @@ angular.module('app', [
   'app.UserProfileStatView',
   'app.UserProfileChangePhoneView',
   'app.UserProfileChangePassView',
+  'app.UserProfileChangeUnameView',
   'app.PlacePhotoView',
   'app.PlaceSearchView',
   'app.TableReserveView',
