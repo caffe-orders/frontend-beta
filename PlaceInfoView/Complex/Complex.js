@@ -17,8 +17,9 @@ angular.module('app.PlaceComplexView', [
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
     
     //get all needed data about place (json)
-    $http.get('tmp/comments.json').success(function(data) {
-      $scope.commentsList = data;
+    $http.get('http://api.caffe.ru/complexdinner/list?placeId=' + $scope.placeId, { cache: true }).success(function(data) {
+      $scope.data = data;
+      console.log(data);
       $rootScope.title = 'Комплексные обеды | CaffeOrders';
     });
 }]);
