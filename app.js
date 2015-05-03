@@ -46,11 +46,72 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
 run(function($rootScope, $http, $location, AuthService, BrowserData) {
   $rootScope.title = 'Caffe-Orders | Fast & Beautiful table reservation service';
   $rootScope.loginForm = {
-    'email': null,
-    'password': null,
-    'send': function() {
-      console.log('try to log in on email: ' + this.email + ' , password: ' + this.password);
-      AuthService.logIn($rootScope.loginForm.email, $rootScope.loginForm.password);
+    'data': {
+      'loginForm': {
+        'email': null,
+        'password': null
+      },
+      'registrationForm': {
+        'email': null,
+        'password': null,
+        'phone': null
+      }
+    },
+    'state': {
+      'wrongLoginEmail': false,
+      'wrongLoginPassword': false,
+      'failedToLogin': false,
+      'wrondRegister': false,
+      'successRegister': false
+    },
+    'login': function() {
+      if($rootScope.loginForm.checkLoginForm()) {
+        console.log('try to log in on email: ' + this.data.loginForm.email + ' , password: ' + this.data.loginForm.password);
+        if(AuthService.login($rootScope.loginForm.data.loginForm.email, $rootScope.loginForm.data.loginForm.password)) {
+          $rootScope.loginForm.state.failedToLogin = true;
+        }
+        else {
+
+        }
+      } else {
+        $rootScope.loginForm.state.wrongLogin = true;
+      }
+    },
+    'register': function() {
+      if($rootScope.loginForm.checkRegistrationForm()) {
+        if(AuthService.register($rootScope.loginForm.data.registrationForm.phone, $rootScope.loginForm.data.registrationForm.email, $rootScope.loginForm.data.registrationForm.password)) {
+          $rootScope.loginForm.state.successRegister = true;
+          $rootScope.loginForm.state.wrongRegister = false;
+          console.log('registration success');
+        } else {
+          $rootScope.loginForm.state.wrongRegister = true;
+        }
+      } else {
+        $rootScope.loginForm.state.wrongRegister = true;
+      }
+    },
+    'resetPassword': function() {
+
+    },
+    'checkLoginForm': function() {
+      if((/^((\d)|(\w)){5,18}$/).test($rootScope.loginForm.data.loginForm.password)) {
+        if((/^(.)*@(.)*\.(.){2,}$/).test($rootScope.loginForm.data.loginForm.email)) {
+          return true;
+        } else {
+          $rootScope.loginForm.state.wrongLoginEmail = true;
+          return false;
+        }
+      } else {
+        $rootScope.loginForm.state.wrongLoginPassword = true;
+        return false;
+      }
+    },
+    'checkRegistrationForm': function() {
+      if((/^((\d)|(\w)){5,18}$/).test($rootScope.loginForm.data.registrationForm.password) && (/^(.)*@(.)*\.(.){2,}$/).test($rootScope.loginForm.data.registrationForm.email) && (/^(\d){12}$/).test($rootScope.loginForm.data.registrationForm.phone)) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
   //AuthService.logIn('clain@sample.com', 199626);

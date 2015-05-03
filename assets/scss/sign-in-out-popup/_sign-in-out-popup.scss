@@ -136,6 +136,7 @@ xsigin/signup popup
   width: 50%;
   float: left;
   text-align: center;
+  cursor: pointer;
 }
 .cd-user-modal-container .cd-switcher li:first-child a {
   border-radius: .25em 0 0 0;
@@ -179,7 +180,6 @@ xsigin/signup popup
 }
 .cd-form label {
   font-size: 14px;
-  font-size: 0.875rem;
 }
 .cd-form label.image-replace {
   /* заменить текст с иконой */
@@ -289,13 +289,11 @@ xsigin/signup popup
   padding: .8em;
   z-index: 2;
   color: #FFF;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 14px;
   border-radius: 0.25em;
   /* предотвращения кликов и прикосновения */
   pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
+  display:none;
   -webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
   -moz-transition: opacity 0.2s 0, visibility 0 0.2s;
   transition: opacity 0.2s 0, visibility 0 0.2s;
@@ -342,7 +340,6 @@ xsigin/signup popup
 .cd-form-message {
   padding: 1.4em 1.4em 0;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 1.4;
   text-align: center;
 }
@@ -358,7 +355,7 @@ xsigin/signup popup
   bottom: -30px;
   text-align: center;
   font-size: 14px;
-  font-size: 0.875rem;
+  cursor: pointer;
 }
 .cd-form-bottom-message a {
   color: #FFF;

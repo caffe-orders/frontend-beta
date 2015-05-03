@@ -8,6 +8,7 @@ $txt_clr_black: #000;
 $txt_clr_gray: rgba(0, 0, 0, .5);
 $txt_clr_white: #fff;
 $txt_clr_red: #c1221c;
+$txt_clr_green: #189518;
 
 @font-face {
   font-family: 'MyriadPro-Regular';
@@ -58,6 +59,10 @@ $txt_clr_red: #c1221c;
   
   &__clr-black {
     color: $txt_clr_black;
+  }
+  
+  &__clr-green {
+    color: $txt_clr_green;
   }
   
   &__clr-gray {

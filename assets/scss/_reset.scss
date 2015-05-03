@@ -44,6 +44,9 @@ table {
 a:focus {
     outline: none;
 }
+a {
+  outline: none !important;
+}
 img {
   max-width: 100%;
 }

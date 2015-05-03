@@ -47,67 +47,68 @@
   
   <div class="cd-user-modal" ng-class="{visible: signInOutModalVisible}">
   <div class="cd-user-modal-container">
-    <ul class="cd-switcher">
-      <li><a href="#0" class="selected">Вход</a></li>
-      <li><a href="#0">Регистрация</a></li>
+    <ul class="cd-switcher" ng-init="regLogModalTabSelected = 0;">
+      <li><a ng-class="{selected: regLogModalTabSelected == 0}" ng-click="regLogModalTabSelected = 0;">Вход</a></li>
+      <li><a ng-class="{selected: regLogModalTabSelected == 1}" ng-click="regLogModalTabSelected = 1;">Регистрация</a></li>
     </ul>
-    <div id="cd-login" class="visible">
+    <div id="cd-login" ng-class="{visible: regLogModalTabSelected == 0}">
       <form class="cd-form">
         <p class="fieldset">
 		  <label class="image-replace cd-email" for="signin-email">E-mail</label>
-		  <input class="full-width has-padding has-border" ng-model="loginForm.email" id="signin-email" type="email" placeholder="E-mail">
-		  <span class="cd-error-message">Не введен E-mail!</span>
+		  <input class="full-width has-padding has-border" ng-model="loginForm.data.loginForm.email" id="signin-email" type="email" placeholder="E-mail">
+		  <span class="cd-error-message" ng-class="{visible: loginForm.state.wrongLoginEmail}">Не верный email</span>
 		</p>
 		<p class="fieldset">
 		  <label class="image-replace cd-password" for="signin-password">Пароль</label>
-		  <input class="full-width has-padding has-border"  ng-model="loginForm.password" id="signin-password" type="text" placeholder="Пароль">
-		  <span class="cd-error-message">Не введен пароль!</span>
+		  <input class="full-width has-padding has-border"  ng-model="loginForm.data.loginForm.password" id="signin-password" type="password" placeholder="Пароль">
+		  <span class="cd-error-message" ng-class="{visible: loginForm.state.failedToLogin}">Не верный Пароль (допускаются только символы и цифры)</span>
 		</p>
 		<p class="fieldset">
-		  <input type="checkbox" id="remember-me" checked>
-		  <label for="remember-me">Запомнить меня</label>
+		  <p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongLogin}">Не верный email или пароль</p>
 		</p>
 		<p class="fieldset">
-		  <input class="full-width" type="submit" ng-click="loginForm.send()" value="Войти">
+		  <input class="full-width" type="submit" ng-click="loginForm.login()" value="Войти">
 		</p>
       </form>
 				
-	  <p class="cd-form-bottom-message"><a href="#0">Забыли свой пароль?</a></p>
+	  <p class="cd-form-bottom-message"><a ng-click="regLogModalTabSelected = 2">Забыли свой пароль?</a></p>
     </div>
 
-	<div id="cd-signup"> <!-- форма регистрации -->
+	<div id="cd-signup" ng-class="{visible: regLogModalTabSelected == 1}"> <!-- форма регистрации -->
       <form class="cd-form">
         <p class="fieldset">
-          <label class="image-replace cd-username" for="signup-username">Имя пользователя</label>
-          <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Моб. телефон">
-          <span class="cd-error-message">Не введен мобильный телефон!</span>
-        </p>
-
-        <p class="fieldset">
           <label class="image-replace cd-email" for="signup-email">E-mail</label>
-          <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-          <span class="cd-error-message">Не введен E-mail!</span>
+          <input ng-model="loginForm.data.registrationForm.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
         </p>
-
-        <p class="fieldset">
+        
+         <p class="fieldset">
+          <label class="image-replace cd-password" for="signup-phone">Телефон</label>
+          <input ng-model="loginForm.data.registrationForm.phone" class="full-width has-padding has-border" id="signup-phone" type="text"  placeholder="Телефон (375291224598)">
+        </p>
+        
+         <p class="fieldset">
           <label class="image-replace cd-password" for="signup-password">Пароль</label>
-          <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Пароль">
-          <a href="#0" class="hide-password">Скрыть</a>
-          <span class="cd-error-message">Не введен пароль!</span>
+          <input ng-model="loginForm.data.registrationForm.password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Пароль">
         </p>
-
         <p class="fieldset">
+		  <p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongRegister}">Email должен быть акутальным!<br>Tелефон нужно задать в формате "375291255678"!<br>Пароль должен состоять из цифр и символов и быть длинее 6 символов!</p>
+		</p>
+       
+        <p class="fieldset">
+		  <p class="cd-form-message c-text__clr-green" style="display: none;" ng-class="{visible: loginForm.state.successRegister}">На ваш email отправлено сообщение с ссылкой для активации вашего аккаунта!</p>
+		</p>
+        <!--<p class="fieldset">
           <input type="checkbox" id="accept-terms">
           <label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
-        </p>
+        </p> -->
 
         <p class="fieldset">
-          <input class="full-width has-padding" type="submit" value="Создать аккаунт">
+          <input ng-click="loginForm.register()" class="full-width has-padding" type="submit" value="Создать аккаунт">
         </p>
       </form>
     </div> <!-- cd-signup -->
 
-    <div id="cd-reset-password"> <!-- форма восстановления пароля -->
+    <div id="cd-reset-password" ng-class="{visible: regLogModalTabSelected == 2}"> <!-- форма восстановления пароля -->
       <p class="cd-form-message">Забыли пароль? Пожалуйста, введите адрес своей электронной почты. Вы получите ссылку, чтобы создать новый пароль.</p>
 
       <form class="cd-form">
@@ -121,10 +122,8 @@
           <input class="full-width has-padding" type="submit" value="Восстановить пароль">
         </p>
       </form>
-
-      <p class="cd-form-bottom-message"><a href="#0">Вернуться к входу</a></p>
     </div> <!-- cd-reset-password -->
-    <a href="#0" ng-click="signInOutModalVisible = false" class="cd-close-form">Закрыть</a>
+    <a ng-click="signInOutModalVisible = false" class="cd-close-form">Закрыть</a>
   </div> <!-- cd-user-modal-container -->
 </div> <!-- cd-user-modal -->
   
