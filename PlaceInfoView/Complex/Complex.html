@@ -9,18 +9,18 @@
 <section class="b-place">
  
   <div class="b-week-day">
-    <div ng-click="query = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
-    <div ng-click="query = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
-    <div ng-click="query = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
-    <div ng-click="query = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
-    <div ng-click="query = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
-    <div ng-click="query = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
-    <div ng-click="query = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
+    <div ng-click="query.day = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
+    <div ng-click="query.day = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
+    <div ng-click="query.day = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
+    <div ng-click="query.day = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
+    <div ng-click="query.day = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
+    <div ng-click="query.day = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
+    <div ng-click="query.day = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
   </div>
   <div class="b-menu c-box-sz_bd-box" style="width: 100% !important;">
     <div class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Комплексные обеды</div>
       
-    <div ng-repeat="dinner in data" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
+    <div ng-repeat="dinner in data | filter:query" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
       <figure class="b-menu-item_img"><img class="c-icon__cover" src="assets/img/dish-preview-sample.png" alt=""></figure>
       <div class="b-menu-item_desc">
         <div class="b-menu-item_desc-title">{{dinner.name}}</div>
