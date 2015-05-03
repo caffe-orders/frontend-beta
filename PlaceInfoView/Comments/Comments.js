@@ -22,6 +22,9 @@ angular.module('app.PlaceCommentsView', [
     $rootScope.title = 'Отзывы | CaffeOrders';
     
     $scope.commentsPanel = {
+      'state': {
+        'noComments': false
+      },
       'placeId': null,
       'commentsList': {},
       'getCommentsList': function() {
@@ -32,8 +35,10 @@ angular.module('app.PlaceCommentsView', [
           withCredentials: true,
           data: { }
         };
-        $http(req).success(function(data) {
+        $http(req).success(function(data, state) {
           $scope.commentsPanel.commentsList = data;
+          if(state == 204) $scope.commentsPanel.state.noComments = true;
+          console.log($scope.commentsPanel.state.noComments);
         });
       },
       'send': function(comment) {

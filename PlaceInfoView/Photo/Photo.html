@@ -12,6 +12,7 @@
   </div>
   
   <section class="b-photo-gallery_prev-wrap">
-    <figure ng-repeat="prevData in galleryData" style="background: url({{prevData.prev}}) no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg(prevData.id)"></figure>
+    <figure ng-repeat="img in galleryData" style="background: url({{img}}) no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg($index)"></figure>
   </section>
+  <p ng-class="{visible: album.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет фото</p>
 </section>

@@ -217,6 +217,11 @@ body {
   -ms-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px; }
 
+/* line 103, Z:/home/caffe.ru/www/assets/scss/globals/_globals.scss */
+.b-center-message {
+  display: none;
+  padding: 1% 0 1% 0; }
+
 /* line 4, Z:/home/caffe.ru/www/assets/scss/_icon.scss */
 .c-icon {
   width: 100px;

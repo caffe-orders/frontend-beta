@@ -17,9 +17,16 @@ angular.module('app.PlaceComplexView', [
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
     
     //get all needed data about place (json)
-    $http.get('http://api.caffe.ru/complexdinner/list?placeId=' + $scope.placeId, { cache: true }).success(function(data) {
+    $http.get('http://api.caffe.ru/complexdinner/list?placeId=' + $scope.placeId, { cache: true }).success(function(data, state) {
       $scope.data = data;
       console.log(data);
       $rootScope.title = 'Комплексные обеды | CaffeOrders';
+      if(state == 204) $scope.complexDinnerPanel.state.noData = true;
     });
+    
+    $scope.complexDinnerPanel = {
+      'state': {
+        'noData': false
+      }
+    }
 }]);

@@ -23,13 +23,19 @@ angular.module('app.PlacePhotoView', [
       $rootScope.title = 'Фото | CaffeOrders';
     });
     
-    $scope.showFullImg = function(imgId) {
-      for(var i=0; i<$scope.galleryData.length; i++) {
-        var img = $scope.galleryData[i];
-        if(img.id == imgId)
-        {
-          $scope.fullImgUrl = img.full;
-        }
+    $http.get('//api.caffe.ru/albums/list?placeId=' + $scope.placeId).success(function(data, state) {
+      $scope.galleryData = data;
+      $rootScope.title = 'Фото | CaffeOrders';
+      if(state == 204) $scope.album.state.noData = true;
+    });
+    
+    $scope.showFullImg = function(imgId) {  
+      $scope.fullImgUrl = $scope.galleryData[imgId];
+    }
+    
+    $scope.album = {
+      'state': {
+        'noData': false
       }
     }
 }]);

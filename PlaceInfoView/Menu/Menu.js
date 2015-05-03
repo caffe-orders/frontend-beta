@@ -32,9 +32,14 @@ angular.module('app.PlaceMenuView', [
       $scope.menuPanel.currCat = $scope.menuPanel.getCatById(0);
     
       console.log($scope.menuPanel.currCat.dishList);
+    }).error(function(){
+      $scope.menuPanel.state.noData = true;
     });
       
     $scope.menuPanel = {
+      'state': {
+        'noData': false
+      },
       'currCat': null,
       'changeCat': function(catId) {
         $scope.menuPanel.currCat = $scope.menuPanel.getCatById(catId);
