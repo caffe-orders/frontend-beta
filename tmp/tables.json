@@ -1,0 +1,59 @@
+[
+  {
+    "tablesList": [ 
+      {
+        "active": true,
+        "xPos": 0,
+        "yPos": 5
+      },
+      {
+        "active": true,
+        "xPos": 0,
+        "yPos": 5
+      },
+      {
+        "active": true,
+        "xPos": 0,
+        "yPos": 5
+      }
+    ]
+  },
+  {
+    "tablesList": [ 
+      {
+        "active": false,
+        "xPos": 0,
+        "yPos": 5
+      },
+      {
+        "active": false,
+        "xPos": 0,
+        "yPos": 50
+      },
+      {
+        "active": true,
+        "xPos": 0,
+        "yPos": 75
+      }
+    ]
+  },
+  {
+    "tablesList": [ 
+      {
+        "active": true,
+        "xPos": 40,
+        "yPos": 58
+      },
+      {
+        "active": true,
+        "xPos": 50,
+        "yPos": 25
+      },
+      {
+        "active": true,
+        "xPos": 80,
+        "yPos": 50
+      }
+    ]
+  }
+]

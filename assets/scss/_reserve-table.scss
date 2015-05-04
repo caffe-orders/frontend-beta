@@ -31,16 +31,24 @@ $break-small: "screen and (min-width: 240px) and (max-width: 900px)";
     width: 10%;
     height: 600px;
     float: left;
+    opacity: .6;
+    transition: .3s;
+    
+    &:hover {
+      opacity: 1;
+    }
   }
   
   &_deck {
     width: 80%;
     height: 600px;
     float: left;
-    background: #639b9b;
+    background-size: 100%;
   }
 
   &_table {
     position: relative;
+    width: 50px;
+    height: 50px;
   }
 }

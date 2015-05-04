@@ -1,9 +1,21 @@
-{
-  "id": 0,
-  "firstName": "Egor",
-  "lastName": "Egorov",
-  "address": "Sasai Lalks District",
-  "city": "Muhosransk",
-  "email": "azaza@azaza.za",
-  "phone": "375291262234"
-}
+[
+  {
+    "tablesList": [
+      {
+        "active": "true",
+        "xPos": "0",
+        "yPos": "0"
+      },
+    ` {
+        "active": "true",
+        "xPos": "0",
+        "yPos": "0"
+      },
+      {
+        "active": "true",
+        "xPos": "0",
+        "yPos": "0"
+      },
+    ]
+  }
+]
