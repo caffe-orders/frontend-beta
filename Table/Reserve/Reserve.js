@@ -4,7 +4,7 @@ angular.module('app.TableReserveView', [
 ])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/table/reserve/:placeId/:roomNo', {
+  $routeProvider.when('/table/reserve/:placeId/', {
     templateUrl: 'Table/Reserve/Reserve.html',
     controller: 'TableReserveCtrl'
   })
