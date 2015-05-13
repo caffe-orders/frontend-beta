@@ -17,10 +17,24 @@
   <span class="dropdown" dropdown on-toggle="toggled(open)">
     <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
     <ul class="dropdown-menu">
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Создать</a>
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Изменить</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
     </ul>
   </span>
 </nav>
 
-create
+create dish
+
+
+<form action="" class="b-create-dish">
+  <label type="text" class="b-create-dish_label">Название блюда</label>
+  <input ng-model="dish.name" type="text" class="b-create-dish_text">
+  <label type="text" class="b-create-dish_label">Описание</label>
+  <textarea ng-model="dish.descr" type="text" class="b-create-dish_text"></textarea>
+  <label type="text" class="b-create-dish_label">Цена</label>
+  <input ng-model="dish.cost" type="text" class="b-create-dish_text">
+  <label type="text" class="b-create-dish_label">Фото</label>
+  <input ng-model="dish.preview" type="file" class="b-create-dish_text">
+  <input type="submit" value="Добавить блюдо">
+</form>

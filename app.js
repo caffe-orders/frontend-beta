@@ -33,6 +33,8 @@ angular.module('app', [
   'app.OwnerPanelMenuCreateView',
   'app.OwnerPanelMenuEditView',
   'app.OwnerPanelMenuBaseEditView',
+  'app.OwnerPanelComplexView',
+  'app.ActivationView',
 ]).
 config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', 
   function($routeProvider, $locationProvider, $sceDelegateProvider) {
@@ -55,37 +57,42 @@ run(function($rootScope, $http, $location, AuthService, BrowserData) {
         'email': null,
         'password': null,
         'phone': null
+      },
+      'forgotPasswordForm': {
+        email: null,
+        code: null,
+        newPass: null
       }
     },
     'state': {
       'wrongLoginEmail': false,
       'wrongLoginPassword': false,
       'failedToLogin': false,
+      'successLogin': false,
       'wrondRegister': false,
       'successRegister': false
     },
     'login': function() {
       if($rootScope.loginForm.checkLoginForm()) {
         console.log('try to log in on email: ' + this.data.loginForm.email + ' , password: ' + this.data.loginForm.password);
-        if(AuthService.login($rootScope.loginForm.data.loginForm.email, $rootScope.loginForm.data.loginForm.password)) {
+        AuthService.login($rootScope.loginForm.data.loginForm.email, $rootScope.loginForm.data.loginForm.password).success(function(data, state) {
+          $rootScope.signInOutModalVisible = false;
+        }).error(function(data, state) {
           $rootScope.loginForm.state.failedToLogin = true;
-        }
-        else {
-
-        }
+        });
       } else {
         $rootScope.loginForm.state.wrongLogin = true;
       }
     },
     'register': function() {
       if($rootScope.loginForm.checkRegistrationForm()) {
-        if(AuthService.register($rootScope.loginForm.data.registrationForm.phone, $rootScope.loginForm.data.registrationForm.email, $rootScope.loginForm.data.registrationForm.password)) {
+        AuthService.register($rootScope.loginForm.data.registrationForm.phone, $rootScope.loginForm.data.registrationForm.email, $rootScope.loginForm.data.registrationForm.password).success(function() {
           $rootScope.loginForm.state.successRegister = true;
           $rootScope.loginForm.state.wrongRegister = false;
           console.log('registration success');
-        } else {
+        }).error(function(){
           $rootScope.loginForm.state.wrongRegister = true;
-        }
+        });
       } else {
         $rootScope.loginForm.state.wrongRegister = true;
       }
@@ -107,7 +114,7 @@ run(function($rootScope, $http, $location, AuthService, BrowserData) {
       }
     },
     'checkRegistrationForm': function() {
-      if((/^((\d)|(\w)){5,18}$/).test($rootScope.loginForm.data.registrationForm.password) && (/^(.)*@(.)*\.(.){2,}$/).test($rootScope.loginForm.data.registrationForm.email) && (/^(\d){12}$/).test($rootScope.loginForm.data.registrationForm.phone)) {
+      if((/^((\d)|(\w)){5,18}$/).test($rootScope.loginForm.data.registrationForm.password) && (/^(.){1,}@(.){2,}\.(.){2,10}$/).test($rootScope.loginForm.data.registrationForm.email) && (/^(\d){12}$/).test($rootScope.loginForm.data.registrationForm.phone)) {
         return true;
       } else {
         return false;
@@ -118,4 +125,5 @@ run(function($rootScope, $http, $location, AuthService, BrowserData) {
   if(BrowserData.browser.family == 'IE' || BrowserData.browser.family == 'Opera Mini') {
     $location.path('/badbrowser/');
   }
+  setInterval($rootScope.loginForm.state.successRegister, 1000);
 });

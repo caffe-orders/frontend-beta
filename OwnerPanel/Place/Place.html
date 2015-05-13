@@ -17,50 +17,65 @@
   <span class="dropdown" dropdown on-toggle="toggled(open)">
     <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
     <ul class="dropdown-menu">
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Создать</a>
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Изменить</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
     </ul>
   </span>
 </nav>
 
 <section class="b-owner-panel">
-  <form action="" class="b-place-create-form">
+  <form class="b-place-create-form">
     <label for="name" class="b-place-create-form_label">Название</label>
-    <input type="text" name="name" class="b-place-create-form_text-input" >
+    <input ng-model="place.name" type="text" name="name" class="b-place-create-form_text-input">
     <label for="type" class="b-place-create-form_label">Тип</label>
-    <select name="type">
+    <select ng-model="place.type" name="type">
       <option value="Ресторан">Ресторан</option>
       <option value="Кафе">Кафе</option>
     </select>
     <label for="phones" class="b-place-create-form_label">Телефон</label>
-    <input type="text" name="phones" class="b-place-create-form_text-input">
+    <input ng-model="place.phones" type="text" name="phones" class="b-place-create-form_text-input">
     <label for="address" class="b-place-create-form_label">Адрес</label>
-    <input type="text" name="address" class="b-place-create-form_text-input">
+    <input ng-model="place.address" type="text" name="address" class="b-place-create-form_text-input">
     <label for="cuisine" class="b-place-create-form_label">Кухня</label>
-    <input type="text" name="cuisine" class="b-place-create-form_text-input">
+    <input ng-model="place.cuisine" type="text" name="cuisine" class="b-place-create-form_text-input">
     <div class="b-place-create-form_line-wrap">
       <label for="outdoors" class="b-place-create-form_label__ch-box">За городом?</label>
-      <input type="checkbox" name="outdoors" class="b-place-create-form_checkbox">
+      <input ng-model="place.outdoors" type="checkbox" name="outdoors" class="b-place-create-form_checkbox">
     </div>
     <div class="b-place-create-form_line-wrap">
       <label for="parking" class="b-place-create-form_label__ch-box">Парковка</label>
-      <input type="checkbox" name="parking" class="b-place-create-form_checkbox">
+      <input ng-model="place.parking" type="checkbox" name="parking" class="b-place-create-form_checkbox">
     </div>
     <div class="b-place-create-form_line-wrap">
       <label for="smoking" class="b-place-create-form_label__ch-box">Зал для курящих</label>
-      <input type="checkbox" name="smoking" class="b-place-create-form_checkbox">
+      <input ng-model="place.smoking" type="checkbox" name="smoking" class="b-place-create-form_checkbox">
     </div>
+
     <label for="avgBill" class="b-place-create-form_label">Средний чек</label>
-    <input type="text" name="avgBill" class="b-place-create-form_text-input">
-    <div class="b-place-create-form_line-wrap">
+    <input ng-model="place.avgBill" type="text" name="avgBill" class="b-place-create-form_text-input">
+
       <label for="wifi" class="b-place-create-form_label__ch-box">WiFi</label>
-      <input type="checkbox" name="wifi" class="b-place-create-form_checkbox">
-    <div class="b-place-create-form_line-wrap">
-    <label for="workTime" class="b-place-create-form_label">Время работы</label>
-    <input type="text" name="workTime" class="b-place-create-form_text-input">
-    <label for="prevPic" class="b-place-create-form_label">Фото кафе</label>
-    <input type="file" name="prevPic" class="b-place-create-form_file">
-    <input type="submit" name="wifi" class="b-place-create-form_submit">
+      <input ng-model="place.wifi" type="checkbox" name="wifi" class="b-place-create-form_checkbox">
+
+
+      <label for="descr" class="b-place-create-form_label">Описание</label>
+      <textarea ng-model="place.descr" name="descr" class="b-place-create-form_text-input"> </textarea>
+
+
+      <label for="workTime" class="b-place-create-form_label">Время работы</label>
+      <input ng-model="place.workTime" type="text" name="workTime" class="b-place-create-form_text-input">
+
+      <label for="gmap" class="b-place-create-form_label">Код gmap</label>
+      <input ng-model="place.gmap" type="text" name="gmap" class="b-place-create-form_text-input">
+
+
+      <label for="prevPic" class="b-place-create-form_label">Фото кафе</label>
+      <input ng-model="place.file" type="file" name="prevPic" class="b-place-create-form_file">
+
+
+      <input ng-click="place.update(place)" type="submit" class="b-place-create-form_submit">
+
   </form>
   
   <div class="b-create-form-tips">

@@ -15,7 +15,9 @@ angular.module('app.PlaceComplexView', [
     //init base data
     $scope.placeId = $routeParams.placeId;
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
-    
+    $scope.query = {
+      day: new Date().getDay()
+    }
     //get all needed data about place (json)
     $http.get('http://api.caffe.ru/complexdinner/list?placeId=' + $scope.placeId, { cache: true }).success(function(data, state) {
       $scope.data = data;

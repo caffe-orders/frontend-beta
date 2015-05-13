@@ -41,7 +41,7 @@ angular.module('app.AuthService', []).factory('AuthService', ['$http', '$locatio
           loginState = true;
         }
       });
-      return loginState;
+      return $http(req);
     },
     'logOut': function() {
       
@@ -58,15 +58,8 @@ angular.module('app.AuthService', []).factory('AuthService', ['$http', '$locatio
         },
         headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
       };
-      var registerState = false;//bug here HEREHREHREHRHERHEHREHRHEHRHERHEHRHERHEHREHRHEHREH
-      $http(req).success(function(data, state) {
-        if(state == 200) {
-          registerState = true;
-        }
-        $location.path(this.defaultRedirectPath);
-      });
-      console.log(registerState);
-      return registerState;
+      var magic = $http(req);
+      return magic;
     }
   };
 

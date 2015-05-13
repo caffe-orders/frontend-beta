@@ -11,11 +11,11 @@ angular.module('app.OwnerPanelMenuEditView', [
     })
 }])
 
-.controller('OwnerPanelMenuEditCtrl', ['$scope', '$routeParams', '$rootScope',
-  function($scope, $routeParams, $rootScope) {
+.controller('OwnerPanelMenuEditCtrl', ['$scope', '$routeParams', '$rootScope', '$http',
+  function($scope, $routeParams, $rootScope, $http) {
     //init base data
     var placeId = $routeParams.placeId;
-    $scope.ownerUrl = 'owner/' + placeId + '/';
+    $scope.ownerUrl = 'owner/' +  $routeParams.placeId + '/';
     $rootScope.title = 'Панель владельца | CaffeOrders';
     
     

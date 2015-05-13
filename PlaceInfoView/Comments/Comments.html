@@ -12,7 +12,7 @@
      <textarea class="b-send-comment-form_text" rows="6" ng-model="comment.text" name="text">Оставьте отзыв о заведении!</textarea>
      <label class="b-send-comment-form_label" for="state">Понравилось?</label>
      <input class="b-send-comment-form_checkbox" ng-model="comment.state" ng-init="comment.state = true;" type="checkbox" name="state" value="true" >
-     <input class="b-send-comment-form_submit" ng-click="commentsPanel.send(comment)" type="submit">
+     <input class="b-send-comment-form_submit" ng-click="commentsPanel.send(comment)" type="submit" value="Отправить">
    </form>
   <article ng-repeat="comment in commentsPanel.commentsList" class="b-comment_item">
     <div class="b-comment_uname c-box-sz_bd-box c-text__sz-big c-text__al-left c-text__clr-white">{{comment.firstName}} {{comment.lastName}}</div>

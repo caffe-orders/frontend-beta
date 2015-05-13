@@ -10,13 +10,13 @@
 <section class="b-place">
  
   <div class="b-week-day">
-    <div ng-click="query.day = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
-    <div ng-click="query.day = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
-    <div ng-click="query.day = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
-    <div ng-click="query.day = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
-    <div ng-click="query.day = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
-    <div ng-click="query.day = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
-    <div ng-click="query.day = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 1}" ng-click="query.day = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 2}" ng-click="query.day = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 3}" ng-click="query.day = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 4}" ng-click="query.day = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 5}" ng-click="query.day = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 6}" ng-click="query.day = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 7}" ng-click="query.day = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
   </div>
   <div class="b-menu c-box-sz_bd-box" style="width: 100% !important;">
     <div class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Комплексные обеды</div>

@@ -17,12 +17,41 @@
   <span class="dropdown" dropdown on-toggle="toggled(open)">
     <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
     <ul class="dropdown-menu">
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Создать</a>
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Изменить</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
     </ul>
   </span>
 </nav>
 
-base
-  
-</section>
+<div class="b-menu c-box-sz_bd-box">
+    <div ng-class="{hidden: menuPanel.state.noData}" class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Категория "{{menuPanel.currCat.categoryName}}"</div>
+      
+    <form ng-class="{hidden: menuPanel.state.noData}" ng-repeat="dish in menuPanel.currCat.dishList" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
+      <figure class="b-menu-item_img"><img class="c-icon__cover" src="assets/img/dish-preview-sample.png" alt=""></figure>
+      <div class="b-menu-item_desc">
+        <input type="text" class="b-menu-item_desc-title" value="{{dish.name}}">
+        <textarea class="b-menu-item_desc-content">{{dish.description}}</textarea>
+      </div>
+      <div class="b-menu-item_cost">
+        <div class="b-menu-item_cost-title">Цена:</div>
+        <input type="text" class="b-menu-item_cost-content c-text__st-bold" value="{{dish.cost}}">
+      </div>
+    </form>
+    
+    <div ng-class="{hidden: menuPanel.state.noData}" class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Добавить в категорию</div>
+    
+    <form action="">
+      <label for="">Поиск</label>
+      <input type="text" placeholder="Поиск">
+    </form>
+  </div>
+    
+  <section class="b-menu-cat c-box-sz_bd-box c-text__sz-avg c-text__al-center c-text__clr-white">
+    <div ng-class="{hidden: menuPanel.state.noData}" class="b-menu-cat_title c-text__sz-big c-text__clr-black">Категории блюд</div>
+    <div ng-repeat="cat in data" class="b-menu-cat_btn" ng-click="menuPanel.changeCat($index);">{{cat.categoryName}}</div>
+    <form class="b-menu-cat_add-cat-wrap">
+      <input type="text" class="b-menu-cat_cat-name c-text__clr-black">
+      <input type="submit" class="b-menu-cat_add-cat-btn" value="+">
+    </form>
+  </section>

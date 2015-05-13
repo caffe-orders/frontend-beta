@@ -1,0 +1,66 @@
+<nav class="b-top-tab-nav c-box-sz_bd-box">
+  <a href="{{ownerUrl}}index" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__about">Главная</a>
+  <a href="{{ownerUrl}}place" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__stat">Заведение</a>
+</nav>
+
+<nav class="b-top-nav">
+  <a href="{{ownerUrl}}stat" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Статистика</a>
+  <span class="dropdown" dropdown on-toggle="toggled(open)">
+    <a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
+    <ul class="dropdown-menu">
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
+    </ul>
+  </span>
+  <a href="{{ownerUrl}}comments" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комментарии</a>
+  <a href="{{ownerUrl}}photo" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Фото</a>
+  <span class="dropdown" dropdown on-toggle="toggled(open)">
+    <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
+    <ul class="dropdown-menu">
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
+      <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
+    </ul>
+  </span>
+</nav>
+   
+<section class="b-place">
+ 
+  <div class="b-week-day">
+    <div ng-class="{'b-week-day_btn__active': query.day == 1}" ng-click="query.day = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 2}" ng-click="query.day = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 3}" ng-click="query.day = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 4}" ng-click="query.day = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 5}" ng-click="query.day = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 6}" ng-click="query.day = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
+    <div ng-class="{'b-week-day_btn__active': query.day == 7}" ng-click="query.day = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
+  </div>
+  <div class="b-menu c-box-sz_bd-box" style="width: 100% !important;">
+    <div class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Комплексные обеды</div>
+    
+    <form class="b-create-complex">
+      <label class="b-create-complex_label" for="">Название</label>
+      <input class="b-create-complex_name" ng-model="dinner.name" type="text">
+      <label class="b-create-complex_label" for="">Описание</label>
+      <textarea class="b-create-complex_descr" ng-model="dinner.description"></textarea>
+      <label class="b-create-complex_label" for="">Стоимость</label>
+      <input class="b-create-complex_cost" ng-model="dinner.cost" type="text">
+      <input class="b-create-complex_submit" ng-click="complexDinnerPanel.addDinner(dinner)" type="submit" value="Добавить обед">
+    </form>
+    
+    <form ng-repeat="dinner in data | filter:query" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
+      <figure class="b-menu-item_img"><img class="c-icon__cover" src="assets/img/dish-preview-sample.png" alt=""></figure>
+      <div class="b-menu-item_desc">
+        <input ng-model="dinner.name" class="b-menu-item_desc-title" value="{{dinner.name}}">
+        <textarea ng-model="dinner.description" class="b-menu-item_desc-content">{{dinner.description}}</textarea>
+        <input ng-click="complexDinnerPanel.editDinner(dinner)" class="b-menu-item_edit c-text__clr-red" type="submit" value="Изменить">
+      </div>
+      <div class="b-menu-item_cost">
+        <div class="b-menu-item_cost-title">Цена:</div>
+        <input ng-model="dinner.cost" class="b-menu-item_cost-content c-text__st-bold" value="{{dinner.cost}}">
+        <a style="position: relative;bottom: 30px; left: 0; cursor: pointer;" ng-click="complexDinnerPanel.deleteDinner(dinner.id)">Удалить</a>
+      </div>
+    </form>
+    <p ng-class="{visible: complexDinnerPanel.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет комплексных обедов</p>
+  </div>
+</section>
