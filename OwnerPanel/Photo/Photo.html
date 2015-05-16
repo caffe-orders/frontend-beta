@@ -25,11 +25,18 @@
 </nav>
 
 <section class="b-photo-gallery">
+ 
+  <form class="b-add-img-form">
+    <div class="b-add-img-form_label">Загрузить</div>
+    <input ng-model="imgPanel.file" type="file">
+    <input ng-click="imgPanel.add(imgPanel.file)" class="c-text__clr-white b-add-img-form_submit" type="submit" value="Добавить картинку">
+  </form>
   <div class="b-photo-gallery_full-img-wrap">
     <figure class="b-photo-gallery_full-img"><img ng-src="{{fullImgUrl}}" alt=""></figure>
   </div>
   
   <section class="b-photo-gallery_prev-wrap">
-    <figure ng-repeat="prevData in galleryData" style="background: url({{prevData.prev}}) no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg(prevData.id)"></figure>
+    <figure ng-repeat="img in galleryData" style="background: url({{img}}) no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg($index)"><a ng-click="imgPanel.delete(img)">Удалить</a></figure>
   </section>
+  <p ng-class="{visible: album.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет фото</p>
 </section>

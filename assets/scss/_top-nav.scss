@@ -17,7 +17,7 @@ $break-small: "screen and (min-width: 240px) and (max-width: 900px)";
   @include border-radius(5px);
   
   @media #{$break-avg} {
-    width: 35%;
+    width: 38%;
   }
   @media #{$break-small} {
     width: 99%;
