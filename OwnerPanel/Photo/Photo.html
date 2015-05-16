@@ -28,8 +28,8 @@
  
   <form class="b-add-img-form">
     <div class="b-add-img-form_label">Загрузить</div>
-    <input ng-model="imgPanel.file" type="file">
-    <input ng-click="imgPanel.add(imgPanel.file)" class="c-text__clr-white b-add-img-form_submit" type="submit" value="Добавить картинку">
+    <input file-model="file" type="file">
+    <input ng-click="imgPanel.add()" class="c-text__clr-white b-add-img-form_submit" type="submit" value="Добавить картинку">
   </form>
   <div class="b-photo-gallery_full-img-wrap">
     <figure class="b-photo-gallery_full-img"><img ng-src="{{fullImgUrl}}" alt=""></figure>

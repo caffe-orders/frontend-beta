@@ -29,7 +29,7 @@ angular.module('app.OwnerPanelPhotoView', [
     });
     
     $scope.imgPanel = {
-      add: function(img) {
+      add: function() {
         var req = {
           method: 'POST',
           url: '//api.caffe.ru/filestoken/add',
@@ -242,24 +242,20 @@ angular.module('app.OwnerPanelPhotoView', [
    	return temp.toLowerCase();
 }
           console.log(data);
-          console.log(img);
-          var path = 'files/' + $scope.placeId + '/album/';
-          var req = {
-            method: 'POST',
-            url: '//files.caffe.ru/download.php',
-            crossDomain: true,
-            withCredentials: true,
-            data: {
-              sessionHash: data.sessionHash,
-              token: data.token,
-              path: path,
-              fileName: MD5((new Date()).toString()) + '.jpg',
-              fileType: 'albumImg',
-              file: img
-            },
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
-          };
-          $http(req).success(function(data) {
+          console.log(JSON.stringify($scope.file));
+          var path = 'files/places/' + $scope.placeId + '/album';
+          var fd = new FormData();
+          fd.append('file', $scope.file);
+          fd.append('sessionHash', data.sessionHash);
+          fd.append('token', data.token);
+          fd.append('path', path);
+          fd.append('fileName', MD5((new Date()).toString()) + '.jpg');
+          fd.append('fileType', 'albumImg');
+          
+          $http.post('//files.caffe.ru/download.php' , fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          }).success(function(data) {
             alert('Фото добавлено');
           });
         });
@@ -293,4 +289,18 @@ angular.module('app.OwnerPanelPhotoView', [
         'noData': false
       }
     }
+}]).directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
 }]);
