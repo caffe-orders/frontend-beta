@@ -243,7 +243,7 @@ angular.module('app.OwnerPanelPhotoView', [
 }
           console.log(data);
           console.log(JSON.stringify($scope.file));
-          var path = 'files/places/' + $scope.placeId + '/album';
+          var path = 'places/' + $scope.placeId + '/album';
           var fd = new FormData();
           fd.append('file', $scope.file);
           fd.append('sessionHash', data.sessionHash);
