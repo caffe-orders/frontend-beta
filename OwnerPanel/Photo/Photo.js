@@ -254,7 +254,7 @@ angular.module('app.OwnerPanelPhotoView', [
           
           $http.post('//files.caffe.ru/download.php' , fd, {
             transformRequest: angular.identity,
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            headers: {'Content-Type': undefined},
           }).success(function(data) {
             alert('Фото добавлено');
           });
