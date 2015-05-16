@@ -243,20 +243,34 @@ angular.module('app.OwnerPanelPhotoView', [
 }
           console.log(data);
           console.log(JSON.stringify($scope.file));
-          var path = 'places/' + $scope.placeId + '/album';
+          $scope.path = 'places/' + $scope.placeId + '/album';
           var fd = new FormData();
           fd.append('file', $scope.file);
           fd.append('sessionHash', data.sessionHash);
           fd.append('token', data.token);
-          fd.append('path', path);
-          fd.append('fileName', MD5((new Date()).toString()) + '.jpg');
+          fd.append('path', $scope.path);
+          $scope.fileName = MD5((new Date()).toString()) + '.jpg';
+          fd.append('fileName', $scope.fileName);
           fd.append('fileType', 'albumImg');
           
           $http.post('//files.caffe.ru/download.php' , fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined},
           }).success(function(data) {
-            alert('Фото добавлено');
+            var req = {
+              method: 'POST',
+              url: '//api.caffe.ru/albums/addimg/',
+              crossDomain: true,
+              withCredentials: true,
+              data: {
+              placeId: $scope.placeId,
+              url: $scope.path + '/' + $scope.fileName
+              },
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
+            };
+            $http(req).success(function(data) {
+              alert('Фото добавлено');
+            });
           });
         });
       },
