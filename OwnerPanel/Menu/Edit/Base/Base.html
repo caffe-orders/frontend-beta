@@ -50,8 +50,4 @@
   <section class="b-menu-cat c-box-sz_bd-box c-text__sz-avg c-text__al-center c-text__clr-white">
     <div ng-class="{hidden: menuPanel.state.noData}" class="b-menu-cat_title c-text__sz-big c-text__clr-black">Категории блюд</div>
     <div ng-repeat="cat in data" class="b-menu-cat_btn" ng-click="menuPanel.changeCat($index);">{{cat.categoryName}}</div>
-    <form class="b-menu-cat_add-cat-wrap">
-      <input type="text" class="b-menu-cat_cat-name c-text__clr-black">
-      <input type="submit" class="b-menu-cat_add-cat-btn" value="+">
-    </form>
   </section>

@@ -12,9 +12,9 @@
     <div ng-click="reserveTablePanel.rooms.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
     <div class="b-res-table_deck" style="background: #123333">
    
-      <div ng-repeat="table in reserveTablePanel.rooms.data[reserveTablePanel.rooms.currRoom].tablesList" class="b-res-table_table" style="top: {{table.yPos}}%; left: {{table.xPos}}%; background: {{reserveTablePanel.table.setBg(table.active)}};">
+      <a ng-click="reserveTablePanel.reserveTable(table)" ng-repeat="table in reserveTablePanel.rooms.data[reserveTablePanel.rooms.currRoom].tablesList" class="b-res-table_table" style="top: {{table.yPos}}%; left: {{table.xPos}}%; background: {{reserveTablePanel.table.setBg(table.active)}};">
         <div class="b-res-table_occupied">0/4</div>
-      </div>
+      </a>
       </div>
     
     </div>
@@ -22,3 +22,4 @@
   <p ng-class="{visible: reserveTablePanel.state.noComments}" class="b-center-message c-text__al-center c-text__sz-avg">Нет столиков</p>
   </section>
 </section>
+{{sasai}}

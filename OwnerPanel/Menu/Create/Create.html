@@ -27,7 +27,7 @@
 create dish
 
 
-<form action="" class="b-create-dish">
+<form class="b-create-dish">
   <label type="text" class="b-create-dish_label">Название блюда</label>
   <input ng-model="dish.name" type="text" class="b-create-dish_text">
   <label type="text" class="b-create-dish_label">Описание</label>
@@ -36,5 +36,9 @@ create dish
   <input ng-model="dish.cost" type="text" class="b-create-dish_text">
   <label type="text" class="b-create-dish_label">Фото</label>
   <input ng-model="dish.preview" type="file" class="b-create-dish_text">
-  <input type="submit" value="Добавить блюдо">
+  <label type="text" class="b-create-dish_label">Категория</label>
+  <select ng-model="dish.catId">
+    <option ng-repeat="cat in catsList" ng-model="cat.id">{{cat.name}}</option>
+  </select>
+  <input ng-click="dish.add(dish)" class="b-create-dish_submit" type="submit" value="Добавить блюдо">
 </form>

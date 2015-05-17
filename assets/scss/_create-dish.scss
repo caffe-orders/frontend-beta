@@ -1,0 +1,27 @@
+.b-create-dish {
+  width: 70%;
+  margin: 1% auto;
+
+  &_form {
+    width: 40%;
+    max-width: 900px;
+    min-width: 320px;
+    height: auto;
+    float: left;
+    line-height: 40px;
+    @media #{$break-small} {
+      width: 100%;
+      float: none;
+    }
+    
+    lable, input {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    input {
+      padding: 0 0 0 1%;
+    }
+  }
+}

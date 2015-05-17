@@ -13,6 +13,7 @@ angular.module('app.TableReserveView', [
 .controller('TableReserveCtrl', ['$scope', '$routeParams', '$http', '$location', '$rootScope',
   function($scope, $routeParams, $http, $location, $rootScope) {
     //init base data
+    $rootScope.title = 'Заказать столик';
     $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
     $scope.reserveTablePanel = {
       state: {
@@ -34,7 +35,7 @@ angular.module('app.TableReserveView', [
         currRoom: 0,
         get: function() {
           var roomId = $scope.reserveTablePanel.rooms.currRoom;
-          return ($scope.reserveTablePanel.rooms.data[roomId] != null) ? 
+          return ($scope.reserveTablePanel.rooms.data[roomId] != null) ?
             $scope.reserveTablePanel.rooms.data[roomId] : $scope.reserveTablePanel.rooms.data[0];
         },
         prev: function() {
@@ -81,6 +82,9 @@ angular.module('app.TableReserveView', [
             });
           }
         }
+      },
+      reserveTable: function(table) {
+        alert('lalka');
       }
     }
     $scope.reserveTablePanel.rooms.getRoomsList(5);
