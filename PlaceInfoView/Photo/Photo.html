@@ -9,11 +9,11 @@
 
 <section class="b-photo-gallery">
   <div class="b-photo-gallery_full-img-wrap">
-    <figure class="b-photo-gallery_full-img"><img ng-src="{{fullImgUrl}}" alt=""></figure>
+    <figure class="b-photo-gallery_full-img"><img ng-src="//files.caffe.ru/files/{{fullImgUrl}}" alt=""></figure>
   </div>
   
   <section class="b-photo-gallery_prev-wrap">
-    <figure ng-repeat="img in galleryData" style="background: url({{img}}) no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg($index)"></figure>
+    <figure ng-repeat="img in galleryData" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg($index)"></figure>
   </section>
   <p ng-class="{visible: album.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет фото</p>
 </section>

@@ -20,6 +20,7 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
       height: auto;
       margin: 1% 0 1% 1%;
       background-color: rgba(0, 0, 0, .8);
+      transition: .4s;
     }
     
     &__hide {

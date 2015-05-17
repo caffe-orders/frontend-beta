@@ -1401,15 +1401,16 @@ xsigin/signup popup
     width: 99%;
     height: auto;
     margin: 1% 0 1% 1%;
-    background-color: rgba(0, 0, 0, 0.8); }
-  /* line 25, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: .4s; }
+  /* line 26, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_full-img__hide {
     display: none; }
-  /* line 29, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 30, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_full-img img {
     width: 100%;
     height: 100%; }
-/* line 35, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+/* line 36, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
 .b-photo-gallery_img-prev {
   z-index: 1;
   width: 19%;
@@ -1418,7 +1419,7 @@ xsigin/signup popup
   margin: 0 0 1% 1%;
   overflow: hidden;
   transition: .3s; }
-  /* line 44, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 45, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_img-prev:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px; }
@@ -1429,7 +1430,7 @@ xsigin/signup popup
     .b-photo-gallery_img-prev {
       width: 32.3%;
       height: 120px; } }
-  /* line 58, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 59, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_img-prev img {
     z-index: 0;
     width: 100%;

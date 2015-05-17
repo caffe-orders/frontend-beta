@@ -269,6 +269,11 @@ angular.module('app.OwnerPanelPhotoView', [
               headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
             };
             $http(req).success(function(data) {
+              $http.get('//api.caffe.ru/albums/list?placeId=' + $scope.placeId).success(function(data, state) {
+                $scope.galleryData = data;
+                $rootScope.title = 'Фото | CaffeOrders';
+                if(state == 204) $scope.album.state.noData = true;
+              });
               alert('Фото добавлено');
             });
           });
@@ -288,7 +293,11 @@ angular.module('app.OwnerPanelPhotoView', [
               headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
           };
           $http(req).success(function(data) {
-            alert('Фото добавлено');
+            $http.get('//api.caffe.ru/albums/list?placeId=' + $scope.placeId).success(function(data, state) {
+              $scope.galleryData = data;
+              $rootScope.title = 'Фото | CaffeOrders';
+              if(state == 204) $scope.album.state.noData = true;
+            });
           });
         }
       }
