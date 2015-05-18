@@ -1418,8 +1418,9 @@ xsigin/signup popup
   float: left;
   margin: 0 0 1% 1%;
   overflow: hidden;
-  transition: .3s; }
-  /* line 45, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  transition: .3s;
+  background-size: cover !important; }
+  /* line 46, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_img-prev:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px; }
@@ -1430,7 +1431,7 @@ xsigin/signup popup
     .b-photo-gallery_img-prev {
       width: 32.3%;
       height: 120px; } }
-  /* line 59, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
+  /* line 60, Z:/home/caffe.ru/www/assets/scss/_photo-gallery.scss */
   .b-photo-gallery_img-prev img {
     z-index: 0;
     width: 100%;

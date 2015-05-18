@@ -41,6 +41,7 @@ $break-small: "screen and (min-width: 240px) and (max-width: 853px)";
     margin: 0 0 1% 1%;
     overflow: hidden;
     transition: .3s;
+    background-size: cover !important;
     
     &:hover {
       box-shadow: 0 0 10px rgba(0,0,0,0.5);

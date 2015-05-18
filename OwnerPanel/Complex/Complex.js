@@ -49,6 +49,7 @@ angular.module('app.OwnerPanelComplexView', [
           headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
         };
         $http(req).success(function(data) {
+          console.log('data' + data);
           $scope.complexDinnerPanel.getData();
         });
       },

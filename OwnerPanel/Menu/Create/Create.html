@@ -35,10 +35,10 @@ create dish
   <label type="text" class="b-create-dish_label">Цена</label>
   <input ng-model="dish.cost" type="text" class="b-create-dish_text">
   <label type="text" class="b-create-dish_label">Фото</label>
-  <input ng-model="dish.preview" type="file" class="b-create-dish_text">
+  <input file-model="file" type="file" class="b-create-dish_text">
   <label type="text" class="b-create-dish_label">Категория</label>
-  <select ng-model="dish.catId">
-    <option ng-repeat="cat in catsList" ng-model="cat.id">{{cat.name}}</option>
+  <select ng-model="magic.catId">
+    <option ng-repeat="cat in catsList" value="{{cat.id}}">{{cat.name}}</option>
   </select>
   <input ng-click="dish.add(dish)" class="b-create-dish_submit" type="submit" value="Добавить блюдо">
 </form>
