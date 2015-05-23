@@ -1,4 +1,4 @@
-angular.module('app.UserProfileStatView', [
+angular.module('App.UserProfileStat', [
   'ngRoute',
   'ui.bootstrap',
   'ngSanitize'
@@ -6,21 +6,15 @@ angular.module('app.UserProfileStatView', [
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/user/:userId/stat/', {
-      templateUrl: 'UserProfile/Stat/Stat.html',
-      controller: 'UserProfileStatCtrl'
-    })
+	when('/user/:userId/stat/', {
+	  templateUrl: 'UserProfile/Stat/Stat.html',
+	  controller: 'UserProfileStatCtrl'
+	})
 }])
 
-.controller('UserProfileStatCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
+.controller('UserProfileStatCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams, $http, $location, $sce, $rootScope) {
-    //init base data
-    $scope.userId = $routeParams.userId;
-    $scope.userUrl = 'user/' + $routeParams.userId + '/';
-    
-    //get all needed data about place (json)
-    $http.get('tmp/user.json').success(function(data) {
-      $scope.userData = data;
-      $rootScope.title = 'Статистика | CaffeOrders';
-    });
+	//init base data
+	$scope.userId = $routeParams.userId;
+	$scope.userUrl = 'user/' + $routeParams.userId + '/';
 }]);

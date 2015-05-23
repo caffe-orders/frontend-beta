@@ -1,0 +1,26 @@
+<nav class="b-top-tab-nav c-box-sz_bd-box">
+  <a href="{{placeUrl}}about" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__about">О нас</a>
+  <a href="{{placeUrl}}menu" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Меню</a>
+  <a href="{{placeUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__photo">Фото</a>
+  <a href="{{placeUrl}}comments" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__comments">Отзывы</a>
+  <a href="{{placeUrl}}complex" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Обеды</a>
+  <a href="table/reserve/{{placeId}}" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
+</nav>
+    
+<section class="b-comment">
+   <form class="b-send-comment-form">
+     <textarea class="b-send-comment-form_text" rows="6" ng-model="comment.text" name="text">Оставьте отзыв о заведении!</textarea>
+     <label class="b-send-comment-form_label" for="state">Понравилось?</label>
+     <input class="b-send-comment-form_checkbox" ng-model="comment.state" ng-init="comment.state = true;" type="checkbox" name="state" value="true" >
+     <input class="b-send-comment-form_submit" ng-click="commentsPanel.send(comment)" type="submit" value="Отправить">
+   </form>
+  <article ng-repeat="comment in commentsPanel.commentsList" class="b-comment_item">
+    <div class="b-comment_uname c-box-sz_bd-box c-text__sz-big c-text__al-left c-text__clr-white">{{comment.firstName}} {{comment.lastName}}</div>
+    <div class="b-comment_state c-text__sz-big c-text__al-center {{comment.state === '1' ? 'b-comment_state__like' : 'b-comment_state__dislike'}}" ng-bind="comment.state === '1' ? 'Понравилось' : 'Не понравилось'"></div>
+    <div class="c-clr_fix"></div>
+    <div class="b-comment_text c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black" ng-bind="comment.text"></div>
+    <div class="b-comment_pub-date c-text__sz-avg c-text__al-right c-text__clr-black" ng-bind="comment.pubDate"></div>
+  </article>
+  <p ng-class="{visible: commentsPanel.state.noComments}" class="b-center-message c-text__al-center c-text__sz-avg">Нет комментариев</p>
+<div class="c-clr_fix"></div>
+</section>

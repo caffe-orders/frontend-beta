@@ -6,37 +6,37 @@
 <nav class="b-top-nav">
   <a href="{{ownerUrl}}stat" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Статистика</a>
   <span class="dropdown" dropdown on-toggle="toggled(open)">
-    <a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
-    <ul class="dropdown-menu">
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
-    </ul>
+	<a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
+	<ul class="dropdown-menu">
+	  <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
+	  <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
+	</ul>
   </span>
   <a href="{{ownerUrl}}comments" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комментарии</a>
   <a href="{{ownerUrl}}photo" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Фото</a>
   <span class="dropdown" dropdown on-toggle="toggled(open)">
-    <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
-    <ul class="dropdown-menu">
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
-      <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
-    </ul>
+	<a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
+	<ul class="dropdown-menu">
+	  <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
+	  <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
+	  <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
+	</ul>
   </span>
 </nav>
 
 <section class="b-photo-gallery">
- 
+
   <form class="b-add-img-form">
-    <div class="b-add-img-form_label">Загрузить</div>
-    <input file-model="file" type="file">
-    <input ng-click="imgPanel.add()" class="c-text__clr-white b-add-img-form_submit" type="submit" value="Добавить картинку">
+	<div class="b-add-img-form_label">Загрузить</div>
+	<input file-model="imgUploadForm.file" type="file">
+	<input ng-click="album.add()" class="c-text__clr-white b-add-img-form_submit" type="submit" value="Добавить фото">
   </form>
   <div class="b-photo-gallery_full-img-wrap">
-    <figure class="b-photo-gallery_full-img"><img ng-src="//files.caffe.ru/files/{{fullImgUrl}}" alt=""></figure>
+	<figure class="b-photo-gallery_full-img"><img ng-src="//files.caffe.ru/files/{{fullImgUrl}}" alt=""></figure>
   </div>
-  
+
   <section class="b-photo-gallery_prev-wrap">
-    <figure ng-repeat="img in galleryData" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="showFullImg($index)"><a ng-click="imgPanel.delete(img)" style="cursor: pointer;">Удалить</a></figure>
+	<figure ng-repeat="img in album.data" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="album.showFullImg($index)"><a ng-click="album.delete(img)" style="cursor: pointer;">Удалить</a></figure>
   </section>
   <p ng-class="{visible: album.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет фото</p>
 </section>

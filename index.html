@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru" ng-app="app">
+<html lang="ru" ng-app="App">
 <head>
   <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <base href="/">
-  <title>{{title}} Сервис быстрого бронирования столиков онлайн</title>
+  <title>CaffeOrders.ru - бронирование столиков онлайн</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Caffe-Orders Сервис быстрого бронирования столиков онлайн">
@@ -17,43 +17,43 @@
 <body class="c-text">
   <!-- <img src="http://api.caffe.ru/auth/login?email=clain@sample.com&password=199626" class="hidden"> -->
   <nav class="b-main-nav">
-    <a href="/" class="b-main-nav_btn">
-      <figure class="c-icon c-icon_logo c-icon__cover"></figure>
-    </a>
-    <a href="#" class="b-main-nav_btn b-main-nav_btn__toggle" ng-click="menuPanelCollapsed = !menuPanelCollapsed" tooltip="Меню" tooltip-placement="right">
-      <figure class="c-icon c-icon_nav c-icon__cover"></figure>
-    </a>
-    <a href="#" ng-init="signInOutModalVisible = false" ng-click="signInOutModalVisible = !signInOutModalVisible" class="b-main-nav_btn" tooltip="Войти или зарегистрироваться" tooltip-placement="right">
-      <figure class="c-icon c-icon_sign-in c-icon__cover"></figure>
-    </a>
-    <a href="user/0/" class="b-main-nav_btn" tooltip="Профиль" tooltip-placement="right">
-      <figure class="c-icon c-icon_user-profile c-icon__cover"></figure>
-    </a>
-    <a href="javascript:window.scroll(0,0)" class="b-main-nav_btn b-main-nav_btn__bottom bottom">
-      <figure class="c-icon c-icon_up c-icon__cover"></figure>
-    </a>
+	<a href="/" class="b-main-nav_btn">
+	  <figure class="c-icon c-icon_logo c-icon__cover"></figure>
+	</a>
+	<a href="#" class="b-main-nav_btn b-main-nav_btn__toggle" ng-click="menuPanelCollapsed = !menuPanelCollapsed" tooltip="Меню" tooltip-placement="right">
+	  <figure class="c-icon c-icon_nav c-icon__cover"></figure>
+	</a>
+	<a href="#" ng-init="signInOutModalVisible = false" ng-click="signInOutModalVisible = !signInOutModalVisible" class="b-main-nav_btn" tooltip="Войти или зарегистрироваться" tooltip-placement="right">
+	  <figure class="c-icon c-icon_sign-in c-icon__cover"></figure>
+	</a>
+	<a href="user/0/" class="b-main-nav_btn" tooltip="Профиль" tooltip-placement="right">
+	  <figure class="c-icon c-icon_user-profile c-icon__cover"></figure>
+	</a>
+	<a href="javascript:window.scroll(0,0)" class="b-main-nav_btn b-main-nav_btn__bottom bottom">
+	  <figure class="c-icon c-icon_up c-icon__cover"></figure>
+	</a>
   </nav><!-- b-main-nav -->
-  
+
   <section ng-view class="b-content c-box-sz_bd-box"></section><!-- b-content -->
-  
+
   <nav ng-init="menuPanelCollapsed = true;" ng-class="{visible: menuPanelCollapsed == false}" class="b-drop-down-nav">
-    <div class="b-drop-down-nav_wrap">
-      <div class="b-drop-down-nav_title c-text__sz-big c-text__al-left c-text__clr-white">Разделы</div>
-      <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Забронировать столик</a>
-      <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Устроить корпоратив</a>
-      <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Комплексные обеды</a>
-    </div>
+	<div class="b-drop-down-nav_wrap">
+	  <div class="b-drop-down-nav_title c-text__sz-big c-text__al-left c-text__clr-white">Разделы</div>
+	  <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Забронировать столик</a>
+	  <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Устроить корпоратив</a>
+	  <a href="#" class="b-drop-down-nav_btn c-text__sz-avg c-text__al-left c-text__clr-white">Комплексные обеды</a>
+	</div>
   </nav>
-  
+
   <div class="cd-user-modal" ng-class="{visible: signInOutModalVisible}">
   <div class="cd-user-modal-container">
-    <ul class="cd-switcher" ng-init="regLogModalTabSelected = 0;">
-      <li><a ng-class="{selected: regLogModalTabSelected == 0}" ng-click="regLogModalTabSelected = 0;">Вход</a></li>
-      <li><a ng-class="{selected: regLogModalTabSelected == 1}" ng-click="regLogModalTabSelected = 1;">Регистрация</a></li>
-    </ul>
-    <div id="cd-login" ng-class="{visible: regLogModalTabSelected == 0}">
-      <form class="cd-form">
-        <p class="fieldset">
+	<ul class="cd-switcher" ng-init="regLogModalTabSelected = 0;">
+	  <li><a ng-class="{selected: regLogModalTabSelected == 0}" ng-click="regLogModalTabSelected = 0;">Вход</a></li>
+	  <li><a ng-class="{selected: regLogModalTabSelected == 1}" ng-click="regLogModalTabSelected = 1;">Регистрация</a></li>
+	</ul>
+	<div id="cd-login" ng-class="{visible: regLogModalTabSelected == 0}">
+	  <form class="cd-form">
+		<p class="fieldset">
 		  <label class="image-replace cd-email" for="signin-email">E-mail</label>
 		  <input class="full-width has-padding has-border" ng-model="loginForm.data.loginForm.email" id="signin-email" type="email" placeholder="E-mail">
 		  <span class="cd-error-message" ng-class="{visible: loginForm.state.wrongLoginEmail}">Не верный email</span>
@@ -69,101 +69,100 @@
 		<p class="fieldset">
 		  <input class="full-width" type="submit" ng-click="loginForm.login()" value="Войти">
 		</p>
-      </form>
-				
+	  </form>
+
 	  <p class="cd-form-bottom-message"><a ng-click="regLogModalTabSelected = 2">Забыли свой пароль?</a></p>
-    </div>
+	</div>
 
 	<div id="cd-signup" ng-class="{visible: regLogModalTabSelected == 1}"> <!-- форма регистрации -->
-      <form class="cd-form">
-        <p class="fieldset">
-          <label class="image-replace cd-email" for="signup-email">E-mail</label>
-          <input ng-model="loginForm.data.registrationForm.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-        </p>
-        
-         <p class="fieldset">
-          <label class="image-replace cd-password" for="signup-phone">Телефон</label>
-          <input ng-model="loginForm.data.registrationForm.phone" class="full-width has-padding has-border" id="signup-phone" type="text"  placeholder="Телефон (375291224598)">
-        </p>
-        
-         <p class="fieldset">
-          <label class="image-replace cd-password" for="signup-password">Пароль</label>
-          <input ng-model="loginForm.data.registrationForm.password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Пароль">
-        </p>
-        <p class="fieldset">
+	  <form class="cd-form">
+		<p class="fieldset">
+		  <label class="image-replace cd-email" for="signup-email">E-mail</label>
+		  <input ng-model="loginForm.data.registrationForm.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+		</p>
+
+		 <p class="fieldset">
+		  <label class="image-replace cd-password" for="signup-phone">Телефон</label>
+		  <input ng-model="loginForm.data.registrationForm.phone" class="full-width has-padding has-border" id="signup-phone" type="text"  placeholder="Телефон (375291224598)">
+		</p>
+
+		 <p class="fieldset">
+		  <label class="image-replace cd-password" for="signup-password">Пароль</label>
+		  <input ng-model="loginForm.data.registrationForm.password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Пароль">
+		</p>
+		<p class="fieldset">
 		  <p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongRegister}">Email должен быть акутальным!<br>Tелефон нужно задать в формате "375291255678"!<br>Пароль должен состоять из цифр и символов и быть длинее 6 символов!</p>
 		</p>
-       
-        <p class="fieldset">
+
+		<p class="fieldset">
 		  <p class="cd-form-message c-text__clr-green" style="display: none;" ng-class="{visible: loginForm.state.successRegister}">На ваш email и мобильный телефон отправлено сообщение с ссылкой для активации вашего аккаунта!</p>
 		</p>
-        <!--<p class="fieldset">
-          <input type="checkbox" id="accept-terms">
-          <label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
-        </p> -->
+		<!--<p class="fieldset">
+		  <input type="checkbox" id="accept-terms">
+		  <label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
+		</p> -->
 
-        <p class="fieldset">
-          <input ng-click="loginForm.register()" class="full-width has-padding" type="submit" value="Создать аккаунт">
-        </p>
-      </form>
-    </div> <!-- cd-signup -->
+		<p class="fieldset">
+		  <input ng-click="loginForm.register()" class="full-width has-padding" type="submit" value="Создать аккаунт">
+		</p>
+	  </form>
+	</div> <!-- cd-signup -->
 
-    <div id="cd-reset-password" ng-class="{visible: regLogModalTabSelected == 2}"> <!-- форма восстановления пароля -->
-      <p class="cd-form-message">Забыли пароль? Пожалуйста, введите адрес своей электронной почты. Вы получите ссылку, чтобы создать новый пароль.</p>
+	<div id="cd-reset-password" ng-class="{visible: regLogModalTabSelected == 2}"> <!-- форма восстановления пароля -->
+	  <p class="cd-form-message">Забыли пароль? Пожалуйста, введите адрес своей электронной почты. Вы получите ссылку, чтобы создать новый пароль.</p>
 
-      <form class="cd-form">
-        <p class="fieldset">
-          <label class="image-replace cd-email" for="reset-email">E-mail</label>
-          <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
-          <span class="cd-error-message">Здесь сообщение об ошибке!</span>
-        </p>
+	  <form class="cd-form">
+		<p class="fieldset">
+		  <label class="image-replace cd-email" for="reset-email">E-mail</label>
+		  <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+		  <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+		</p>
 
-        <p class="fieldset">
-          <input class="full-width has-padding" type="submit" value="Восстановить пароль">
-        </p>
-      </form>
-    </div> <!-- cd-reset-password -->
-    <a ng-click="signInOutModalVisible = false" class="cd-close-form">Закрыть</a>
+		<p class="fieldset">
+		  <input class="full-width has-padding" type="submit" value="Восстановить пароль">
+		</p>
+	  </form>
+	</div> <!-- cd-reset-password -->
+	<a ng-click="signInOutModalVisible = false" class="cd-close-form">Закрыть</a>
   </div> <!-- cd-user-modal-container -->
 </div> <!-- cd-user-modal -->
-  
+
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-cookies.js"></script>
   <script src="assets/libs/google-charts.js"></script>
   <script src="assets/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  <script src="assets/libs/detect.min.js"></script>
   <script src="app.js"></script>
-  <script src="PlacePreviewsListView/PlacePreviewsListView.js"></script>
-  <script src="PlaceInfoView/About/About.js"></script>
-  <script src="PlaceInfoView/Comments/Comments.js"></script>
-  <script src="PlaceInfoView/Menu/Menu.js"></script>
-  <script src="PlaceInfoView/Photo/Photo.js"></script>
-  <script src="PlaceInfoView/Complex/Complex.js"></script>
+  <script src="Common/Provider/DetectJsProvider.js"></script>
+  <script src="Common/Provider/ApiRequestProvider.js"></script>
+  <script src="Common/Provider/AuthProvider.js"></script>
+  <script src="Common/Provider/UserDataProvider.js"></script>
+  <script src="Common/Provider/SendFileProvider.js"></script>
+  <script src="Common/Provider/md5Provider.js"></script>
+  <script src="Common/Directive/FileModel.js"></script>
+  <script src="PlacesList/Index/Index.js"></script>
+  <script src="PlacesList/Search/Search.js"></script>
+  <script src="Place/About/About.js"></script>
+  <script src="Place/Comment/Comment.js"></script>
+  <script src="Place/ComplexDinner/ComplexDinner.js"></script>
+  <script src="Place/Menu/Menu.js"></script>
+  <script src="Place/Photo/Photo.js"></script>
+  <script src="Place/Order/Corporate/Corporate.js"></script>
+  <script src="Place/Order/Table/Table.js"></script>
+  <script src="OwnerPanel/Comment/Comment.js"></script>
+  <script src="OwnerPanel/ComplexDinner/ComplexDinner.js"></script>
+  <script src="OwnerPanel/OrderCheck/OrderCheck.js"></script>
+  <script src="OwnerPanel/Photo/Photo.js"></script>
+  <script src="OwnerPanel/Place/About/About.js"></script>
+  <script src="OwnerPanel/Place/Room/Room.js"></script>
+  <script src="OwnerPanel/Place/Statistics/Statistics.js"></script>
+  <script src="OwnerPanel/Menu/Menu.js"></script>
+  <script src="BadBrowser/BadBrowser.js"></script>
   <script src="UserProfile/About/About.js"></script>
-  <script src="UserProfile/Settings/Settings.js"></script>
-  <script src="UserProfile/Stat/Stat.js"></script>
   <script src="UserProfile/Change/Pass/Pass.js"></script>
   <script src="UserProfile/Change/Phone/Phone.js"></script>
-  <script src="PlaceSearchView/PlaceSearchView.js"></script>
-  <script src="Table/Reserve/Reserve.js"></script>
-  <script src="OwnerPanel/Index/Index.js"></script>
-  <script src="OwnerPanel/Stat/Stat.js"></script>
-  <script src="OwnerPanel/Place/Place.js"></script>
-  <script src="OwnerPanel/Comments/Comments.js"></script>
-  <script src="Auth/AuthService.js"></script>
-  <script src="assets/libs/detect.min.js"></script>
-  <script src="Common/DetectJsProvider.js"></script>
-  <script src="BadBrowser/BadBrowser.js"></script>
-  <script src="OwnerPanel/Rooms/Create/Create.js"></script>
-  <script src="OwnerPanel/Rooms/Edit/Edit.js"></script>
-  <script src="OwnerPanel/Rooms/Edit/Base/Base.js"></script>
-  <script src="OwnerPanel/Photo/Photo.js"></script>
-  <script src="OwnerPanel/Menu/Create/Create.js"></script>
-  <script src="OwnerPanel/Menu/Edit/Edit.js"></script>
-  <script src="OwnerPanel/Menu/Edit/Base/Base.js"></script>
-  <script src="OwnerPanel/Complex/Complex.js"></script>
   <script src="UserProfile/Change/Uname/Uname.js"></script>
-  <script src="Activation/Activation.js"></script>
-</body>
-</html>
+  <script src="UserProfile/Settings/Settings.js"></script>
+  <script src="UserProfile/Stat/Stat.js"></script>

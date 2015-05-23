@@ -1,4 +1,4 @@
-angular.module('app.UserProfileChangeUnameView', [
+angular.module('App.UserProfileChangeUname', [
   'ngRoute',
   'ui.bootstrap',
   'ngSanitize'
@@ -6,50 +6,38 @@ angular.module('app.UserProfileChangeUnameView', [
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/user/:userId/change/uname/', {
-      templateUrl: 'UserProfile/Change/Uname/Uname.html',
-      controller: 'UserProfileChangeUnameCtrl'
-    })
+	when('/user/:userId/change/uname/', {
+	  templateUrl: 'UserProfile/Change/Uname/Uname.html',
+	  controller: 'UserProfileChangeUnameCtrl'
+	})
 }])
 
-.controller('UserProfileChangeUnameCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce', '$rootScope',
+.controller('UserProfileChangeUnameCtrl', ['$scope', '$routeParams', 'ApiRequest', 'UserData',
   function($scope, $routeParams, $http, $location, $sce, $rootScope) {
-    //init base data
-    $scope.userId = $routeParams.userId;
-    $scope.userUrl = 'user/' + $routeParams.userId + '/';
-    
-    //get all needed data about place (json)
-    $http.get('tmp/user.json').success(function(data) {
-      $scope.userData = data;
-      $rootScope.title = 'Сменить телефон | CaffeOrders';
-    });
-    
-    $scope.unameChangeForm = {
-      firstName: null,
-      lastName: null,
-      change: function() {
-        if(true) {
-          var req = {
-            method: 'POST',
-            url: '//api.caffe.ru/users/changeuname',
-            crossDomain: true,
-            withCredentials: true,
-            data: { 
-              'firstname': $scope.unameChangeForm.firstName,
-              'lastname': $scope.unameChangeForm.lastName
-            },
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
-          };
-          $http(req).success(function(data, state) {
-            if(state == 200) {
-              var user = angular.fromJson(localStorage.getItem('user'));
-              user.firstName = $scope.unameChangeForm.firstName;
-              user.lastName = $scope.unameChangeForm.lastName; 
-              localStorage.setItem('user', angular.toJson(user));
-            }
-          });
-        }
-        else console.log('wrong name format');
-      }
-    };
+	//init base data
+	$scope.userId = $routeParams.userId;
+	$scope.userUrl = 'user/' + $routeParams.userId + '/';
+
+	$scope.unameChangeForm = {
+		firstName: null,
+		lastName: null,
+		change: function() {
+			if(true) {
+			ApiRequest.post('/changeuname', {
+				'firstname': $scope.unameChangeForm.firstName,
+				'lastname': $scope.unameChangeForm.lastName
+			}, false)
+			.success(function(data, state) {
+				if(state == 200) {
+					var user = UserData.data;
+					user.firstName = $scope.unameChangeForm.firstName;
+					user.lastName = $scope.unameChangeForm.lastName;
+					UserData.setData(user);
+				}
+			});
+		} else {
+			console.log('wrong name format');
+		}
+	  }
+	};
 }]);
