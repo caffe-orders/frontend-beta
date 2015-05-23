@@ -87,5 +87,6 @@ function($scope, $routeParams, md5, ApiRequest, SendFile) {
 		data: [],
 		fullImgUrl: null
 	}
+	$scope.album.showFullImg(0);
 	$scope.album.getImgList($routeParams.placeId);
 }]);
