@@ -1,23 +1,24 @@
 <nav class="b-top-tab-nav c-box-sz_bd-box">
   <a href="{{placeUrl}}about" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__about">О нас</a>
-  <a href="{{placeUrl}}menu" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Мено</a>
+  <a href="{{placeUrl}}menu" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Меню</a>
   <a href="{{placeUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__photo">Фото</a>
   <a href="{{placeUrl}}comments" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__comments">Отзывы</a>
   <a href="{{placeUrl}}complex" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Обеды</a>
+  <a href="{{placeUrl}}tables" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
 </nav>
 
 <section class="b-res-table">
   <header class="b-res-table_title c-text__sz-big c-text__al-center c-text__clr-black">Забронировать столик в этом заведении</header>
   <section class="b-res-table_wrap">
-    <div ng-click="reserveTablePanel.rooms.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
-    <div class="b-res-table_deck" style="background: #123333">
-   
-      <a ng-click="reserveTablePanel.reserveTable(table)" ng-repeat="table in reserveTablePanel.rooms.data[reserveTablePanel.rooms.currRoom].tablesList" class="b-res-table_table" style="top: {{table.yPos}}%; left: {{table.xPos}}%; background: {{reserveTablePanel.table.setBg(table.active)}};">
-        <div class="b-res-table_occupied">0/4</div>
-      </a>
-      </div>
-    
-    </div>
+	<div ng-click="reserveTablePanel.rooms.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
+	<div class="b-res-table_deck" style="background: #123333">
+
+	  <a ng-click="reserveTablePanel.reserveTable(table)" ng-repeat="table in reserveTablePanel.rooms.data[reserveTablePanel.rooms.currRoom].tablesList" class="b-res-table_table" style="top: {{table.yPos}}%; left: {{table.xPos}}%; background: {{reserveTablePanel.table.setBg(table.active)}};">
+		<div class="b-res-table_occupied">0/4</div>
+	  </a>
+	  </div>
+
+	</div>
   <div ng-click="reserveTablePanel.rooms.next()" class="b-res-table_btn c-icon_custom__arr-right"></div>
   <p ng-class="{visible: reserveTablePanel.state.noComments}" class="b-center-message c-text__al-center c-text__sz-avg">Нет столиков</p>
   </section>

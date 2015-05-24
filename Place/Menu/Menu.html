@@ -4,29 +4,29 @@
   <a href="{{placeUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__photo">Фото</a>
   <a href="{{placeUrl}}comments" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__comments">Отзывы</a>
   <a href="{{placeUrl}}complex" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Обеды</a>
-  <a href="table/reserve/{{placeId}}" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
+  <a href="{{placeUrl}}tables" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
 </nav>
-   
+
 <section class="b-place">
   <div class="b-menu c-box-sz_bd-box">
-    <div ng-class="{hidden: menuPanel.state.noData}" class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">{{menuPanel.currCat.categoryName}}</div>
-      
-    <div ng-class="{hidden: menuPanel.state.noData}" ng-repeat="dish in menuPanel.currCat.dishList" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
-      <figure class="b-menu-item_img"><img class="c-icon__cover" src="//files.caffe.ru/files/dishs/{{dish.id}}.jpg"></figure>
-      <div class="b-menu-item_desc">
-        <div class="b-menu-item_desc-title" ng-bind="dish.name"></div>
-        <div class="b-menu-item_desc-content" ng-bind="dish.description"></div>
-      </div>
-      <div class="b-menu-item_cost">
-        <div class="b-menu-item_cost-title">Цена:</div>
-        <div class="b-menu-item_cost-content c-text__st-bold" ng-bind="dish.cost"></div>
-      </div>
-    </div>
+	<div ng-class="{hidden: menuPanel.state.noData}" class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">{{menuPanel.currCat.categoryName}}</div>
+
+	<div ng-class="{hidden: menuPanel.state.noData}" ng-repeat="dish in menuPanel.currCat.dishList" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
+	  <figure class="b-menu-item_img"><img class="c-icon__cover" src="//files.caffe.ru/files/dishs/{{dish.id}}.jpg"></figure>
+	  <div class="b-menu-item_desc">
+		<div class="b-menu-item_desc-title" ng-bind="dish.name"></div>
+		<div class="b-menu-item_desc-content" ng-bind="dish.description"></div>
+	  </div>
+	  <div class="b-menu-item_cost">
+		<div class="b-menu-item_cost-title">Цена:</div>
+		<div class="b-menu-item_cost-content c-text__st-bold" ng-bind="dish.cost"></div>
+	  </div>
+	</div>
   </div>
-    
+
   <section class="b-menu-cat c-box-sz_bd-box c-text__sz-avg c-text__al-center c-text__clr-white">
-    <div ng-class="{hidden: menuPanel.state.noData}" class="b-menu-cat_title c-text__sz-big c-text__clr-black">Категории блюд</div>
-    <div ng-repeat="cat in menuPanel.data" class="b-menu-cat_btn" ng-click="menuPanel.changeCat($index);">{{cat.categoryName}}</div>
+	<div ng-class="{hidden: menuPanel.state.noData}" class="b-menu-cat_title c-text__sz-big c-text__clr-black">Категории блюд</div>
+	<div ng-repeat="cat in menuPanel.data" class="b-menu-cat_btn" ng-click="menuPanel.changeCat($index);">{{cat.categoryName}}</div>
   </section>
   <p ng-class="{visible: menuPanel.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет меню</p>
 </section>

@@ -4,7 +4,7 @@
   <a href="{{placeUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__photo">Фото</a>
   <a href="{{placeUrl}}comments" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__comments">Отзывы</a>
   <a href="{{placeUrl}}complex" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Обеды</a>
-  <a href="table/reserve/{{placeId}}" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
+  <a href="{{placeUrl}}tables" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
 </nav>
 
 <section class="b-place">
@@ -20,7 +20,7 @@
   </div>
   <div class="b-menu c-box-sz_bd-box" style="width: 100% !important;">
 	<div class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Комплексные обеды</div>
-	  
+
 	<div ng-repeat="dinner in complexDinnerPanel.dinnersList | filter:week" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
 	  <figure class="b-menu-item_img"><img class="c-icon__cover" src="//files.caffe.ru/files/complexDinner/{{dinner.id}}.jpg" alt=""></figure>
 	  <div class="b-menu-item_desc">

@@ -4,16 +4,16 @@
   <a href="{{placeUrl}}photo" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__photo">Фото</a>
   <a href="{{placeUrl}}comments" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__comments">Отзывы</a>
   <a href="{{placeUrl}}complex" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Обеды</a>
-  <a href="table/reserve/{{placeId}}" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
+  <a href="{{placeUrl}}tables" class="b-top-tab-nav_btn c-text__sz-avg c-text__al-center c-text__clr-white c-icon_tab__menu">Заказать столик</a>
 </nav>
 
 <section class="b-photo-gallery">
   <div class="b-photo-gallery_full-img-wrap">
-    <figure class="b-photo-gallery_full-img"><img ng-src="//files.caffe.ru/files/{{album.fullImgUrl}}" alt=""></figure>
+	<figure class="b-photo-gallery_full-img"><img ng-src="//files.caffe.ru/files/{{album.fullImgUrl}}" alt=""></figure>
   </div>
-  
+
   <section class="b-photo-gallery_prev-wrap">
-    <figure ng-repeat="img in album.data" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="album.showFullImg($index)"></figure>
+	<figure ng-repeat="img in album.data" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="album.showFullImg($index)"></figure>
   </section>
   <p ng-class="{visible: album.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет фото</p>
 </section>

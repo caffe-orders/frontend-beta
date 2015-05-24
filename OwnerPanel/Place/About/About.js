@@ -36,11 +36,12 @@ angular.module('App.OwnerPanelPlaceAbout', [
 				avgBill: place.avgBill
 			}, false)
 			.success(function(data) {
-				  console.log('edit success');
+				console.log('edit success');
+				alert('Данные изменены');
 			})
 			.error(function() {
 				alert('Не удалось изменить данные');
-				  console.log('api return error while trying to edit place data');
+				console.log('api return error while trying to edit place data');
 			});
 		},
 		getBaseData: function(placeId) {
