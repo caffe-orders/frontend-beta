@@ -48,7 +48,7 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
 	]);
 }]).
 run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
-  AuthProvider.logIn('clain@sample.com', '199626');
+  //AuthProvider.logIn('clain@sample.com', '199626');
 
   if(BrowserData.browser.family == 'IE' || BrowserData.browser.family == 'Opera Mini') {
 	$location.path('/badbrowser/');
@@ -65,5 +65,80 @@ run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
 			alert('Введен неверный код либо заказа нет!');
 		});
 	}
+
+	$rootScope.loginForm = {
+	'data': {
+	  'loginForm': {
+		'email': null,
+		'password': null
+	  },
+	  'registrationForm': {
+		'email': null,
+		'password': null,
+		'phone': null
+	  },
+	  'forgotPasswordForm': {
+		email: null,
+		code: null,
+		newPass: null
+	  }
+	},
+	'state': {
+	  'wrongLoginEmail': false,
+	  'wrongLoginPassword': false,
+	  'failedToLogin': false,
+	  'successLogin': false,
+	  'wrondRegister': false,
+	  'successRegister': false
+	},
+	'login': function() {
+	  if($rootScope.loginForm.checkLoginForm()) {
+		console.log('try to log in on email: ' + this.data.loginForm.email + ' , password: ' + this.data.loginForm.password);
+		AuthProvider.logIn($rootScope.loginForm.data.loginForm.email, $rootScope.loginForm.data.loginForm.password).success(function(data, state) {
+		  $rootScope.signInOutModalVisible = false;
+		}).error(function(data, state) {
+		  $rootScope.loginForm.state.failedToLogin = true;
+		});
+	  } else {
+		$rootScope.loginForm.state.wrongLogin = true;
+	  }
+	},
+	'register': function() {
+	  if($rootScope.loginForm.checkRegistrationForm()) {
+		AuthProvider.register($rootScope.loginForm.data.registrationForm.phone, $rootScope.loginForm.data.registrationForm.email, $rootScope.loginForm.data.registrationForm.password).success(function() {
+		  $rootScope.loginForm.state.successRegister = true;
+		  $rootScope.loginForm.state.wrongRegister = false;
+		  console.log('registration success');
+		}).error(function(){
+		  $rootScope.loginForm.state.wrongRegister = true;
+		});
+	  } else {
+		$rootScope.loginForm.state.wrongRegister = true;
+	  }
+	},
+	'resetPassword': function() {
+
+	},
+	'checkLoginForm': function() {
+	  if((/^((\d)|(\w)){5,18}$/).test($rootScope.loginForm.data.loginForm.password)) {
+		if((/^(.)*@(.)*\.(.){2,}$/).test($rootScope.loginForm.data.loginForm.email)) {
+		  return true;
+		} else {
+		  $rootScope.loginForm.state.wrongLoginEmail = true;
+		  return false;
+		}
+	  } else {
+		$rootScope.loginForm.state.wrongLoginPassword = true;
+		return false;
+	  }
+	},
+	'checkRegistrationForm': function() {
+	  if((/^((\d)|(\w)){5,18}$/).test($rootScope.loginForm.data.registrationForm.password) && (/^(.){1,}@(.){2,}\.(.){2,10}$/).test($rootScope.loginForm.data.registrationForm.email) && (/^(\d){12}$/).test($rootScope.loginForm.data.registrationForm.phone)) {
+		return true;
+	  } else {
+		return false;
+	  }
+	}
+  }
 
 });
