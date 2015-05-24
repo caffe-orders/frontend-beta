@@ -13,7 +13,7 @@ angular.module('App.UserProfileChangeUname', [
 }])
 
 .controller('UserProfileChangeUnameCtrl', ['$scope', '$routeParams', 'ApiRequest', 'UserData',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+  function($scope, $routeParams, ApiRequest, UserData) {
 	//init base data
 	$scope.userId = $routeParams.userId;
 	$scope.userUrl = 'user/' + $routeParams.userId + '/';
@@ -23,21 +23,27 @@ angular.module('App.UserProfileChangeUname', [
 		lastName: null,
 		change: function() {
 			if(true) {
-			ApiRequest.post('/changeuname', {
-				'firstname': $scope.unameChangeForm.firstName,
-				'lastname': $scope.unameChangeForm.lastName
-			}, false)
-			.success(function(data, state) {
-				if(state == 200) {
-					var user = UserData.data;
-					user.firstName = $scope.unameChangeForm.firstName;
-					user.lastName = $scope.unameChangeForm.lastName;
-					UserData.setData(user);
-				}
-			});
-		} else {
-			console.log('wrong name format');
+				ApiRequest.post('users/changeuname', {
+					'firstname': $scope.unameChangeForm.firstName,
+					'lastname': $scope.unameChangeForm.lastName
+				}, false)
+				.success(function(data, state) {
+					if(state == 200) {
+						var user = UserData.data;
+						user.firstName = $scope.unameChangeForm.firstName;
+						user.lastName = $scope.unameChangeForm.lastName;
+						UserData.setData(user);
+						console.log('user data edited');
+						alert('Ваши данные успешно изменены');
+					}
+				})
+				.error(function(data, state) {
+					alert('Произошла ошибка при изменении данных, попробуйте позже');
+				});
+			} else {
+				console.log('wrong name format');
+				alert('Слишком длинное/короткое имя/фамилия');
+			}
 		}
-	  }
 	};
 }]);

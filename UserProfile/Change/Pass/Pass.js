@@ -31,16 +31,20 @@ angular.module('App.UserProfileChangePass', [
 					}, false)
 					.success(function(data, state) {
 						console.log('password changed');
+						alert('Ваш пароль успешно изменен');
 					})
 					.error(function(data, state) {
-						console.log('api retyrn arror while trying to change user password');
+						console.log('api return arror while trying to change user password');
+						alert('Возникла ошибка при изменении пароля, попробуйте позже');
 					});
 				} else {
 					console.log('passwords must me similar' + $scope.passChangeForm.newPass + $scope.passChangeForm.repeatedPass);
+					alert('Введенные пароли не совпадают');
 				}
 			}
 			else {
 				console.log('wrong pass format');
+				alert('Ваш пароль успешно изменен');
 			}
 		}
 	}

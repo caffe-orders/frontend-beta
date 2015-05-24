@@ -13,7 +13,7 @@ angular.module('App.UserProfileChangePhone', [
 }])
 
 .controller('UserProfileChangePhoneCtrl', ['$scope', '$routeParams', 'ApiRequest', 'UserData',
-  function($scope, $routeParams, $http, $location, $sce, $rootScope) {
+  function($scope, $routeParams, ApiRequest, UserData) {
 	//init base data
 	$scope.userId = $routeParams.userId;
 	$scope.userUrl = 'user/' + $routeParams.userId + '/';
@@ -32,12 +32,18 @@ angular.module('App.UserProfileChangePhone', [
 						var oldUserData = UserData.data;
 						oldUserData.phone = $scope.phoneChangeForm.newPhone;
 						UserData.setData(oldUserData);
+						console.log('user phone edited');
+						alert('Ваш телефон успешно изменен');
 					} else {
 						console.log('magic was happend');
 					}
-				});
+				})
+				.error(function(data, state) {
+					alert('Произошла ошибка при изменении телефона, попробуйте позже');
+				});;
 			} else {
 				console.log('wrong phone format');
+				alert('Не верный формат телефона! (ex. 375928876450)');
 			}
 		}
 	}
