@@ -1,26 +1,23 @@
-<form ng-init="searchFormCollapsed = true;" ng-class="{visible: searchFormCollapsed == false}" action="/search/1" class="b-pl-srh-drop-down c-box-sz_bd-box">
+<form ng-init="searchFormCollapsed = true;" ng-class="{visible: searchFormCollapsed == false}" class="b-pl-srh-drop-down c-box-sz_bd-box">
 	<div class="b-pl-srh-drop-down_sect">
 		<label for="wifi" class="b-pl-srh-drop-down_descr b-pl-srh-drop-down_descr__checkbox c-text__sz-avg c-text__al-left c-text__clr-white">WiFi</label>
-		<input type="checkbox" name="wifi" class="b-pl-srh-drop-down_chkbx">
+		<input ng-model="search.wifi" type="checkbox" name="wifi" class="b-pl-srh-drop-down_chkbx">
 		<label for="countryside" class="b-pl-srh-drop-down_descr b-pl-srh-drop-down_descr__checkbox c-text__sz-avg c-text__al-left c-text__clr-white">За городом</label>
-		<input type="checkbox" name="countryside" class="b-pl-srh-drop-down_chkbx">
+		<input ng-model="search.outdoors" type="checkbox" name="countryside" class="b-pl-srh-drop-down_chkbx">
 		<label for="parking" class="b-pl-srh-drop-down_descr b-pl-srh-drop-down_descr__checkbox c-text__sz-avg c-text__al-left c-text__clr-white">Нужна парковка?</label>
-		<input type="checkbox" name="parking" class="b-pl-srh-drop-down_chkbx">
+		<input ng-model="search.parking" type="checkbox" name="parking" class="b-pl-srh-drop-down_chkbx">
 		<label for="smoking" class="b-pl-srh-drop-down_descr b-pl-srh-drop-down_descr__checkbox c-text__sz-avg c-text__al-left c-text__clr-white">Зал для курящих</label>
-		<input type="checkbox" name="smoking" class="b-pl-srh-drop-down_chkbx">
-		<input type="submit" name="submit" value="Искать" class="b-pl-srh-drop-down_submit">
+		<input ng-model="search.smoking" type="checkbox" name="smoking" class="b-pl-srh-drop-down_chkbx">
+		<input ng-click="searchPlace(search)" type="submit" name="submit" value="Искать" class="b-pl-srh-drop-down_submit">
 	</div>
 	<div class="b-pl-srh-drop-down_sect">
-		<label for="min-bill" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">Средний чек</label>
-		<input type="text" name="min-bill" class="b-pl-srh-drop-down_text" placeholder="от">
-		<input type="text" name="max-bill" class="b-pl-srh-drop-down_text" placeholder="до">
 		<label for="type" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">Тип заведения</label>
-		<select name="type" class="b-pl-srh-drop-down_select">
+		<select ng-model="search.type" name="type" class="b-pl-srh-drop-down_select">
 			<option value="Ресторан">Ресторан</option>
 			<option value="Кафе">Кафе</option>
 		</select>
 		<label for="cuisine" class="b-pl-srh-drop-down_descr c-text__sz-avg c-text__al-left c-text__clr-white">Кухня</label>
-		<select name="cuisine" class="b-pl-srh-drop-down_select">
+		<select ng-model="search.cuisine" name="cuisine" class="b-pl-srh-drop-down_select">
 			<option value="Итальянская">Итальянская</option>
 			<option value="Французская">Французская</option>
 		</select>
