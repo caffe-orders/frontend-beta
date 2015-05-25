@@ -6,65 +6,68 @@
 <nav class="b-top-nav">
   <a href="{{ownerUrl}}stat" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Статистика</a>
   <span class="dropdown" dropdown on-toggle="toggled(open)">
-	<a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
-	<ul class="dropdown-menu">
-	  <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
-	  <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
-	</ul>
+  <a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
+  <ul class="dropdown-menu">
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
+  </ul>
   </span>
   <a href="{{ownerUrl}}comments" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комментарии</a>
   <a href="{{ownerUrl}}photo" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Фото</a>
   <span class="dropdown" dropdown on-toggle="toggled(open)">
-	<a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
-	<ul class="dropdown-menu">
-	  <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
-	  <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
-	  <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
-	</ul>
+  <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
+  <ul class="dropdown-menu">
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
+  </ul>
   </span>
 </nav>
 
 <section class="b-place">
 
   <div class="b-week-day">
-	<div ng-class="{'b-week-day_btn__active': week.day == 1}" ng-click="week.day = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
-	<div ng-class="{'b-week-day_btn__active': week.day == 2}" ng-click="week.day = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
-	<div ng-class="{'b-week-day_btn__active': week.day == 3}" ng-click="week.day = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
-	<div ng-class="{'b-week-day_btn__active': week.day == 4}" ng-click="week.day = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
-	<div ng-class="{'b-week-day_btn__active': week.day == 5}" ng-click="week.day = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
-	<div ng-class="{'b-week-day_btn__active': week.day == 6}" ng-click="week.day = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
-	<div ng-class="{'b-week-day_btn__active': week.day == 7}" ng-click="week.day = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 1}" ng-click="week.day = 1;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пн</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 2}" ng-click="week.day = 2;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вт</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 3}" ng-click="week.day = 3;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Ср</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 4}" ng-click="week.day = 4;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Чт</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 5}" ng-click="week.day = 5;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Пт</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 6}" ng-click="week.day = 6;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Сб</div>
+  <div ng-class="{'b-week-day_btn__active': week.day == 7}" ng-click="week.day = 7;" class="b-week-day_btn c-text__sz-avg c-text__al-center c-text__clr-black">Вс</div>
   </div>
   <div class="b-menu c-box-sz_bd-box" style="width: 100% !important;">
-	<div class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Комплексные обеды</div>
+  <div class="b-menu_title c-text__sz-big c-text__al-center c-text__clr-black">Комплексные обеды</div>
 
-	<form class="b-create-complex">
-	  <label class="b-create-complex_label" for="">Название</label>
-	  <input class="b-create-complex_name" ng-model="dinner.name" type="text">
-	  <label class="b-create-complex_label" for="">Описание</label>
-	  <textarea class="b-create-complex_descr" ng-model="dinner.description"></textarea>
-	  <label class="b-create-complex_label" for="">Стоимость</label>
-	  <input class="b-create-complex_cost" ng-model="dinner.cost" type="text">
-	  <input style="float:left;" type="file" file-model="dinner.preview">
-	  <input class="b-create-complex_submit" ng-click="complexDinnerPanel.addDinner(dinner)" type="submit" value="Добавить обед">
-	</form>
+  <form class="b-create-complex">
+    <label class="b-create-complex_label" for="">Название</label>
+    <input class="b-create-complex_name" ng-model="dinner.name" type="text">
+    <label class="b-create-complex_label" for="">Описание</label>
+    <textarea class="b-create-complex_descr" ng-model="dinner.description"></textarea>
+    <label class="b-create-complex_label" for="">Стоимость</label>
+    <input class="b-create-complex_cost" ng-model="dinner.cost" type="text">
+    <input style="float:left;" type="file" file-model="dinner.preview">
+    <input class="b-create-complex_submit" ng-click="complexDinnerPanel.addDinner(dinner)" type="submit" value="Добавить обед">
+  </form>
 
-	<div ng-repeat="dinner in complexDinnerPanel.dinnersList | filter:week" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
-	  <figure class="b-menu-item_img c-icon__cover" style="background: url('//files.caffe.ru/files/complexDinner/{{dinner.id}}.jpg') no-repeat;">
-		  <input type="file" file-model="dinner.preview">
-	  </figure>
-	  <div class="b-menu-item_desc">
-		<input class="b-menu-item_desc-title" ng-model="dinner.name">
-		<input class="b-menu-item_desc-content" ng-model="dinner.description">
-	  </div>
-	  <div class="b-menu-item_cost">
-		<div class="b-menu-item_cost-title">Цена:
-		<a ng-click="complexDinnerPanel.deleteDinner(dinner.id)">Уд.</a>
-		<a ng-click="complexDinnerPanel.editDinner(dinner)">Изм.</a>
-		</div>
-		<input class="b-menu-item_cost-content c-text__st-bold" ng-model="dinner.cost">
-	  </div>
-	</div>
-	<p ng-class="{visible: complexDinnerPanel.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет комплексных обедов</p>
+  <div ng-repeat="dinner in complexDinnerPanel.dinnersList | filter:week" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
+    <figure class="b-menu-item_img c-icon__cover" style="background: url('//files.caffe.ru/files/complexDinner/{{dinner.id}}.jpg') no-repeat;">
+      <input type="file" file-model="dinner.preview">
+      <div class="b-menu-item_edit-field">
+        <a class="b-menu-item_btn" ng-click="complexDinnerPanel.deleteDinner(dinner.id)">Удалить</a>
+        <br>
+        <a class="b-menu-item_btn" ng-click="complexDinnerPanel.editDinner(dinner)">Изменить</a>
+      </div>
+    </figure>
+    <div class="b-menu-item_desc">
+    <input class="b-menu-item_desc-title" ng-model="dinner.name">
+    <input class="b-menu-item_desc-content" ng-model="dinner.description">
+    </div>
+    <div class="b-menu-item_cost">
+    <div class="b-menu-item_cost-title">Цена:
+    </div>
+    <input class="b-menu-item_cost-content c-text__st-bold" ng-model="dinner.cost">
+    </div>
+  </div>
+  <p ng-class="{visible: complexDinnerPanel.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет комплексных обедов</p>
   </div>
 </section>

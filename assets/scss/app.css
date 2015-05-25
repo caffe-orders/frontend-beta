@@ -1291,6 +1291,18 @@ xsigin/signup popup
     overflow: hidden;
     border: rgba(0, 0, 0, 0.1) 1px solid; }
     /* line 22, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    .b-menu-item_edit-field {
+      width: 100%;
+      height: auto;
+      background-color: rgba(0, 0, 0, 0.5); }
+    /* line 28, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    .b-menu-item_btn {
+      cursor: pointer;
+      color: white; }
+      /* line 32, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      .b-menu-item_btn:hover {
+        text-decoration: none; }
+    /* line 37, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-item_edit {
       width: auto;
       height: 25px;
@@ -1301,19 +1313,19 @@ xsigin/signup popup
       cursor: pointer;
       line-height: 25px;
       border: none; }
-      /* line 33, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 48, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-item_edit:hover {
         text-decoration: underline; }
-    /* line 38, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 53, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-item_img {
       width: 20%;
       height: 200px;
       float: left; }
-      /* line 43, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 58, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-item_img img {
         width: 100%;
         height: 100%; }
-    /* line 49, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 64, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-item_desc {
       width: 69%;
       height: 150px;
@@ -1321,65 +1333,65 @@ xsigin/signup popup
       margin-left: 1%;
       resize: none;
       border: none; }
-      /* line 57, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 72, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-item_desc-title {
         width: 100%;
         height: 50px;
         line-height: 50px;
         border: none; }
-      /* line 64, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 79, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-item_desc-content {
         width: 100%;
         height: 100px;
         line-height: 24px;
         border: none; }
-    /* line 72, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 87, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-item_cost {
       width: 10%;
       height: 150px;
       float: left; }
-      /* line 77, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 92, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-item_cost-title {
         width: 100%;
         height: 50px;
         line-height: 50px; }
-      /* line 83, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 98, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-item_cost-content {
         width: 100%;
         height: 100px;
         line-height: 24px;
         border: none; }
-  /* line 92, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+  /* line 107, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
   .b-menu-cat {
     width: 29%;
     float: right;
     margin-left: 1%; }
-    /* line 97, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 112, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-cat_btn {
       width: 100%;
       height: 50px;
       cursor: pointer;
       line-height: 50px;
       background-color: #3995f0; }
-      /* line 104, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+      /* line 119, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
       .b-menu-cat_btn:hover {
         background-color: #6b82bb; }
-    /* line 109, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 124, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-cat_title {
       width: 100%;
       height: 50px;
       line-height: 50px; }
-    /* line 115, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 130, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-cat_add-cat-wrap {
       width: 100%;
       height: 50px;
       margin-top: 30px; }
-    /* line 120, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 135, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-cat_cat-name {
       width: 80%;
       float: left;
       height: 50px; }
-    /* line 125, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
+    /* line 140, Z:/home/caffe.ru/www/assets/scss/_menu.scss */
     .b-menu-cat_add-cat-btn {
       width: 20%;
       height: 50px;
@@ -2038,28 +2050,28 @@ xsigin/signup popup
 
 /* line 1, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
 .b-create-dish {
-  width: 70%;
-  margin: 1% auto; }
-  /* line 5, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
-  .b-create-dish_form {
-    width: 40%;
-    max-width: 900px;
-    min-width: 320px;
-    height: auto;
-    float: left;
+  display: block;
+  width: 78%;
+  height: auto;
+  padding: 1%;
+  margin: 1% auto 4%;
+  background-color: #c6e8f2; }
+  /* line 9, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
+  .b-create-dish lable, .b-create-dish input {
+    width: 100%;
+    height: 40px;
     line-height: 40px; }
-    @media screen and (min-width: 240px) and (max-width: 900px) {
-      .b-create-dish_form {
-        width: 100%;
-        float: none; } }
-    /* line 17, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
-    .b-create-dish_form lable, .b-create-dish_form input {
-      width: 100%;
-      height: 40px;
-      line-height: 40px; }
-    /* line 23, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
-    .b-create-dish_form input {
-      padding: 0 0 0 1%; }
+  /* line 14, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
+  .b-create-dish lable {
+    padding: 0 0 0 1%; }
+  /* line 17, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
+  .b-create-dish textarea {
+    width: 100%;
+    height: 80px;
+    resize: vertical; }
+  /* line 22, Z:/home/caffe.ru/www/assets/scss/_create-dish.scss */
+  .b-create-dish input {
+    padding: 0 0 0 1%; }
 
 /* line 1, Z:/home/caffe.ru/www/assets/scss/_add-img-form.scss */
 .b-add-img-form {

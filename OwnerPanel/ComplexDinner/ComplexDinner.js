@@ -55,6 +55,7 @@ function($scope, $routeParams, ApiRequest, SendFile) {
 			}, false)
 			.success(function(data, state) {
 				console.log('complex dinner added');
+				alert('Комплексный обед добавлен');
 				$scope.complexDinnerPanel.getComplexDinnersList($routeParams.placeId);
 				var fileData = {
 					file: dinner.preview,
