@@ -21,7 +21,6 @@ angular.module('App', [
   'App.PlaceOrderTable',
   'App.PlacePhoto',
   'App.PlacesListIndex',
-  'App.PlacesListSearch',
   'App.OwnerPanelComment',
   'App.OwnerPanelComplexDinner',
   'App.OwnerPanelOrderCheck',
@@ -53,6 +52,31 @@ run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
   if(BrowserData.browser.family == 'IE' || BrowserData.browser.family == 'Opera Mini') {
 	$location.path('/badbrowser/');
   }
+	var checkUnconfirmedOrders = function() {
+		ApiRequest.get('orders/notconfirmed', false)
+		.success(function(data, state) {
+			if(data.haveOrder) {
+				console.log('user have unconfirmed orders');
+				$rootScope.notifyBtnVisible = true;
+			} else {
+				console.log('user doesnt have unconfirmed orders');
+				$rootScope.notifyBtnVisible = false;
+			}
+		});
+	}
+	checkUnconfirmedOrders();
+
+	var checkUserLogged = function() {
+		ApiRequest.get('users/current', false)
+		.success(function(data, state) {
+			if(state != 204) {
+				$rootScope.profileVisible = true;
+			} else {
+				$rootScope.profileVisible = false;
+			}
+		});
+	}
+	checkUserLogged();
 
 	$rootScope.confirmOrder = function(code) {
 		ApiRequest.post('orders/confirm', {
@@ -60,6 +84,8 @@ run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
 		}, false)
 		.success(function(data, state) {
 			alert('Заказ подтвержден');
+			$rootScope.notifyPanelExpanded = false;
+			$rootScope.notifyBtnVisible = false;
 		})
 		.error(function(data, state) {
 			alert('Введен неверный код либо заказа нет!');

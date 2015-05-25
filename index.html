@@ -26,7 +26,7 @@
   <a href="#" ng-init="signInOutModalVisible = false" ng-click="signInOutModalVisible = !signInOutModalVisible" class="b-main-nav_btn" tooltip="Войти или зарегистрироваться" tooltip-placement="right">
 	<figure class="c-icon c-icon_sign-in c-icon__cover"></figure>
   </a>
-  <a href="user/0/" class="b-main-nav_btn" tooltip="Профиль" tooltip-placement="right">
+  <a href="user/0/" ng-class="{visible: profileVisible}" style="display: none;" class="b-main-nav_btn" tooltip="Профиль" tooltip-placement="right">
 	<figure class="c-icon c-icon_user-profile c-icon__cover"></figure>
   </a>
   <a href="javascript:window.scroll(0,0)" class="b-main-nav_btn b-main-nav_btn__bottom bottom">
@@ -45,7 +45,7 @@
   </div>
   </nav>
 
-  <a ng-init="notifyPanelExpand = false" ng-click="notifyPanelExpand = !notifyPanelExpand" class="c-text__clr-white c-text__al-center b-notify_btn">!</a>
+  <a ng-class="{visible: notifyBtnVisible}" ng-init="notifyPanelExpand = false" ng-click="notifyPanelExpand = !notifyPanelExpand" class="c-text__clr-white c-text__al-center b-notify_btn">!</a>
   <div ng-class="{visible: notifyPanelExpand}" class="b-notify">
 	Введите код подтверждения заказа<br>
 	<input class="b-notify_input" ng-model="code" type="text">
@@ -152,7 +152,6 @@
   <script src="Common/Provider/NotifyPanelProvider.js"></script>
   <script src="Common/Directive/FileModel.js"></script>
   <script src="PlacesList/Index/Index.js"></script>
-  <script src="PlacesList/Search/Search.js"></script>
   <script src="Place/About/About.js"></script>
   <script src="Place/Comment/Comment.js"></script>
   <script src="Place/ComplexDinner/ComplexDinner.js"></script>

@@ -13,7 +13,7 @@
   </div>
 
   <section class="b-photo-gallery_prev-wrap">
-	<figure ng-repeat="img in album.data" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="album.showFullImg($index)"></figure>
+	<figure ng-repeat="img in album.data track by $index" style="background: url('//files.caffe.ru/files/{{img}}') no-repeat center;" class="b-photo-gallery_img-prev" ng-click="album.showFullImg($index)"></figure>
   </section>
   <p ng-class="{visible: album.state.noData}" class="b-center-message c-text__al-center c-text__sz-avg">Нет фото</p>
 </section>

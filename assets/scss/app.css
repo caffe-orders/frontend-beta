@@ -2106,7 +2106,7 @@ xsigin/signup popup
     line-height: 30px; }
   /* line 27, Z:/home/caffe.ru/www/assets/scss/_notify.scss */
   .b-notify_btn {
-    display: block;
+    display: none;
     position: fixed;
     top: 50px;
     right: 1%;

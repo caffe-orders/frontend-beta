@@ -71,6 +71,13 @@ angular.module('App.PlacesListIndex', [
 				});
 		};
 
+		$scope.search = {
+			wifi: false,
+			outdoors: false,
+			parking: false,
+			smoking: false
+		}
+
 		$scope.searchPlace = function(search) {
 			reqUrl = 'places/search?';
 			reqUrl = reqUrl + 'wifi=' + search.wifi;

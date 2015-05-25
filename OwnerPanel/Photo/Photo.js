@@ -70,6 +70,7 @@ function($scope, $routeParams, md5, ApiRequest, SendFile) {
 					console.log('no data in albums url list');
 					$scope.album.state.noData = true;
 				} else {
+					$scope.album.showFullImg(0);
 					$scope.album.state.noData = false;
 				}
 			})
@@ -87,6 +88,5 @@ function($scope, $routeParams, md5, ApiRequest, SendFile) {
 		data: [],
 		fullImgUrl: null
 	}
-	$scope.album.showFullImg(0);
 	$scope.album.getImgList($routeParams.placeId);
 }]);

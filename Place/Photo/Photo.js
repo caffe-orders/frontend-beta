@@ -30,6 +30,7 @@ angular.module('App.PlacePhoto', [
 					$scope.album.state.noData = true;
 				} else {
 					$scope.album.state.noData = false;
+					$scope.album.showFullImg(0);
 				}
 			})
 			.error(function(data, state) {
@@ -46,6 +47,5 @@ angular.module('App.PlacePhoto', [
 		data: [],
 		fullImgUrl: null
 	}
-	$scope.album.showFullImg(0);
 	$scope.album.getImgList($routeParams.placeId);
 }]);

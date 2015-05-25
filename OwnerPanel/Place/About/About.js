@@ -16,6 +16,14 @@ angular.module('App.OwnerPanelPlaceAbout', [
   function($scope, $routeParams, ApiRequest, SendFile) {
 	//init base data
 	$scope.ownerUrl = 'owner/' +  $routeParams.placeId + '/';
+
+	$scope.place = {
+		wifi: false,
+		outdoors: false,
+		parking: false,
+		smoking: false
+	}
+
 	$scope.placeModel = {
 		edit: function(place) {
 			ApiRequest.post('places/edit', {

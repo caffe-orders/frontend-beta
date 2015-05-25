@@ -77,6 +77,7 @@ function($scope, $routeParams, ApiRequest, $rootScope) {
 						  console.log('table ordered');
 						  alert('Заказ на столик отправлен на обработку');
 						  $rootScope.notifyPanelExpand = true;
+						  $rootScope.notifyBtnExpand = true;
 					  })
 					  .error(function(data, state) {
 						  console.log('table order error');
