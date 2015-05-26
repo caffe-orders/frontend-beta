@@ -69,7 +69,7 @@ function($scope, $routeParams, ApiRequest, SendFile, $timeout) {
 				alert('Комната добавлена, загрузка плана помещения происходит в фоновом режиме');
 				SendFile({
 					file: room.file,
-					path: 'places/' + $routeParams.placeId + '/rooms/',
+					path: 'places/' + $routeParams.placeId + '/rooms/' + data.roomNumber,
 					type: 'roomScheme',
 					name: 'scheme.jpg'
 				});
@@ -100,7 +100,7 @@ function($scope, $routeParams, ApiRequest, SendFile, $timeout) {
 				var calcPosX = function(table) {
 					var width = $('.b-room_scheme').width();
 					var left = $(table).css('left').replace(/[^-\d\.]/g, '');
-					return (left * 100) / width;
+					return ((left + 80) * 100) / width;
 				}
 				var calcPosY = function(table) {
 					var height = $('.b-room_scheme').height();
@@ -113,6 +113,7 @@ function($scope, $routeParams, ApiRequest, SendFile, $timeout) {
 					posX: calcPosX(this),
 					posY: calcPosY(this)
 				}
+				console.log(table);
 				$scope.roomsPanel.edit(table);
 			});
 
