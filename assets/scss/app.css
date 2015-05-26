@@ -1615,7 +1615,7 @@ xsigin/signup popup
     height: 600px; }
   /* line 30, Z:/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_btn {
-    width: 10%;
+    width: 15%;
     height: 600px;
     float: left;
     opacity: .6;
@@ -1625,7 +1625,7 @@ xsigin/signup popup
       opacity: 1; }
   /* line 42, Z:/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_deck {
-    width: 80%;
+    width: 70%;
     height: 600px;
     float: left;
     border: 2px solid black;

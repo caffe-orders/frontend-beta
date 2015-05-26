@@ -96,7 +96,39 @@ function($scope, $routeParams, ApiRequest, SendFile, $timeout) {
 			}
 		},
 		save: function() {
+			$(".draggable").each(function() {
+				var calcPosX = function(table) {
+					var width = $('.b-room_scheme').width();
+					var left = $(table).css('left').replace(/[^-\d\.]/g, '');
+					return (left * 100) / width;
+				}
+				var calcPosY = function(table) {
+					var height = $('.b-room_scheme').height();
+					var top = $(table).css('top').replace(/[^-\d\.]/g, '');
+					return (top * 100) / height;
+				}
+				var table = {
+					id: $(this).attr('id'),
+					type: $(this).attr('type'),
+					posX: calcPosX(this),
+					posY: calcPosY(this)
+				}
+				$scope.roomsPanel.edit(table);
+			});
 
+		},
+		edit: function(table) {
+			ApiRequest.post('tables/update', {
+				id: table.id,
+				placeId: $routeParams.placeId,
+				roomId: $scope.roomsPanel.roomsList[$scope.roomsPanel.currRoom].id,
+				type: table.type,
+				posX: table.posX,
+				posY: table.posY
+			}, false)
+			.success(function(data, state) {
+				console.log('table has been edited');
+			});
 		},
 		reestablish: function() {
 			ApiRequest.post('rooms/reestablish', {

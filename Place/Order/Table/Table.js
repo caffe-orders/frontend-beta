@@ -14,6 +14,7 @@ angular.module('App.PlaceOrderTable', [
 function($scope, $routeParams, ApiRequest, $rootScope) {
 	//init base data
 	$scope.placeUrl = 'place/' + $routeParams.placeId + '/';
+	$scope.placeId = $routeParams.placeId;
 	$scope.reserveTablePanel = {
 		state: {
 			noData: false
