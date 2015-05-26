@@ -35,3 +35,11 @@
 @import 'create-dish';
 @import 'add-img-form';
 @import 'notify';
+@import 'room';
+.draggable {
+	position: relative;
+	z-index: 99999;
+	width: 36px;
+	height: 36px;
+	background-size: cover;
+}

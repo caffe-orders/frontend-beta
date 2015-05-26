@@ -62,20 +62,20 @@
   <div id="cd-login" ng-class="{visible: regLogModalTabSelected == 0}">
   <form class="cd-form">
   <p class="fieldset">
-    <label class="image-replace cd-email" for="signin-email">E-mail</label>
-    <input class="full-width has-padding has-border" ng-model="loginForm.data.loginForm.email" id="signin-email" type="email" placeholder="E-mail">
-    <span class="cd-error-message" ng-class="{visible: loginForm.state.wrongLoginEmail}">Не верный email</span>
+	<label class="image-replace cd-email" for="signin-email">E-mail</label>
+	<input class="full-width has-padding has-border" ng-model="loginForm.data.loginForm.email" id="signin-email" type="email" placeholder="E-mail">
+	<span class="cd-error-message" ng-class="{visible: loginForm.state.wrongLoginEmail}">Не верный email</span>
   </p>
   <p class="fieldset">
-    <label class="image-replace cd-password" for="signin-password">Пароль</label>
-    <input class="full-width has-padding has-border"  ng-model="loginForm.data.loginForm.password" id="signin-password" type="password" placeholder="Пароль">
-    <span class="cd-error-message" ng-class="{visible: loginForm.state.failedToLogin}">Не верный Пароль (допускаются только символы и цифры)</span>
+	<label class="image-replace cd-password" for="signin-password">Пароль</label>
+	<input class="full-width has-padding has-border"  ng-model="loginForm.data.loginForm.password" id="signin-password" type="password" placeholder="Пароль">
+	<span class="cd-error-message" ng-class="{visible: loginForm.state.failedToLogin}">Не верный Пароль (допускаются только символы и цифры)</span>
   </p>
   <p class="fieldset">
-    <p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongLogin}">Не верный email или пароль</p>
+	<p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongLogin}">Не верный email или пароль</p>
   </p>
   <p class="fieldset">
-    <input class="full-width" type="submit" ng-click="loginForm.login()" value="Войти">
+	<input class="full-width" type="submit" ng-click="loginForm.login()" value="Войти">
   </p>
   </form>
 
@@ -85,33 +85,33 @@
   <div id="cd-signup" ng-class="{visible: regLogModalTabSelected == 1}"> <!-- форма регистрации -->
   <form class="cd-form">
   <p class="fieldset">
-    <label class="image-replace cd-email" for="signup-email">E-mail</label>
-    <input ng-model="loginForm.data.registrationForm.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+	<label class="image-replace cd-email" for="signup-email">E-mail</label>
+	<input ng-model="loginForm.data.registrationForm.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
   </p>
 
    <p class="fieldset">
-    <label class="image-replace cd-password" for="signup-phone">Телефон</label>
-    <input ng-model="loginForm.data.registrationForm.phone" class="full-width has-padding has-border" id="signup-phone" type="text"  placeholder="Телефон (375291224598)">
+	<label class="image-replace cd-password" for="signup-phone">Телефон</label>
+	<input ng-model="loginForm.data.registrationForm.phone" class="full-width has-padding has-border" id="signup-phone" type="text"  placeholder="Телефон (375291224598)">
   </p>
 
    <p class="fieldset">
-    <label class="image-replace cd-password" for="signup-password">Пароль</label>
-    <input ng-model="loginForm.data.registrationForm.password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Пароль">
+	<label class="image-replace cd-password" for="signup-password">Пароль</label>
+	<input ng-model="loginForm.data.registrationForm.password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Пароль">
   </p>
   <p class="fieldset">
-    <p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongRegister}">Email должен быть акутальным!<br>Tелефон нужно задать в формате "375291255678"!<br>Пароль должен состоять из цифр и символов и быть длинее 6 символов!</p>
+	<p class="cd-form-message c-text__clr-red" style="display: none;" ng-class="{visible: loginForm.state.wrongRegister}">Email должен быть акутальным!<br>Tелефон нужно задать в формате "375291255678"!<br>Пароль должен состоять из цифр и символов и быть длинее 6 символов!</p>
   </p>
 
   <p class="fieldset">
-    <p class="cd-form-message c-text__clr-green" style="display: none;" ng-class="{visible: loginForm.state.successRegister}">На ваш email мобильный телефон отправлено сообщение с ссылкой для активации вашего аккаунта!</p>
+	<p class="cd-form-message c-text__clr-green" style="display: none;" ng-class="{visible: loginForm.state.successRegister}">На ваш email мобильный телефон отправлено сообщение с ссылкой для активации вашего аккаунта!</p>
   </p>
   <!--<p class="fieldset">
-    <input type="checkbox" id="accept-terms">
-    <label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
+	<input type="checkbox" id="accept-terms">
+	<label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
   </p> -->
 
   <p class="fieldset">
-    <input ng-click="loginForm.register()" class="full-width has-padding" type="submit" value="Создать аккаунт">
+	<input ng-click="loginForm.register()" class="full-width has-padding" type="submit" value="Создать аккаунт">
   </p>
   </form>
   </div> <!-- cd-signup -->
@@ -121,12 +121,12 @@
 
   <form class="cd-form">
   <p class="fieldset">
-    <label class="image-replace cd-email" for="reset-email">Телефон</label>
-    <input ng-model="restorePhone" class="full-width has-padding has-border" id="reset-email" type="text" pattern="^(\d){12}$" placeholder="Телефон">
+	<label class="image-replace cd-email" for="reset-email">Телефон</label>
+	<input ng-model="restorePhone" class="full-width has-padding has-border" id="reset-email" type="text" pattern="^(\d){12}$" placeholder="Телефон">
   </p>
 
   <p class="fieldset">
-    <input class="full-width has-padding" ng-click="loginForm.restorePassword(restorePhone)" type="submit" value="Восстановить пароль">
+	<input class="full-width has-padding" ng-click="loginForm.restorePassword(restorePhone)" type="submit" value="Восстановить пароль">
   </p>
   </form>
   </div> <!-- cd-reset-password -->
@@ -136,18 +136,18 @@
 
   <form class="cd-form">
   <p class="fieldset">
-    <label class="image-replace cd-email" for="reset-email">Новый пароль</label>
-    <input ng-model="password" class="full-width has-padding has-border" id="reset-email" type="text" placeholder="Новый пароль">
+	<label class="image-replace cd-email" for="reset-email">Новый пароль</label>
+	<input ng-model="password" class="full-width has-padding has-border" id="reset-email" type="text" placeholder="Новый пароль">
   </p>
 
   <p class="fieldset">
-    <label class="image-replace cd-email" for="reset-email">Код подтверждения</label>
-    <input ng-model="code" class="full-width has-padding has-border" id="reset-email" type="text" pattern="^(/d){4}$" placeholder="Код">
-    <span ng-class="{visible: wrongCode}" style="display: none;" class="cd-error-message">Введенный код не верен!</span>
+	<label class="image-replace cd-email" for="reset-email">Код подтверждения</label>
+	<input ng-model="code" class="full-width has-padding has-border" id="reset-email" type="text" pattern="^(/d){4}$" placeholder="Код">
+	<span ng-class="{visible: wrongCode}" style="display: none;" class="cd-error-message">Введенный код не верен!</span>
   </p>
 
   <p class="fieldset">
-    <input class="full-width has-padding" ng-click="loginForm.changePassword(code, restorePhone)" type="submit" value="Изменить пароль">
+	<input class="full-width has-padding" ng-click="loginForm.changePassword(code, restorePhone)" type="submit" value="Изменить пароль">
   </p>
   </form>
   </div>
@@ -195,3 +195,5 @@
   <script src="UserProfile/Change/Uname/Uname.js"></script>
   <script src="UserProfile/Settings/Settings.js"></script>
   <script src="UserProfile/Stat/Stat.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

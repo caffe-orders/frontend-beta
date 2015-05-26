@@ -6,20 +6,15 @@
 <nav class="b-top-nav">
   <a href="{{ownerUrl}}stat" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Статистика</a>
   <span class="dropdown" dropdown on-toggle="toggled(open)">
-  <a href="{{ownerUrl}}rooms" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
-  <ul class="dropdown-menu">
-  <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms">Создать</a>
-  <a style="float:left; width: 100%;" href="{{ownerUrl}}rooms/edit">Изменить</a>
-  </ul>
+  <a href="{{ownerUrl}}rooms" class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комнаты</a>
   </span>
   <a href="{{ownerUrl}}comments" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Комментарии</a>
   <a href="{{ownerUrl}}photo" class="b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Фото</a>
   <span class="dropdown" dropdown on-toggle="toggled(open)">
   <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
   <ul class="dropdown-menu">
-  <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Добавить блюдо</a>
-  <a style="float:left; width: 100%;" href="{{ownerUrl}}menu/edit">Управление меню</a>
-  <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Управление меню</a>
+    <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
   </ul>
   </span>
 </nav>
@@ -53,9 +48,9 @@
 
 <div ng-class="{hidden: menuPanel.state.noData}" ng-repeat="dish in searchPanel.dinnersList" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
   <figure class="b-menu-item_img">
-	<div class="b-menu-item_edit-field">
-	<a class="b-menu-item_btn" ng-click="searchPanel.add(dish.id)">Добавить</a>
-	</div><img class="c-icon__cover" src="//files.caffe.ru/files/dishs/{{dish.id}}.jpg"></figure>
+  <div class="b-menu-item_edit-field">
+  <a class="b-menu-item_btn" ng-click="searchPanel.add(dish.id)">Добавить</a>
+  </div><img class="c-icon__cover" src="//files.caffe.ru/files/dishs/{{dish.id}}.jpg"></figure>
   <div class="b-menu-item_desc">
   <div class="b-menu-item_desc-title" ng-bind="dish.name"></div>
   <div class="b-menu-item_desc-content" ng-bind="dish.description"></div>
@@ -71,12 +66,12 @@
 
   <div ng-repeat="dinner in dinnersPanel.dinnersList | filter:category" class="b-menu-item c-box-sz_bd-box c-text__sz-avg c-text__al-left c-text__clr-black">
   <figure class="b-menu-item_img c-icon__cover" style="background: url('//files.caffe.ru/files/dishs/{{dinner.id}}.jpg') no-repeat;background-size: cover;">
-	<input type="file" file-model="dinner.preview">
-	<div class="b-menu-item_edit-field">
-	<a class="b-menu-item_btn" ng-click="dinnersPanel.deleteDinner(dinner.id)">Удалить</a>
-	  <br>
-	<a class="b-menu-item_btn" ng-click="dinnersPanel.editDinner(dinner)">Изменить</a>
-	</div>
+  <input type="file" file-model="dinner.preview">
+  <div class="b-menu-item_edit-field">
+  <a class="b-menu-item_btn" ng-click="dinnersPanel.deleteDinner(dinner.id)">Удалить</a>
+    <br>
+  <a class="b-menu-item_btn" ng-click="dinnersPanel.editDinner(dinner)">Изменить</a>
+  </div>
   </figure>
   <div class="b-menu-item_desc">
   <input class="b-menu-item_desc-title" ng-model="dinner.name">

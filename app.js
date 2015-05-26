@@ -175,6 +175,8 @@ run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
         $rootScope.regLogModalTabSelected = 3;
       })
       .error(function(data, state) {
+        alert('Возможно у вас есть неподтвержденный запрос на восстановление');
+        $rootScope.regLogModalTabSelected = 3;
       });
     },
     changePassword(code, password) {

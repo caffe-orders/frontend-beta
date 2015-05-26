@@ -1,0 +1,90 @@
+.b-room {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+
+  &_header {
+	height: 40px;
+	width: 100%;
+	background-color: #3995f0;
+	box-sizing: border-box;
+	padding: 0 1% 0 1%;
+
+	&-info {
+	  display: block;
+	  width: auto;
+	  height: 40px;
+	  float: left;
+	  line-height: 40px;
+	  color: #fff;
+	  padding: 0 1% 0 0;
+	  font-size: 18px;
+	}
+  }
+
+  &_main {
+	width: 100%;
+	height: auto;
+	padding: 1% 0 1% 0;
+  }
+
+  &_scheme {
+	width: 70%;
+	height: 500px;
+	float: left;
+	background-size: cover;
+  }
+
+  &_tables-list {
+	width: 29%;
+	height: 500px;
+	padding: 0;
+	background-color: aqua;
+	float: right;
+  }
+
+  &_footer {
+	width: 100%;
+	height: 40px;
+
+	&-btn {
+	  width: auto;
+	  height: 40px;
+	  line-height: 40px;
+	  padding: 0 1% 0 1%;
+	  color: black;
+	  display: block;
+	  float: left;
+	  cursor: pointer;
+
+	  &:hover {
+		text-decoration: none;
+	  }
+
+	  &__save {
+		float: right;
+		background-color: #c78a38;
+		font-size: 20px;
+		text-align: center;
+		color: white;
+	  }
+	}
+  }
+}
+
+.b-table {
+	padding: 0;
+	border: 0;
+	width: 98%;
+	height: 40px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	background-color: cornflowerblue;
+
+	&:hover {
+		background-color: darkblue;
+	}
+}
+

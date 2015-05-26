@@ -12,11 +12,10 @@ angular.module('App.OwnerPanelStatistic', [
 		})
 }])
 
-.controller('OwnerPanelStatCtrl', ['$scope', '$routeParams',
+.controller('OwnerPanelStatisticCtrl', ['$scope', '$routeParams',
 	function($scope, $routeParams, googleChartApiPromise) {
 		//init base data
 		$scope.ownerUrl = 'owner/' + $routeParams.placeId + '/';
-		$rootScope.title = 'Панель владельца | CaffeOrders';
 
 	 $scope.chartObject = {};
 

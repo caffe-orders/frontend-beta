@@ -1848,9 +1848,11 @@ xsigin/signup popup
 /* line 1, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
 .b-create-room-form {
   width: 49%;
-  margin-left: 1%;
-  height: auto; }
-  /* line 6, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  margin: 1% auto 1%;
+  height: auto;
+  background-color: #c6e8f2;
+  padding: 1%; }
+  /* line 8, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
   .b-create-room-form_label {
     display: block;
     width: 100%;
@@ -1860,22 +1862,22 @@ xsigin/signup popup
     font-weight: 400;
     line-height: 30px;
     float: left; }
-  /* line 17, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  /* line 19, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
   .b-create-room-form_text {
     width: 100%;
     height: 30px;
     line-height: 30px; }
-  /* line 23, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  /* line 25, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
   .b-create-room-form_line-wrap {
     width: 100%;
     height: 30px; }
-  /* line 28, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  /* line 30, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
   .b-create-room-form_file {
     width: 100%;
     height: 30px;
     margin: 0;
     padding: 0; }
-  /* line 35, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
+  /* line 37, Z:/home/caffe.ru/www/assets/scss/_create-room-form.scss */
   .b-create-room-form_submit {
     width: 100%;
     height: 30px;
@@ -2126,5 +2128,93 @@ xsigin/signup popup
     height: 50px;
     line-height: 50px;
     background-color: blueviolet; }
+
+/* line 1, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+.b-room {
+  width: 100%;
+  height: auto;
+  padding: 1%; }
+  /* line 6, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+  .b-room_header {
+    height: 40px;
+    width: 100%;
+    background-color: #3995f0;
+    box-sizing: border-box;
+    padding: 0 1% 0 1%; }
+    /* line 13, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+    .b-room_header-info {
+      display: block;
+      width: auto;
+      height: 40px;
+      float: left;
+      line-height: 40px;
+      color: #fff;
+      padding: 0 1% 0 0;
+      font-size: 18px; }
+  /* line 25, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+  .b-room_main {
+    width: 100%;
+    height: auto;
+    padding: 1% 0 1% 0; }
+  /* line 31, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+  .b-room_scheme {
+    width: 70%;
+    height: 500px;
+    float: left;
+    background-size: cover; }
+  /* line 38, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+  .b-room_tables-list {
+    width: 29%;
+    height: 500px;
+    padding: 0;
+    background-color: aqua;
+    float: right; }
+  /* line 46, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+  .b-room_footer {
+    width: 100%;
+    height: 40px; }
+    /* line 50, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+    .b-room_footer-btn {
+      width: auto;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 1% 0 1%;
+      color: black;
+      display: block;
+      float: left;
+      cursor: pointer; }
+      /* line 60, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+      .b-room_footer-btn:hover {
+        text-decoration: none; }
+      /* line 64, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+      .b-room_footer-btn__save {
+        float: right;
+        background-color: #c78a38;
+        font-size: 20px;
+        text-align: center;
+        color: white; }
+
+/* line 75, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+.b-table {
+  padding: 0;
+  border: 0;
+  width: 98%;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  background-color: cornflowerblue; }
+  /* line 86, Z:/home/caffe.ru/www/assets/scss/_room.scss */
+  .b-table:hover {
+    background-color: darkblue; }
+
+/* line 39, Z:/home/caffe.ru/www/assets/scss/app.scss */
+.draggable {
+  position: relative;
+  z-index: 99999;
+  width: 36px;
+  height: 36px;
+  background-size: cover; }
 
 /*# sourceMappingURL=app.css.map */
