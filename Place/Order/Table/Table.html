@@ -10,16 +10,16 @@
 <section class="b-res-table">
   <header class="b-res-table_title c-text__sz-big c-text__al-center c-text__clr-black">Забронировать столик в этом заведении</header>
   <section class="b-res-table_wrap">
-	<div ng-click="reserveTablePanel.rooms.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
-	<div class="b-res-table_deck" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{reserveTablePanel.rooms.data[reserveTablePanel.rooms.currRoom].number}}/scheme.jpg') no-repeat center;">
+	<div ng-click="tablePanel.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
+	<div class="b-res-table_deck" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{tablePanel.roomsList[tablePanel.currRoom].number}}/scheme.jpg') no-repeat center;">
 
-	  <a ng-click="reserveTablePanel.table.reserve(table)" ng-repeat="table in reserveTablePanel.rooms.data[reserveTablePanel.rooms.currRoom].tablesList" class="b-res-table_table" style="top: {{table.posY}}%; left: {{table.posX}}%; background: {{reserveTablePanel.table.setBg(table.status)}};">
-		<div class="b-res-table_occupied"></div>
+	  <a ng-click="tablePanel.table.reserve(table)" ng-repeat="table in tablePanel.tablesList" class="b-res-table_table" style="top: {{table.posY}}%; left: {{table.posX}}%; background: {{tablePanel.table.setBg(table.status)}};">
+		<div class="b-res-table_occupied" ng-bind="table.type"></div>
 	  </a>
 	  </div>
 
 	</div>
-  <div ng-click="reserveTablePanel.rooms.next()" class="b-res-table_btn c-icon_custom__arr-right"></div>
+  <div ng-click="tablePanel.next()" class="b-res-table_btn c-icon_custom__arr-right"></div>
   <p ng-class="{visible: reserveTablePanel.state.noComments}" class="b-center-message c-text__al-center c-text__sz-avg">Нет столиков</p>
   </section>
 </section>

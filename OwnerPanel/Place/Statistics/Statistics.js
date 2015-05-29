@@ -12,12 +12,18 @@ angular.module('App.OwnerPanelStatistic', [
 		})
 }])
 
-.controller('OwnerPanelStatisticCtrl', ['$scope', '$routeParams',
-	function($scope, $routeParams, googleChartApiPromise) {
+.controller('OwnerPanelStatisticCtrl', ['$scope', '$routeParams', 'ApiRequest',
+	function($scope, $routeParams, ApiRequest, googleChartApiPromise) {
 		//init base data
 		$scope.ownerUrl = 'owner/' + $routeParams.placeId + '/';
 
-	 $scope.chartObject = {};
+		 ApiRequest.get('statistics/general?id=' + $routeParams.placeId, false)
+		.success(function(data, state) {
+			$scope.data = data;
+			 console.log(data);
+		});
+
+		$scope.chartObject = {};
 
 		$scope.chartObject.data = {"cols": [
 				{id: "t", label: "Topping", type: "string"},

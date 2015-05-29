@@ -13,16 +13,16 @@
   <span class="dropdown" dropdown on-toggle="toggled(open)">
   <a href="{{ownerUrl}}menu" dropdown-toggle class="dropdown-toggle b-top-nav_btn c-text__sz-sml c-text__al-center c-text__clr-black c-icon_tab__stat">Меню</a>
   <ul class="dropdown-menu">
-    <a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Управление меню</a>
-    <a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
+	<a style="float:left; width: 100%;" href="{{ownerUrl}}menu">Управление меню</a>
+	<a style="float:left; width: 100%;" href="{{ownerUrl}}complex">Комплексные обеды</a>
   </ul>
   </span>
 </nav>
 
 <section class="b-owner-panel">
-<div class="b-owner-panel_stat block c-text__sz-avg c-text__al-center c-text__clr-black">Просмотров всего: <p class="c-text__clr-red">12000</p></div>
-<div class="b-owner-panel_stat block c-text__sz-avg c-text__al-center c-text__clr-black">Просмотров в день: <p class="c-text__clr-red">54</p></div>
-<div class="b-owner-panel_stat block c-text__sz-avg c-text__al-center c-text__clr-black">Заявок в день: <p class="c-text__clr-red">8</p></div>
+<div class="b-owner-panel_stat block c-text__sz-avg c-text__al-center c-text__clr-black">Просмотров всего: <p class="c-text__clr-red">{{data.views}}</p></div>
+<div class="b-owner-panel_stat block c-text__sz-avg c-text__al-center c-text__clr-black">Заявок: <p class="c-text__clr-red">{{data.orders}}</p></div>
+<div class="b-owner-panel_stat block c-text__sz-avg c-text__al-center c-text__clr-black">Корпоративов: <p class="c-text__clr-red">{{data.corporates}}</p></div>
 <div google-chart chart="chartObject" class="b-owner-panel_g-chart" style="width: 100%;height: 600px;float: left;"></div>
 <div google-chart chart="chartObject1" class="b-owner-panel_g-chart" style="width: 100%;height: 600px;float: left;"></div>
 </section>
