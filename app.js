@@ -46,7 +46,7 @@ config(['$routeProvider', '$locationProvider', '$sceDelegateProvider',
 	'https://www.google.com/maps/**'
   ]);
 }]).
-run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
+run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope, UserData) {
   //AuthProvider.logIn('clain@sample.com', '199626');
 
   if(BrowserData.browser.family == 'IE' || BrowserData.browser.family == 'Opera Mini') {
@@ -69,8 +69,10 @@ run(function($location, BrowserData, AuthProvider, ApiRequest, $rootScope) {
   var checkUserLogged = function() {
 	ApiRequest.get('users/current', false)
 	.success(function(data, state) {
+		console.log(data);
 	  if(state != 204) {
 		$rootScope.profileVisible = true;
+		UserData.setData(data);
 	  } else {
 		$rootScope.profileVisible = false;
 	  }

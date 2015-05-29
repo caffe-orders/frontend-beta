@@ -100,11 +100,13 @@ function($scope, $routeParams, ApiRequest, SendFile, $timeout) {
 				var calcPosX = function(table) {
 					var width = $('.b-room_scheme').width();
 					var left = $(table).css('left').replace(/[^-\d\.]/g, '');
-					return ((left + 80) * 100) / width;
+					console.log(width + ' ' + left);
+					return (left * 100) / width;
 				}
 				var calcPosY = function(table) {
 					var height = $('.b-room_scheme').height();
 					var top = $(table).css('top').replace(/[^-\d\.]/g, '');
+					console.log(height + ' ' + top);
 					return (top * 100) / height;
 				}
 				var table = {

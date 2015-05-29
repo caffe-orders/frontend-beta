@@ -2224,9 +2224,10 @@ xsigin/signup popup
 /* line 39, D:/work/Denwer/home/caffe.ru/www/assets/scss/app.scss */
 .draggable {
   position: relative;
-  z-index: 99999;
-  width: 36px;
-  height: 36px;
-  background-size: cover; }
+  width: 30px !important;
+  height: 30px !important;
+  background-size: cover;
+  float: none;
+  background-color: #123123; }
 
 /*# sourceMappingURL=app.css.map */
