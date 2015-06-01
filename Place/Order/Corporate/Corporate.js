@@ -4,88 +4,89 @@ angular.module('App.PlaceOrderCorporate', [
 ])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/corporate/reserve/:placeId/', {
-    templateUrl: 'Place/Order/Corporate/Corporate.html',
-    controller: 'PlaceOrderCorporateCtrl'
+  $routeProvider.when('/place/:placeId/corporate/', {
+	templateUrl: 'Place/Order/Corporate/Corporate.html',
+	controller: 'PlaceOrderCorporateCtrl'
   })
 }])
 
-.controller('PlaceOrderCorporateCtrl', ['$scope', '$routeParams', '$http', '$location', '$rootScope',
-  function($scope, $routeParams, $http, $location, $rootScope) {
-    //init base data
-    $rootScope.title = 'Заказать столик';
-    $scope.placeUrl = 'place/' + $routeParams.placeId + '/';
-    $scope.reserveTablePanel = {
-      state: {
-        noData: false
-      },
-      rooms: {
-        data: { },
-        getRoomsList: function(placeId) {
-          $http.get('tmp/tables.json')
-            .success(function(data, state) {
-              if(state == 200) {
-                console.log(data);
-                $scope.reserveTablePanel.rooms.data = data;
-              } else {
-                $scope.reserveTablePanel.state.noData = true;
-              }
-            });
-        },
-        currRoom: 0,
-        get: function() {
-          var roomId = $scope.reserveTablePanel.rooms.currRoom;
-          return ($scope.reserveTablePanel.rooms.data[roomId] != null) ?
-            $scope.reserveTablePanel.rooms.data[roomId] : $scope.reserveTablePanel.rooms.data[0];
-        },
-        prev: function() {
-          console.log($scope.reserveTablePanel.rooms.currRoom);
-          console.log($scope.reserveTablePanel.rooms.data[$scope.reserveTablePanel.rooms.currRoom].tablesList);
-          if($scope.reserveTablePanel.rooms.currRoom > 0) {
-            $scope.reserveTablePanel.rooms.currRoom--;
-          }
-          else {
-            $scope.reserveTablePanel.rooms.currRoom = $scope.reserveTablePanel.rooms.data.length - 1;
-          }
-        },
-        next: function() {
-          console.log($scope.reserveTablePanel.rooms.currRoom);
-          if($scope.reserveTablePanel.rooms.currRoom < ($scope.reserveTablePanel.rooms.data.length - 1)) {
-            $scope.reserveTablePanel.rooms.currRoom++;
-          }
-          else {
-            $scope.reserveTablePanel.rooms.currRoom = 0;
-          }
-        }
-      },
-      table: {
-        activeBg: '#123213',
-        unactiveBg: '#228228',
-        setBg: function(active) {
-          if(active == true) {
-            return this.activeBg;
-          } else {
-            return this.unactiveBg;
-          }
-        },
-        reserve: function(table) {
-          if(table.active) {
-            var req = {
-              method: 'GET',
-              url: '//api.caffe.ru/comments/list?id=' + this.placeId,
-              crossDomain: true,
-              withCredentials: true,
-              data: { }
-            };
-            $http(req).success(function(data, state) {
-
-            });
-          }
-        }
-      },
-      reserveTable: function(table) {
-        alert('lalka');
-      }
-    }
-    $scope.reserveTablePanel.rooms.getRoomsList(5);
+.controller('PlaceOrderCorporateCtrl', ['$scope', '$routeParams', 'ApiRequest',
+  function($scope, $routeParams, ApiRequest) {
+	$scope.placeUrl = 'place/' + $routeParams.placeId + '/';
+	$scope.placeId = $routeParams.placeId;
+	$scope.tablePanel = {
+		state: {
+			noData: false
+		},
+		currRoom: 1,
+		tablesList: {},
+		roomsList: {},
+		prev: function() {
+			if($scope.tablePanel.currRoom > 0) {
+				$scope.tablePanel.currRoom--;
+			} else {
+				$scope.tablePanel.currRoom = $scope.tablePanel.roomsList.length - 1;
+			}
+			console.log($scope.tablePanel.currRoom);
+			$scope.tablePanel.getTablesList();
+		},
+		next: function() {
+			if($scope.tablePanel.currRoom < ($scope.tablePanel.roomsList.length - 1)) {
+				$scope.tablePanel.currRoom++;
+			} else {
+				$scope.tablePanel.currRoom = 0;
+			}
+			$scope.tablePanel.getTablesList();
+			console.log($scope.tablePanel.currRoom);
+		},
+		getRoomsList: function() {
+			var reqUrl = 'rooms/publiclist?placeId=' + $routeParams.placeId;
+			ApiRequest.get(reqUrl, false)
+			.success(function(data, state) {
+				$scope.tablePanel.roomsList = data;
+				$scope.tablePanel.getTablesList();
+				console.log($scope.tablePanel.roomsList);
+			});
+		},
+		getTablesList: function() {
+			var reqUrl = 'tables/publiclist?placeId=' + $routeParams.placeId + '&roomId=' + $scope.tablePanel.roomsList[$scope.tablePanel.currRoom].id;
+			ApiRequest.get(reqUrl, false)
+			.success(function(data, state) {
+				$scope.tablePanel.tablesList = data;
+				console.log($scope.tablePanel.roomsList);
+			});
+		},
+		table: {
+			activeBg: '#123213',
+			unactiveBg: '#228228',
+			setBg: function(status) {
+				if(status == 0) {
+					return this.activeBg;
+				} else {
+					return this.unactiveBg;
+				}
+			},
+			reserve: function(table) {
+				if(confirm('Вы действительно хотите заказать этот столик?')) {
+					console.log(table);
+					if(table.status == 0) {
+						ApiRequest.post('orders/new', {
+							'tableId': table.id
+						}, false)
+						.success(function(data, state) {
+							console.log('table ordered');
+							alert('Заказ на столик отправлен на обработку');
+							$rootScope.notifyPanelExpand = true;
+							$rootScope.notifyBtnExpand = true;
+						})
+						.error(function(data, state) {
+							console.log('table order error');
+							alert('Возникла ошибка при заказе столика, возможно столик уже забронирован.\n Попробуйте позже');
+						});
+					}
+				}
+			}
+		}
+	}
+	$scope.tablePanel.getRoomsList();
 }]);

@@ -13,7 +13,7 @@
 	<div ng-click="tablePanel.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
 	<div class="b-res-table_deck" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{tablePanel.roomsList[tablePanel.currRoom].number}}/scheme.jpg') no-repeat center;">
 
-	  <a ng-click="tablePanel.table.reserve(table)" ng-repeat="table in tablePanel.tablesList" class="b-res-table_table" style="top: {{table.posY}}%; left: {{table.posX}}%; background: {{tablePanel.table.setBg(table.status)}};">
+	  <a ng-click="tablePanel.table.reserve(table)" ng-repeat="table in tablePanel.tablesList" class="b-res-table_table" style="top: {{table.posY}}%; left: {{table.posX}}%; background: {{tablePanel.table.setBg(table.status)}};z-index: {{table.id}};">
 		<div class="b-res-table_occupied" ng-bind="table.type"></div>
 	  </a>
 	  </div>

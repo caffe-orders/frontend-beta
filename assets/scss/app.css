@@ -1594,28 +1594,28 @@ xsigin/signup popup
 /* line 5, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
 .b-res-table {
   width: 99%;
-  min-height: 100%;
-  height: auto;
+  min-height: 600px;
+  height: 600px;
+  max-height: 600px;
   margin: 0 0 1% 1%; }
   @media screen and (min-width: 240px) and (max-width: 900px) {
     .b-res-table {
       margin: 0 0 1% 0;
       position: relative;
       left: 1%; } }
-  /* line 17, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
+  /* line 18, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_title {
     width: auto;
     height: 50px;
     margin: 1% auto 1% 0;
     line-height: 50px; }
-  /* line 24, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
+  /* line 25, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_wrap {
-    display: block;
     width: 100%;
     height: 600px; }
   /* line 30, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_btn {
-    width: 15%;
+    width: 16%;
     height: 600px;
     float: left;
     opacity: .6;
@@ -1625,25 +1625,28 @@ xsigin/signup popup
       opacity: 1; }
   /* line 42, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_deck {
-    width: 70%;
+    width: 68%;
     height: 600px;
+    max-height: 600px;
     float: left;
-    border: 2px solid black;
-    background-size: 100%; }
-  /* line 50, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
+    border: 1% solid black;
+    background-size: cover;
+    overflow: scroll; }
+  /* line 52, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
   .b-res-table_table {
     display: block;
-    position: relative;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    opacity: .7;
-    cursor: pointer; }
-    /* line 63, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
+    line-height: 30px !important;
+    font-size: 30px !important;
+    color: white !important;
+    text-align: center !important;
+    opacity: .7 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    width: 30px !important;
+    height: 30px !important;
+    background-size: cover !important;
+    float: none !important; }
+    /* line 66, D:/work/Denwer/home/caffe.ru/www/assets/scss/_reserve-table.scss */
     .b-res-table_table:hover {
       opacity: 1;
       text-decoration: none;
@@ -1942,14 +1945,14 @@ xsigin/signup popup
   /* line 7, D:/work/Denwer/home/caffe.ru/www/assets/scss/_edit-room-panel.scss */
   .b-edit-room-panel_room {
     width: 68%;
-    height: 98%;
+    height: 600px;
     float: left;
     margin: 1%;
     background-color: bisque; }
   /* line 15, D:/work/Denwer/home/caffe.ru/www/assets/scss/_edit-room-panel.scss */
   .b-edit-room-panel_tables-list {
     width: 29%;
-    height: 98%;
+    height: 600px;
     margin: 1% 1% 1% 0;
     float: right; }
 
