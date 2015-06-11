@@ -17,7 +17,6 @@
 @import 'user-info';
 @import 'user-settings';
 @import 'user-stat';
-@import 'reserve-table';
 @import 'rating';
 @import 'owner-panel';
 @import 'place-create-form';
@@ -36,6 +35,9 @@
 @import 'add-img-form';
 @import 'notify';
 @import 'room';
+@import 'reserve-table';
+@import 'corporate-order';
+
 .draggable {
 	position: relative;
 	width: 30px !important;
@@ -43,5 +45,4 @@
 	background-size: cover;
 	float: none;
 	background-color: #123123;
-
 }

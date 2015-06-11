@@ -1,0 +1,76 @@
+.b-res-table {
+  width: 99%;
+  min-height: 500px;
+  height: 500px;
+  max-height: 500px;
+  margin: 0 0 1% 1%;
+}
+
+@media screen and (min-width: 240px) and (max-width: 900px) {
+  .b-res-table {
+    margin: 0 0 1% 0;
+    position: relative;
+    left: 1%;
+  }
+}
+
+.b-res-table_title {
+  width: auto;
+  height: 50px;
+  margin: 1% auto 1% 0;
+  line-height: 50px;
+}
+
+.b-res-table_wrap {
+  width: 100%;
+  height: 500px;
+  float: left;
+}
+
+.b-res-table_btn {
+  width: 14%;
+  height: 500px;
+  float: left;
+  opacity: .6;
+  transition: .3s;
+}
+
+.b-res-table_btn:hover {
+  opacity: 1;
+}
+
+.b-res-table_deck {
+  width: 70%;
+  height: 500px;
+  float: left;
+  background-size: cover;
+  border: 2px solid black;
+}
+
+.b-res-table_occupied {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  text-align: center;
+  line-height: 30;
+}
+
+.b-res-table_table {
+  position: relative;
+  width: 30px !important;
+  height: 30px !important;
+  background-size: cover;
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: .6;
+}
+
+.b-res-table_table:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}

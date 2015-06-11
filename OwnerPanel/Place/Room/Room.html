@@ -35,7 +35,8 @@
 	  <span style="float: right;" class="c-text_clr-red b-room_header-info">{{roomsPanel.roomsList[roomsPanel.currRoom].deleted == 1 ? 'Удалена' : ''}}</span>
 	</div>
 	<div class="b-room_main">
-	  <figure class="b-room_scheme" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{roomsPanel.roomsList[roomsPanel.currRoom].number}}/scheme.jpg') no-repeat center;"><img ng-repeat="table in roomsPanel.tablesList" id="{{table.id}}" type="{{table.type}}" src="assets/img/dish-preview-sample.png" class="draggable" style="top: {{table.posY}}%; left: {{table.posX}}%;z-index: {{table.id}};"></figure>
+	  <figure class="b-room_scheme" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{roomsPanel.roomsList[roomsPanel.currRoom].number}}/scheme.jpg') no-repeat center;">
+	  	<img ng-repeat="table in roomsPanel.tablesList" id="{{table.id}}" type="{{table.type}}" src="assets/img/dish-preview-sample.png" class="draggable" style="top: {{table.posY}}%; left: {{table.posX}}%;z-index: {{table.id}};"></figure>
 	  <div class="b-room_tables-list">
 		<div class="b-table" ng-click="roomsPanel.addTable(roomsPanel.currRoom, 1)">
 		  Столик на 1 персону

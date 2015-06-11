@@ -8,19 +8,28 @@
 </nav>
 
 <section class="b-res-table">
-  <header class="b-res-table_title c-text__sz-big c-text__al-center c-text__clr-black">Забронировать корпоратив в этом заведении</header>
+  <header class="b-res-table_title c-text__sz-big c-text__al-center c-text__clr-black">
+    <a ng-click="showCorporateForm = !showCorporateForm">Забронировать корпоратив в этой комнате</a>
+  </header>
+  
+  <form action="" class="b-corporate-order" ng-class="{visible: showCorporateForm}">
+    <label for="" class="b-corporate-order_lable">Выберите дату проведения</label>
+    <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    <label for="" class="b-corporate-order_lable">Выберите планируемое время начала корпоратива</label>
+    <timepicker ng-model="mytime" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="ismeridian"></timepicker>
+    <label for="" class="b-corporate-order_lable">Выберите планируемое время конца корпоратива</label>
+    <timepicker ng-model="mytime" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="ismeridian"></timepicker>
+  </form>
+
   <section class="b-res-table_wrap">
-	<div ng-click="tablePanel.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
-	<div class="b-res-table_deck" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{tablePanel.roomsList[tablePanel.currRoom].number}}/scheme.jpg') no-repeat center;">
+  <div ng-click="tablePanel.prev()" class="b-res-table_btn c-icon_custom__arr-left"></div>
+  <div class="b-res-table_deck" style="background: url('//files.caffe.ru/files/places/{{placeId}}/rooms/{{tablePanel.roomsList[tablePanel.currRoom].number}}/scheme.jpg') no-repeat center;">
 
-	  <a ng-click="tablePanel.table.reserve(table)" ng-repeat="table in tablePanel.tablesList" class="b-res-table_table" style="top: {{table.posY}}%; left: {{table.posX}}%; background: {{tablePanel.table.setBg(table.status)}};z-index: {{table.id}};">
-		<div class="b-res-table_occupied" ng-bind="table.type"></div>
-	  </a>
-	  </div>
-
-	</div>
+    <figure ng-click="tablePanel.table.reserve(table)" ng-repeat="table in tablePanel.tablesList" class="b-res-table_table" style="top: {{table.posY}}%; left: {{table.posX}}%; background: {{tablePanel.table.setBg(table.status)}}; z-index: {{table.id}};">
+    {{table.type}}
+    </figure>
+  </div>
   <div ng-click="tablePanel.next()" class="b-res-table_btn c-icon_custom__arr-right"></div>
   <p ng-class="{visible: reserveTablePanel.state.noComments}" class="b-center-message c-text__al-center c-text__sz-avg">Нет столиков</p>
   </section>
 </section>
-

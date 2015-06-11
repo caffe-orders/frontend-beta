@@ -4,10 +4,10 @@ angular.module('App.PlaceOrderTable', [
 ])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/place/:placeId/tables', {
-	templateUrl: 'Place/Order/Table/Table.html',
-	controller: 'PlaceOrderTableCtrl'
-  })
+	$routeProvider.when('/place/:placeId/tables', {
+		templateUrl: 'Place/Order/Table/Table.html',
+		controller: 'PlaceOrderTableCtrl'
+	})
 }])
 
 .controller('PlaceOrderTableCtrl', ['$scope', '$routeParams', 'ApiRequest', '$rootScope',

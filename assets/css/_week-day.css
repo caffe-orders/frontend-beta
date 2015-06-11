@@ -1,0 +1,21 @@
+.b-week-day {
+  height: 40px;
+  margin: 0 auto;
+}
+
+.b-week-day_btn {
+  float: left;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f7e8d5;
+  cursor: pointer;
+}
+
+.b-week-day_btn:hover {
+  background-color: #efd0a7;
+}
+
+.b-week-day_btn__active {
+  background-color: #efd0a7;
+}
